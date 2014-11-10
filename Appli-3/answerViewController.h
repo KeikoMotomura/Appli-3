@@ -8,6 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
-@interface answerViewController : UIViewController
+@interface answerViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+{
+    NSArray *_answerArray;
+}
+
+
+@property (weak, nonatomic) IBOutlet UILabel *wordjumpLabel;
+
+@property (weak, nonatomic) IBOutlet UISwitch *wordjumpSwitch;
+
+@property (weak, nonatomic) IBOutlet UITextView *answerTextView;
+
+@property(nonatomic,assign) int select_num;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *menubackBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+@property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
+
+- (IBAction)wordjumpSwitch:(id)sender;
+
+- (IBAction)menubackBtn:(id)sender;
+
+- (IBAction)topbackBtn:(id)sender;
 
 @end

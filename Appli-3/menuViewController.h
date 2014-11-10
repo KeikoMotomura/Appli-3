@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface menuViewController : UIViewController
+@interface menuViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+{
+    
+    NSArray *_menuArray;
+}
+
+
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
 @end

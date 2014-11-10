@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface note2ViewController : UIViewController
+@interface note2ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+
+{
+    NSArray *_note2Array;
+}
+
+
+@property (weak, nonatomic) IBOutlet UITableView *note2TableView;
+
+
+@property(nonatomic,assign) int select_num;
+
+
 
 @end

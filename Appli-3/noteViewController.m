@@ -7,6 +7,7 @@
 //
 
 #import "noteViewController.h"
+#import "note2ViewController.h"
 
 @interface noteViewController ()
 
@@ -16,8 +17,61 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.title=@"Words Note";
+  
+    _noteArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
+    
+    _noteTableView.delegate = self;
+    _noteTableView.dataSource = self;
+    
+    _noteTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _noteArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+ 
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+  
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:
+                UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = _noteArray[indexPath.row];
+    return cell;
+    
+}
+
+//何か行が押されたときにnote2ViewControllerに画面推移する
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
+indexPath{
+    
+    
+    note2ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
+    
+//    dvc.select_num = indexPath.row;
+    
+    
+    [[self navigationController]
+     pushViewController:dvc animated:YES];
+    
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

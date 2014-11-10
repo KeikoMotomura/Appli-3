@@ -7,6 +7,8 @@
 //
 
 #import "note2ViewController.h"
+#import "note3ViewController.h"
+
 
 @interface note2ViewController ()
 
@@ -16,7 +18,59 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+
+    _note2Array = @[@"（仮）",@"ここに",@"選択肢を",@"表示させたい"];
+    
+    _note2TableView.delegate = self;
+    _note2TableView.dataSource = self;
+    
+    _note2TableView.separatorColor = [UIColor redColor]; //色は後で変更
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _note2Array.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:
+                UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = _note2Array[indexPath.row];
+    return cell;
+    
+
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
+indexPath
+{
+    NSLog(@"単語が選択されました");
+    
+    // 次画面を指定して遷移
+    note3ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
+    
+//    dvc.select_num = indexPath.row;
+    
+    
+    //    ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController]
+     pushViewController:dvc animated:YES];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -6,6 +6,9 @@
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 //
 
+//＊＊やりたいこと＊＊
+
+
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -17,11 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.titleLabel.text = @"アプリ名";
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+
 
 @end

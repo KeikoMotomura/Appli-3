@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface questionViewController : UIViewController
+@interface questionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+
+{
+    NSArray *_choiseArray;
+    NSArray *_answerArray;
+}
+
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *queLabel;
+
+@property (weak, nonatomic) IBOutlet UITableView *choiseTableView;
+
+@property(nonatomic,assign) int select_num;
+
 
 @end
