@@ -218,16 +218,6 @@
                                     <action selector="wordjumpSwitch:" destination="Jfi-CB-9T6" eventType="valueChanged" id="nL8-vc-81X"/>
                                 </connections>
                             </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Gu-Pa-5k7">
-                                <rect key="frame" x="193" y="518" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="次の問題へ">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextBtn:" destination="Jfi-CB-9T6" eventType="touchUpInside" id="XOR-HK-D0E"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sXS-Up-B4D">
                                 <rect key="frame" x="-8" y="503" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -254,7 +244,6 @@
                     <connections>
                         <outlet property="answerTextView" destination="zCx-PC-N36" id="Xk5-kA-Y4d"/>
                         <outlet property="menubackBtn" destination="sXS-Up-B4D" id="PlA-8s-g6v"/>
-                        <outlet property="nextBtn" destination="2Gu-Pa-5k7" id="dT8-9o-ufu"/>
                         <outlet property="topbackBtn" destination="UKe-9X-so6" id="m9i-ME-WGQ"/>
                         <outlet property="wordjumpLabel" destination="hkU-WE-QV4" id="SEN-II-Y61"/>
                         <outlet property="wordjumpSwitch" destination="OTt-v3-zgt" id="eeN-us-zOD"/>

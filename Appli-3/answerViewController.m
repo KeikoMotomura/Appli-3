@@ -14,6 +14,7 @@
 #import "ViewController.h"
 #import "menuViewController.h"
 #import "questionViewController.h"
+#import "resultViewController.h"
 
 
 @interface answerViewController ()
@@ -25,19 +26,80 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
     NSLog(@"kotae");
     
     _answerArray = @[@{@"name":@"単語",@"desc":@"説明文"},@{@"name":@"単語",@"desc":@"説明文"},@{@"name":@"単語",@"desc":@"説明文"},@{@"name":@"単語",@"desc":@"説明文"}];
                    
                      
-    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_num][@"name"],_answerArray[self.select_num][@"desc"]];
+    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_categoryNo][@"name"],_answerArray[self.select_categoryNo][@"desc"]];
    
     self.wordjumpLabel.text = @"単語帳に登録";
     
     
+    [self _createnextButton];
+
+    
+    
+    
 }
+
+-(void) _createnextButton{
+    
+    //    ボタンの位置を決定
+    UIButton *_createnextButton = [[UIButton alloc] initWithFrame:CGRectMake (200, 550, 100, 10)];
+    
+    //ボタンに表示する文字を指定
+    [_createnextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
+    
+    //ボタンの色を指定
+    [_createnextButton setTitleColor:[UIColor blueColor]forState:UIControlStateNormal];
+    
+    //     ボタンを表示している
+    [self.view addSubview: _createnextButton];
+    
+    [_createnextButton addTarget:self action:@selector(buttonWasTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+
+    
+}
+    //    ボタンをタップしたときに反応
+-(void)tapButton:(UIButton *) _createnextButton{
+
+    //  「次の問題へ」ボタンが押されたら次のquestion画面が開く
+    NSLog(@"次の問題へボタンが押されました");
+    
+    // 次画面を指定して遷移
+    questionViewController *qvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
     
+    //  questionViewからわたってきたself.select numをここに代入＝ここを入れることで値が前の選択したものを覚えている
+    //    Synonymなら１だな。Twomeaningなら３だな。
+    qvc.select_categoryNo = self.select_categoryNo;
+    
+    //    ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController]
+     pushViewController:qvc animated:YES];
+
+    
+    //＝＝＝＝＝問題箇所＝＝＝＝＝
+    
+//    //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
+//    qvc.select_questionNo = self.select_questionNo+1;
+//    
+//    NSLog(@"%d" ,qvc.select_questionNo);
+//    
+//    if (qvc.select_questionNo == 10) {
+//        NSLog(@"問題カウント数10になりました");
+//        [self. _createnextBtn setTitle:@"結果画面へ" forState:UIControlStateNormal];
+//        
+//    }
+
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -85,6 +147,7 @@
 
 }
 
+//  トップ画面へ戻るボタンが押されたら３画面前へ戻る
 - (IBAction)topbackBtn:(id)sender {
     
     NSInteger count       = self.navigationController.viewControllers.count - 4;
@@ -93,20 +156,8 @@
 
 }
 
-//  「次の問題へ」ボタンが押されたら次のquestion画面が開く　＊＊問題種類がすべてPhrasalVerbになってしまう。
-- (IBAction)nextBtn:(id)sender {
     
-    NSLog(@"次の問題へボタンが押されました");
     
-    // 次画面を指定して遷移
-    questionViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
-    
-    //    ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController]
-     pushViewController:dvc animated:YES];
-    
-}
-
 
 
 @end

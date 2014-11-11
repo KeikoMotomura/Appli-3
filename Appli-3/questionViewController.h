@@ -18,13 +18,13 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-
-
 @property (weak, nonatomic) IBOutlet UILabel *queLabel;
-
 @property (weak, nonatomic) IBOutlet UITableView *choiseTableView;
 
-@property(nonatomic,assign) int select_num;
+
+
+@property(nonatomic,assign) int select_categoryNo;
+@property(nonatomic,assign) int select_questionNo;
 
 
 @end

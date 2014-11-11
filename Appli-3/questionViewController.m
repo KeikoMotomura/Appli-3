@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
 
-    switch (self.select_num) {
+    switch (self.select_categoryNo) {
                     case 0:
                     self.titleLabel.text = @"Phrasal Verb";
                     break;
@@ -102,10 +102,18 @@ indexPath
        
     // 次画面を指定して遷移
     answerViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"answerViewController"];
+
+//    移動した先のセレクトナムというプロパティに値がわたる
+    dvc.select_categoryNo = self.select_categoryNo;
+    
+//  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた
+    dvc.select_questionNo = self.select_questionNo;
+    
     
 //    ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController]
      pushViewController:dvc animated:YES];
+    
     
     
 }

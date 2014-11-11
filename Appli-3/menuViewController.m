@@ -72,7 +72,7 @@ indexPath{
     
     questionViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
-        dvc.select_num = indexPath.row;
+        dvc.select_categoryNo = indexPath.row;
     
     
     [[self navigationController]
