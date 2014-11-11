@@ -12,6 +12,8 @@
 
 #import "answerViewController.h"
 #import "ViewController.h"
+#import "menuViewController.h"
+#import "questionViewController.h"
 
 
 @interface answerViewController ()
@@ -72,13 +74,10 @@
 
 - (IBAction)menubackBtn:(id)sender {
     
-    
     NSLog(@"問題種類へ戻るボタンがタップされました");
     
-    
     // 次画面を指定して遷移
-    answerViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
-    
+    menuViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
     
     //    ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController]
@@ -88,15 +87,23 @@
 
 - (IBAction)topbackBtn:(id)sender {
     
-    NSLog(@"TOPへ戻るボタンがタップされました");
+    NSInteger count       = self.navigationController.viewControllers.count - 4;
+    ViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
+    [self.navigationController popToViewController:vc animated:YES];
+
+}
+
+//  「次の問題へ」ボタンが押されたら次のquestion画面が開く　＊＊問題種類がすべてPhrasalVerbになってしまう。
+- (IBAction)nextBtn:(id)sender {
     
-//    ViewController *dvc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    NSLog(@"次の問題へボタンが押されました");
     
+    // 次画面を指定して遷移
+    questionViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
-//    //    ナビゲーションコントローラーの機能で画面遷移
-//    [[self navigationController]
-//     pushViewController:dvc2 animated:YES];
-    
+    //    ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController]
+     pushViewController:dvc animated:YES];
     
 }
 

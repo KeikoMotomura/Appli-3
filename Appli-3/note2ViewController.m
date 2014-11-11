@@ -20,12 +20,22 @@
     [super viewDidLoad];
    
 
-    _note2Array = @[@"（仮）",@"ここに",@"選択肢を",@"表示させたい"];
+    _note2Array = @[@"（仮）",@"ここに",@"単語リストを",@"表示させたい"];
     
     _note2TableView.delegate = self;
     _note2TableView.dataSource = self;
     
     _note2TableView.separatorColor = [UIColor redColor]; //色は後で変更
+    
+
+//      単語をスワイプできるようにした。
+    [super viewDidLoad];
+    //SwipeGestureのインスタンスを生成
+    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
+    //スワイプの方向（右から左）
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    //self.viewにジェスチャーをのせる
+    [self.view addGestureRecognizer:swipeLeftGesture];
     
 }
 
@@ -69,9 +79,15 @@ indexPath
     [[self navigationController]
      pushViewController:dvc animated:YES];
     
-    
-    
 }
+
+//  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
+- (void)swipeLeft:(UISwipeGestureRecognizer *)sender
+{
+    NSLog(@"右から左にスワイプされました");
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

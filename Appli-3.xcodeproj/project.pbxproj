@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7223C78F1A12032500DEF780 /* resultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7223C78E1A12032500DEF780 /* resultViewController.m */; };
 		72AD41B11A09FD2C00D2DF1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B01A09FD2C00D2DF1D /* main.m */; };
 		72AD41B41A09FD2C00D2DF1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B31A09FD2C00D2DF1D /* AppDelegate.m */; };
 		72AD41B71A09FD2C00D2DF1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B61A09FD2C00D2DF1D /* ViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7223C78D1A12032500DEF780 /* resultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultViewController.h; sourceTree = "<group>"; };
+		7223C78E1A12032500DEF780 /* resultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultViewController.m; sourceTree = "<group>"; };
 		72AD41AB1A09FD2C00D2DF1D /* Appli-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Appli-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AD41AF1A09FD2C00D2DF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72AD41B01A09FD2C00D2DF1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				72AD42101A0B418400D2DF1D /* questionViewController.m */,
 				72AD421B1A0BC1DA00D2DF1D /* answerViewController.h */,
 				72AD421C1A0BC1DA00D2DF1D /* answerViewController.m */,
+				7223C78D1A12032500DEF780 /* resultViewController.h */,
+				7223C78E1A12032500DEF780 /* resultViewController.m */,
 				72AD42121A0B449200D2DF1D /* noteViewController.h */,
 				72AD42131A0B449200D2DF1D /* noteViewController.m */,
 				72AD42151A0B4C4B00D2DF1D /* note2ViewController.h */,
@@ -256,6 +261,7 @@
 				72AD421D1A0BC1DA00D2DF1D /* answerViewController.m in Sources */,
 				72AD41D91A0A5E5100D2DF1D /* menuViewController.m in Sources */,
 				72AD42141A0B449200D2DF1D /* noteViewController.m in Sources */,
+				7223C78F1A12032500DEF780 /* resultViewController.m in Sources */,
 				72AD42111A0B418400D2DF1D /* questionViewController.m in Sources */,
 				72AD42171A0B4C4B00D2DF1D /* note2ViewController.m in Sources */,
 			);

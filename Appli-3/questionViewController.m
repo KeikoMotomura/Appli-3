@@ -24,8 +24,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.titleLabel.text = @"問題種類を表示するためのラベル";
-    self.queLabel.text = _choiseArray[self.select_num];
+
+    switch (self.select_num) {
+                    case 0:
+                    self.titleLabel.text = @"Phrasal Verb";
+                    break;
+            
+                    case 1:
+                    self.titleLabel.text = @"Synonym";
+                    break;
+            
+                    case 2:
+                    self.titleLabel.text = @"Antonym";
+                    break;
+            
+                    case 3:
+                    self.titleLabel.text = @"Two Meaning";
+                    break;
+
+}
+    
+//    問題の表示（②画面を４種類で使い回す）
+    self.queLabel.text = @"問題の単語を表示";
     
     
     
@@ -36,7 +56,8 @@
     _choiseTableView.dataSource = self;
     
     _choiseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+    
+    
     
 }
 
@@ -64,6 +85,13 @@
     
 
 }
+
+//  画面を戻したときに前回選択した行の選択状況を解除する
+- (void)viewWillAppear:(BOOL)animated{
+    [_choiseTableView deselectRowAtIndexPath:_choiseTableView.indexPathForSelectedRow animated:YES];
+    
+}
+
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)

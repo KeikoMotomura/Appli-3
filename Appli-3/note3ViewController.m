@@ -23,6 +23,8 @@
 
     self.note3Label.text = @"ここに単語を表示";
     
+    
+    
 //    self.note3Label.text = [NSString stringWithFormat:@"%@",ここになにか[self.select_num]];
     
     

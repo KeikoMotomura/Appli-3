@@ -34,4 +34,7 @@
 
 - (IBAction)topbackBtn:(id)sender;
 
+- (IBAction)nextBtn:(id)sender;
+
+
 @end

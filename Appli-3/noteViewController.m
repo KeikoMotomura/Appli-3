@@ -70,6 +70,12 @@ indexPath{
 }
 
 
+//  画面を戻したときに前回選択した行の選択状況を解除する
+- (void)viewWillAppear:(BOOL)animated{
+    [_noteTableView deselectRowAtIndexPath:_noteTableView.indexPathForSelectedRow animated:YES];
+    
+}
+
 
 
 
