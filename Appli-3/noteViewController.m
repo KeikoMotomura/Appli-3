@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"Words Note";
+    self.title=@"単語帳(目次)noteViewController";
   
     _noteArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
     
@@ -26,6 +26,8 @@
     _noteTableView.dataSource = self;
     
     _noteTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    
     
     
 }
@@ -54,18 +56,19 @@
     
 }
 
-//何か行が押されたときにnote2ViewControllerに画面推移する
+//     何か行が押されたときにnote2ViewControllerに画面推移する
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
 indexPath{
     
     
-    note2ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
+    note2ViewController *nvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
     
-//    dvc.select_num = indexPath.row;
-    
+    nvc.select_num = indexPath.row;
+    nvc.select_wordNo = self.select_wordNo;
+
     
     [[self navigationController]
-     pushViewController:dvc animated:YES];
+     pushViewController:nvc animated:YES];
     
 }
 

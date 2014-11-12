@@ -20,12 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title=@"単語帳(説明画面)note3ViewController";
 
     self.note3Label.text = @"ここに単語を表示";
-    
-    
-    
-//    self.note3Label.text = [NSString stringWithFormat:@"%@",ここになにか[self.select_num]];
+//    →いらないかも。回答画面の使い回しのみで対応する？？
     
     
     self.wordjumpLabel.text = @"OFFにすると単語帳から削除できます";

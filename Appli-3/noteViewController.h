@@ -20,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *noteTableView;
 
 @property(nonatomic,assign) int select_num;
+@property(nonatomic,assign) int select_wordNo;
 
 @end

@@ -4,9 +4,7 @@
 //
 //  Created by 本村佳子 on 2014/11/05.
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
-//
 
-//＊＊やりたいこと＊＊
 
 
 #import "ViewController.h"

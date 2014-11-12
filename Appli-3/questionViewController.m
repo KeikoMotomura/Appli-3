@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title=@"questionViewController";
+    
 
     switch (self.select_categoryNo) {
                     case 0:
@@ -46,8 +48,6 @@
     
 //    問題の表示（②画面を４種類で使い回す）
     self.queLabel.text = @"問題の単語を表示";
-    
-    
     
     _choiseArray = @[@"（仮）",@"ここに",@"選択肢を",@"表示させたい"];
     
@@ -93,24 +93,22 @@
 }
 
 
-
+//  選択肢をタップしたら画面遷移
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
 indexPath
 {
     NSLog(@"選択肢がタップされました");
-    
-       
-    // 次画面を指定して遷移
+           
+//  次画面を指定して遷移
     answerViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"answerViewController"];
 
-//    移動した先のセレクトナムというプロパティに値がわたる
+//  移動した先のセレクトナムというプロパティに値がわたる
     dvc.select_categoryNo = self.select_categoryNo;
     
 //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた
     dvc.select_questionNo = self.select_questionNo;
     
-    
-//    ナビゲーションコントローラーの機能で画面遷移
+//  ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController]
      pushViewController:dvc animated:YES];
     

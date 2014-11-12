@@ -13,7 +13,7 @@
 {
     NSArray *_answerArray;
     
-    UIButton *_createnextButton;
+    UIButton *_nextButton;
 }
 
 

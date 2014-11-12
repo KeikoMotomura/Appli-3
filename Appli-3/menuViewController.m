@@ -18,11 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title=@"問題種類を選択 menuViewController";
+
+    
     self.titleLabel.text = @"種類を選択して下さい";
     
     
     
-    self.title=@"問題種類を選択";
     
     _menuArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
     

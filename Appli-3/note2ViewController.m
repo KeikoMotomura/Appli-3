@@ -18,23 +18,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
+    self.title=@"単語帳(単語リスト)note2ViewController";
+    
+    nvc.select_wordNo = self.select_wordNo;
+//    self.notetitleLabel.text = _noteArray[self.select_wordNo];
+    
+    switch (self.select_wordNo) {
+        case 0:
+            self.notetitleLabel.text = @"Phrasal Verb";
+            break;
+            
+        case 1:
+            self.notetitleLabel.text = @"Synonym";
+            break;
+            
+        case 2:
+            self.notetitleLabel.text = @"Antonym";
+            break;
+            
+        case 3:
+            self.notetitleLabel.text = @"Two Meaning";
+            break;
 
-    _note2Array = @[@"（仮）",@"ここに",@"単語リストを",@"表示させたい"];
+    }
+
+    _note2Array = @[@"ant",@"apple",@"cookie",@"strawberry"];
     
     _note2TableView.delegate = self;
     _note2TableView.dataSource = self;
     
     _note2TableView.separatorColor = [UIColor redColor]; //色は後で変更
     
+    
 
-//      単語をスワイプできるようにした。
+//  単語をスワイプできるようにした。
     [super viewDidLoad];
-    //SwipeGestureのインスタンスを生成
+//  SwipeGestureのインスタンスを生成
     UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
-    //スワイプの方向（右から左）
+//  スワイプの方向（右から左）
     swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-    //self.viewにジェスチャーをのせる
+//   self.viewにジェスチャーをのせる
     [self.view addGestureRecognizer:swipeLeftGesture];
     
 }
@@ -69,13 +93,13 @@ indexPath
 {
     NSLog(@"単語が選択されました");
     
-    // 次画面を指定して遷移
+//  次画面を指定して遷移
     note3ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
     
 //    dvc.select_num = indexPath.row;
     
     
-    //    ナビゲーションコントローラーの機能で画面遷移
+//   ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController]
      pushViewController:dvc animated:YES];
     
@@ -91,17 +115,8 @@ indexPath
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

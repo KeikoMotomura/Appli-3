@@ -12,21 +12,20 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *note3Label;
-
-
 @property (weak, nonatomic) IBOutlet UITextView *wordTextView;
-
 
 
 @property (weak, nonatomic) IBOutlet UILabel *wordjumpLabel;
 
 @property (weak, nonatomic) IBOutlet UISwitch *wordjumpSwitch;
-
 - (IBAction)wordjumpSwitch:(id)sender;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *nextpageBtn;
+
 
 @property(nonatomic,assign) int select_num;
 
-@property (weak, nonatomic) IBOutlet UIButton *nextpageBtn;
 
 
 @end
