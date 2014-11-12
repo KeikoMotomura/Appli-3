@@ -19,10 +19,12 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *wordjumpSwitch;
 - (IBAction)wordjumpSwitch:(id)sender;
+- (IBAction)topbackBtn:(id)sender;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *nextpageBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
 
 @property(nonatomic,assign) int select_num;
 

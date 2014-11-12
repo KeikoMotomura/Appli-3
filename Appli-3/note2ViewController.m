@@ -21,7 +21,7 @@
     
     self.title=@"単語帳(単語リスト)note2ViewController";
     
-    nvc.select_wordNo = self.select_wordNo;
+//    nvc.select_wordNo = self.select_wordNo;
 //    self.notetitleLabel.text = _noteArray[self.select_wordNo];
     
     switch (self.select_wordNo) {
@@ -43,7 +43,7 @@
 
     }
 
-    _note2Array = @[@"ant",@"apple",@"cookie",@"strawberry"];
+    _note2Array = @[@"ant",@"apple",@"cookie",@"strawberry",@"water",@"tea",@"coffee",@"nestea",@"orange",@"mango",@"mikan",@"meat",@"ramen",@"flower",@"pancit",@"karekare",@"pinakbet",@"soup",@"corn",@"porkberry",@"sisig",@"sinigang",];
     
     _note2TableView.delegate = self;
     _note2TableView.dataSource = self;

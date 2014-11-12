@@ -41,15 +41,14 @@
     [self _createnextButton];
 
     
-    
-    
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
-    
-
-
 }
+
+
 
 -(void) _createnextButton{
     
@@ -59,13 +58,13 @@
     //  ボタンに表示する文字を指定
     [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
     
-    if (self.select_questionNo == 10) {
+    if (self.select_questionNo == 2) {
         NSLog(@"問題カウント数10になりました");
         
     //  ボタンに表示する文字を指定
         [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
         
-    }
+}
     
 
     //  ボタンの色を指定
@@ -74,54 +73,61 @@
     //  ボタンを表示している
     [self.view addSubview: _nextButton];
     
-    [_nextButton addTarget:self action:@selector(tapButton) forControlEvents:UIControlEventTouchUpInside];
+    [_nextButton addTarget:self action:@selector(tapButton)
+          forControlEvents:UIControlEventTouchUpInside];
     
+   
     
     
 }
+
+
     //   ボタンをタップしたときに反応
 -(void)tapButton{
 
     //  「次の問題へ」ボタンが押されたら次のquestion画面が開く
     NSLog(@"次の問題へボタンが押されました");
     
-    //  次画面を指定して遷移
+    
     questionViewController *qvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
-    
-    
-    //  questionViewからわたってきたself.select numをここに代入＝ここを入れることで値が前の選択したものを覚えている
-    //    Synonymなら１だな。Twomeaningなら３だな。
-    qvc.select_categoryNo = self.select_categoryNo;
-    
-    //    ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController]
-     pushViewController:qvc animated:YES];
-    
     
 //    //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
     qvc.select_questionNo = self.select_questionNo+1;
     
     NSLog(@"%d" ,qvc.select_questionNo);
     
+    
+    if (self.select_questionNo == 2) {
+        
+        // 次画面を指定して遷移
+        resultViewController *kvc = [self.storyboard instantiateViewControllerWithIdentifier:@"resultViewController"];
+        
+        //    ナビゲーションコントローラーの機能で画面遷移
+        [[self navigationController]
+         pushViewController:kvc animated:YES];
+    
  
-}
+    }else{
+        //  次画面を指定して遷移
+        
+        
+        //  questionViewからわたってきたself.select numをここに代入＝ここを入れることで値が前の選択したものを覚えている
+        //    Synonymなら１だな。Twomeaningなら３だな。
+        qvc.select_categoryNo = self.select_categoryNo;
+        
+        //    ナビゲーションコントローラーの機能で画面遷移
+        [[self navigationController]
+         pushViewController:qvc animated:YES];
 
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)wordjumpSwitch:(id)sender {
     

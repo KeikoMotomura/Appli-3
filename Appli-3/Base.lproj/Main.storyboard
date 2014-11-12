@@ -132,12 +132,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Aeg-bl-fre">
-                                <rect key="frame" x="16" y="171" width="286" height="386"/>
+                                <rect key="frame" x="0.0" y="88" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yhB-h6-MsC">
-                                <rect key="frame" x="25" y="83" width="170" height="21"/>
+                                <rect key="frame" x="16" y="71" width="170" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -262,30 +262,18 @@
             <point key="canvasLocation" x="1012" y="94"/>
         </scene>
         <!--Result View Controller-->
-        <scene sceneID="yCO-b4-V89">
+        <scene sceneID="5ke-E7-SSf">
             <objects>
-                <tableViewController storyboardIdentifier="resultViewController" id="pzy-M9-jEE" customClass="resultViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xwB-hW-C6h">
+                <viewController storyboardIdentifier="resultViewController" id="CgY-WF-Sd0" customClass="resultViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C7f-Kp-pCI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="azq-OV-8E4">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="azq-OV-8E4" id="vfq-kQ-FZD">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pzy-M9-jEE" id="Z3q-iK-yJm"/>
-                            <outlet property="delegate" destination="pzy-M9-jEE" id="Lkd-wJ-aGO"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sU2-9q-LHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gt3-ql-nbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365" y="94"/>
+            <point key="canvasLocation" x="1407" y="98"/>
         </scene>
         <!--Note3 View Controller-->
         <scene sceneID="N0m-e6-vyv">
@@ -338,12 +326,23 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MZu-bg-7Pv">
+                                <rect key="frame" x="12" y="520" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="トップへ戻る">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="topbackBtn:" destination="r7X-br-SwS" eventType="touchUpInside" id="2Lm-Nj-avD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="nextpageBtn" destination="Sse-lx-ZMk" id="iZD-26-7a0"/>
                         <outlet property="note3Label" destination="M8b-Ub-f2S" id="yj8-Gi-PfC"/>
+                        <outlet property="topbackBtn" destination="MZu-bg-7Pv" id="48x-BF-oZA"/>
                         <outlet property="wordTextView" destination="qFc-Al-MPK" id="e7G-MA-SFu"/>
                         <outlet property="wordjumpLabel" destination="1Wn-yZ-IGp" id="t1W-dZ-sQa"/>
                         <outlet property="wordjumpSwitch" destination="TJf-Ar-PnB" id="0dd-xa-qY3"/>
