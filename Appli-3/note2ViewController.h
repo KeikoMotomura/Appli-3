@@ -22,7 +22,8 @@
 
 
 @property(nonatomic,assign) int select_num;
-@property(nonatomic,assign) int select_wordNo;
+@property(nonatomic,assign) int select_wordNo; //Viewから選択した分類を渡す為に書いてある。
+@property(nonatomic,assign) int select_wordlist; //View3にタップした単語を渡す為に書いてみた
 
 
 @end

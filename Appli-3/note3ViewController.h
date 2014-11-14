@@ -10,6 +10,13 @@
 
 @interface note3ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+{
+    
+    NSArray *_noteArray;
+    NSArray *_note2Array;
+}
+
+
 
 @property (weak, nonatomic) IBOutlet UILabel *note3Label;
 @property (weak, nonatomic) IBOutlet UITextView *wordTextView;
@@ -27,6 +34,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
 
 @property(nonatomic,assign) int select_num;
+@property(nonatomic,assign) int select_wordNo;
+@property(nonatomic,assign) int select_wordlist; //View2→View3にタップした単語を渡す為に書いてみた
+@property(nonatomic,retain) NSArray *note2Array;
 
 
 

@@ -20,10 +20,7 @@
     [super viewDidLoad];
     
     self.title=@"単語帳(単語リスト)note2ViewController";
-    
-//    nvc.select_wordNo = self.select_wordNo;
-//    self.notetitleLabel.text = _noteArray[self.select_wordNo];
-    
+ 
     switch (self.select_wordNo) {
         case 0:
             self.notetitleLabel.text = @"Phrasal Verb";
@@ -96,7 +93,11 @@ indexPath
 //  次画面を指定して遷移
     note3ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
     
-//    dvc.select_num = indexPath.row;
+    dvc.select_num = indexPath.row;
+    
+    dvc.select_wordlist = indexPath.row;
+    dvc.note2Array = _note2Array;
+
     
     
 //   ナビゲーションコントローラーの機能で画面遷移
