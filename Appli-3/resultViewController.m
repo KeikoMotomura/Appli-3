@@ -5,6 +5,8 @@
 //  Created by 本村佳子 on 2014/11/11.
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 //
+//＊＊やりたいこと
+//正解数によって表示させるメッセージと画像を変える
 
 #import "resultViewController.h"
 
@@ -18,21 +20,25 @@
     [super viewDidLoad];
     
     self.title=@"resultViewController";
+    
+    self.resultLabel.text = @"正解数に応じて三種類のメッセージを表示";
+    
+    
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)topbackBtn:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
-*/
-
 @end

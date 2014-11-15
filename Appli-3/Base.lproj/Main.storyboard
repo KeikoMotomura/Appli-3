@@ -204,13 +204,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hkU-WE-QV4">
-                                <rect key="frame" x="16" y="474" width="231" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="zCx-PC-N36">
                                 <rect key="frame" x="23" y="139" width="275" height="289"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -219,13 +212,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="OTt-v3-zgt">
-                                <rect key="frame" x="255" y="469" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="wordjumpSwitch:" destination="Jfi-CB-9T6" eventType="valueChanged" id="nL8-vc-81X"/>
-                                </connections>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sXS-Up-B4D">
                                 <rect key="frame" x="-8" y="503" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -246,6 +232,23 @@
                                     <action selector="topbackBtn:" destination="Jfi-CB-9T6" eventType="touchUpInside" id="J7k-LF-rLc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IMv-Tq-dty">
+                                <rect key="frame" x="258" y="530" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0am-lI-Frr">
+                                <rect key="frame" x="258" y="503" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wordjumpBtn:" destination="Jfi-CB-9T6" eventType="touchUpInside" id="vAt-3i-6oo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -253,8 +256,7 @@
                         <outlet property="answerTextView" destination="zCx-PC-N36" id="Xk5-kA-Y4d"/>
                         <outlet property="menubackBtn" destination="sXS-Up-B4D" id="PlA-8s-g6v"/>
                         <outlet property="topbackBtn" destination="UKe-9X-so6" id="m9i-ME-WGQ"/>
-                        <outlet property="wordjumpLabel" destination="hkU-WE-QV4" id="SEN-II-Y61"/>
-                        <outlet property="wordjumpSwitch" destination="OTt-v3-zgt" id="eeN-us-zOD"/>
+                        <outlet property="wordjumpBtn" destination="0am-lI-Frr" id="cD5-XJ-Xir"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRb-Mz-GJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,8 +270,36 @@
                     <view key="view" contentMode="scaleToFill" id="C7f-Kp-pCI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SMu-vV-Pzz">
+                                <rect key="frame" x="26" y="190" width="273" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3pD-tR-eOE">
+                                <rect key="frame" x="26" y="513" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="メニュー画面へ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="topbackBtn:" destination="CgY-WF-Sd0" eventType="touchUpInside" id="SSH-SS-NHu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OvN-eZ-9fK">
+                                <rect key="frame" x="55" y="97" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultImage" destination="SMu-vV-Pzz" id="Een-W8-tNo"/>
+                        <outlet property="resultLabel" destination="OvN-eZ-9fK" id="2hC-fS-LWX"/>
+                        <outlet property="topbackBtn" destination="3pD-tR-eOE" id="KsZ-ez-XjR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gt3-ql-nbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,20 +320,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Wn-yZ-IGp">
-                                <rect key="frame" x="16" y="480" width="239" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="TJf-Ar-PnB">
-                                <rect key="frame" x="255" y="480" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="wordjumpSwitch:" destination="r7X-br-SwS" eventType="valueChanged" id="xYq-M4-1RS"/>
-                                </connections>
-                            </switch>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qFc-Al-MPK">
                                 <rect key="frame" x="15" y="119" width="240" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -336,6 +352,16 @@
                                     <action selector="topbackBtn:" destination="r7X-br-SwS" eventType="touchUpInside" id="2Lm-Nj-avD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i80-fj-hgA">
+                                <rect key="frame" x="172" y="463" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wordjumpBtn:" destination="r7X-br-SwS" eventType="touchUpInside" id="BVE-Tk-qtv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -344,8 +370,7 @@
                         <outlet property="note3Label" destination="M8b-Ub-f2S" id="yj8-Gi-PfC"/>
                         <outlet property="topbackBtn" destination="MZu-bg-7Pv" id="48x-BF-oZA"/>
                         <outlet property="wordTextView" destination="qFc-Al-MPK" id="e7G-MA-SFu"/>
-                        <outlet property="wordjumpLabel" destination="1Wn-yZ-IGp" id="t1W-dZ-sQa"/>
-                        <outlet property="wordjumpSwitch" destination="TJf-Ar-PnB" id="0dd-xa-qY3"/>
+                        <outlet property="wordjumpBtn" destination="i80-fj-hgA" id="zyD-14-txJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14K-Da-2Sd" userLabel="First Responder" sceneMemberID="firstResponder"/>

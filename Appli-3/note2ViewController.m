@@ -21,6 +21,8 @@
     
     self.title=@"単語帳(単語リスト)note2ViewController";
  
+
+    
     switch (self.select_wordNo) {
         case 0:
             self.notetitleLabel.text = @"Phrasal Verb";
@@ -38,7 +40,8 @@
             self.notetitleLabel.text = @"Two Meaning";
             break;
 
-    }
+    }//単語種類を一番上に表示させる為のコード
+    
 
     _note2Array = @[@"ant",@"apple",@"cookie",@"strawberry",@"water",@"tea",@"coffee",@"nestea",@"orange",@"mango",@"mikan",@"meat",@"ramen",@"flower",@"pancit",@"karekare",@"pinakbet",@"soup",@"corn",@"porkberry",@"sisig",@"sinigang",];
     

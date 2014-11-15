@@ -35,7 +35,6 @@
                      
     self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_categoryNo][@"name"],_answerArray[self.select_categoryNo][@"desc"]];
    
-    self.wordjumpLabel.text = @"単語帳に登録";
     
     
     [self _createnextButton];
@@ -123,30 +122,40 @@
 }
 
 
+- (IBAction)wordjumpBtn:(id)sender {
+    
+    NSDictionary *selectedWord = _note2Array[self.select_wordlist];
+    
+    NSMutableDictionary *changedWord = selectedWord.mutableCopy;
+    
+    id favoriteflag = _note2Array[self.select_wordlist][@"favoriteflag"];
+    
+    int intFavFlag = [favoriteflag intValue];
+    
+    if (intFavFlag == 0) {
+        [changedWord setObject:@1 forKey:@"favoriteflag"];
+        
+        //これからお気に入りに追加されるため、ボタン名を解除にセットしておく
+        [self.wordjumpBtn setTitle:@"お気に入り解除" forState:UIControlStateNormal];
+        
+    }else{
+        [changedWord setObject:@0 forKey:@"favoriteflag"];
+        
+        //これからお気に入り解除されるため、ボタン名を追加にセットしておく
+        [self.wordjumpBtn setTitle:@"お気に入り追加" forState:UIControlStateNormal];
+        
+    }
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
 }
+        
 
 
-- (IBAction)wordjumpSwitch:(id)sender {
-    
-    if(self.wordjumpSwitch.on){
-        
-        //単語帳に登録する
-        NSLog(@"スイッチがONになりました");
-        
-    }else{
-        
-        //単語帳から削除する
-        NSLog(@"スイッチがOFFになりました");
-      
-        
-}
-    
-       
-}
-
+//問題種類へ戻るボタンが押されたら反応
 - (IBAction)menubackBtn:(id)sender {
     
     NSLog(@"問題種類へ戻るボタンがタップされました");
@@ -174,6 +183,4 @@
 
 
     
-
-
 @end

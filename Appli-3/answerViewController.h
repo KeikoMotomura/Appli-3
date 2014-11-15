@@ -14,23 +14,26 @@
     NSArray *_answerArray;
     
     UIButton *_nextButton;
+
+    UIButton *_note2Array;
 }
 
 
-@property (weak, nonatomic) IBOutlet UILabel *wordjumpLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *wordjumpSwitch;
+
 @property (weak, nonatomic) IBOutlet UITextView *answerTextView;
 
 
 @property(nonatomic,assign) int select_categoryNo;
 @property(nonatomic,assign) int select_questionNo;
 
+@property(nonatomic,assign) int select_wordlist;
 
 @property (weak, nonatomic) IBOutlet UIButton *menubackBtn;
 @property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *wordjumpBtn;
 
-- (IBAction)wordjumpSwitch:(id)sender;
+
 
 - (IBAction)menubackBtn:(id)sender;
 
@@ -38,5 +41,6 @@
 
 - (IBAction)nextBtn:(id)sender;
 
+- (IBAction)wordjumpBtn:(id)sender;
 
 @end

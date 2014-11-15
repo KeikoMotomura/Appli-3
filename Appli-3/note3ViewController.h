@@ -22,10 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *wordTextView;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *wordjumpLabel;
-
-@property (weak, nonatomic) IBOutlet UISwitch *wordjumpSwitch;
-- (IBAction)wordjumpSwitch:(id)sender;
 - (IBAction)topbackBtn:(id)sender;
 
 
@@ -38,6 +34,8 @@
 @property(nonatomic,assign) int select_wordlist; //View2→View3にタップした単語を渡す為に書いてみた
 @property(nonatomic,retain) NSArray *note2Array;
 
+@property (weak, nonatomic) IBOutlet UIButton *wordjumpBtn;
+- (IBAction)wordjumpBtn:(id)sender;
 
 
 @end
