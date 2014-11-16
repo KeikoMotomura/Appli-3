@@ -30,7 +30,7 @@
     
     NSLog(@"kotae");
     
-    _answerArray = @[@{@"name":@"単語",@"desc":@"説明文"},@{@"name":@"単語",@"desc":@"説明文"},@{@"name":@"単語",@"desc":@"説明文"},@{@"name":@"単語",@"desc":@"説明文"}];
+    _answerArray = @[@{@"name":@"apple",@"desc":@"apple2"},@{@"name":@"ant",@"desc":@"ant2文"},@{@"name":@"sisig",@"desc":@"sisig2"},@{@"name":@"sinigang",@"desc":@"sinigang2"}];
                    
                      
     self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_categoryNo][@"name"],_answerArray[self.select_categoryNo][@"desc"]];
@@ -38,9 +38,46 @@
     
     
     [self _createnextButton];
-
+    
+    
+    
+    //UserDefaultからデータを取り出す
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSArray *coffeeTmp;
+    
+    //保存されたデータを取り出す
+    coffeeTmp = [defaults objectForKey:@"coffeeTable"];
+    
+    if (coffeeTmp == nil) {
+        //一度も保存されていない場合はデフォルトリストを代入する
+        
+        //配列を使った場合
+        coffeeTmp = _answerArray;
+        
+    }
+    
+    _note2Array = coffeeTmp.mutableCopy;
+    
+//    self.descriptionText.text = _note2Array[self.select_num][@"desc"];
+    
+    id favoriteflag = _answerArray[self.select_wordlist][@"favoriteflag"];
+    
+    int intFavFlag = [favoriteflag intValue];
+    
+    if (intFavFlag == 0) {
+        [self.wordjumpBtn setTitle:@"単語帳へ追加" forState:UIControlStateNormal];
+        
+    }else{
+        [self.wordjumpBtn setTitle:@"単語帳から削除" forState:UIControlStateNormal];
+        
+    }
     
 }
+
+    
+
+
 
 
 
@@ -124,11 +161,13 @@
 
 - (IBAction)wordjumpBtn:(id)sender {
     
-    NSDictionary *selectedWord = _note2Array[self.select_wordlist];
+    NSLog(@"単語帳登録ボタンが押されました");
+
+    NSDictionary *selectedWord = _answerArray[self.select_wordlist];
     
     NSMutableDictionary *changedWord = selectedWord.mutableCopy;
     
-    id favoriteflag = _note2Array[self.select_wordlist][@"favoriteflag"];
+    id favoriteflag = _answerArray[self.select_wordlist][@"favoriteflag"];
     
     int intFavFlag = [favoriteflag intValue];
     
@@ -136,13 +175,13 @@
         [changedWord setObject:@1 forKey:@"favoriteflag"];
         
         //これからお気に入りに追加されるため、ボタン名を解除にセットしておく
-        [self.wordjumpBtn setTitle:@"お気に入り解除" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳削除" forState:UIControlStateNormal];
         
     }else{
         [changedWord setObject:@0 forKey:@"favoriteflag"];
         
         //これからお気に入り解除されるため、ボタン名を追加にセットしておく
-        [self.wordjumpBtn setTitle:@"お気に入り追加" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳追加" forState:UIControlStateNormal];
         
     }
 

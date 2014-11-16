@@ -26,7 +26,7 @@
     
     self.title=@"questionViewController";
     
-
+//  一番上に問題種類を表示する為のSwitch構文
     switch (self.select_categoryNo) {
                     case 0:
                     self.titleLabel.text = @"Phrasal Verb";
@@ -46,7 +46,8 @@
 
 }
     
-//    問題の表示（②画面を４種類で使い回す）
+
+    //    問題の表示（②画面を４種類で使い回す）
     self.queLabel.text = @"問題の単語を表示";
     
     _choiseArray = @[@"（仮）",@"ここに",@"選択肢を",@"表示させたい"];

@@ -9,6 +9,7 @@
 
 #import "note3ViewController.h"
 #import "note2ViewController.h"
+#import "answerViewController.h"
 
 @interface note3ViewController ()
 
@@ -28,30 +29,42 @@
     //UserDefaultからデータを取り出す
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSArray *note2Array;
+    NSArray *wordTmp;
     
     //保存されたデータを取り出す
-    note2Array = [defaults objectForKey:@"coffeeTable"];
+    wordTmp = [defaults objectForKey:@"coffeeTable"]; //coffeeTableは何をさしているのか？
     
-    if (note2Array == nil) {
+    if (wordTmp == nil) {
         //一度も保存されていない場合はデフォルトリストを代入する
         
 }
     
-    _note2Array = note2Array.mutableCopy;
+    wordTmp = @[@{@"name":@"apple",@"desc":@"apple2",@"favoriteflag":@"0"},@{@"name":@"ant",@"desc":@"ant2文",@"favoriteflag":@"0"},@{@"name":@"sisig",@"desc":@"sisig2",@"favoriteflag":@"0"},@{@"name":@"sinigang",@"desc":@"sinigang2",@"favoriteflag":@"0"}];
     
-    id favoriteflag = _note2Array[self.select_wordlist][@"favoriteflag"];
+    _answerArray = wordTmp.mutableCopy;
     
-    int intFavFlag = [favoriteflag intValue];
+    _answerArray[self.select_num][@"name"];
     
-    if (intFavFlag == 0) {
-        [self.wordjumpBtn setTitle:@"お気に入り追加" forState:UIControlStateNormal];
+    self.wordTextView.text = _answerArray[self.select_num][@"desc"];
+    
+    id favoriteFlag = _answerArray[self.select_num][@"favoriteflag"];
+    
+    int intFavFlag = [favoriteFlag intValue];
+    
+    if(intFavFlag == 0){
+        
+        [self.wordjumpBtn setTitle:@"単語帳登録" forState:UIControlStateNormal];
         
     }else{
-        [self.wordjumpBtn setTitle:@"お気に入り解除" forState:UIControlStateNormal];
         
-    }
+        [self.wordjumpBtn setTitle:@"単語帳削除" forState:UIControlStateNormal];
 
+    }
+    
+    
+    
+    
+    
 }
 
 
@@ -63,11 +76,11 @@
 
 - (IBAction)wordjumpBtn:(id)sender {
     
-    NSDictionary *selectedWord = _note2Array[self.select_wordlist];
+    NSDictionary *selectedWord = _answerArray[self.select_num];
     
     NSMutableDictionary *changedWord = selectedWord.mutableCopy;
     
-    id favoriteflag = _note2Array[self.select_wordlist][@"favoriteflag"];
+    id favoriteflag = _answerArray[self.select_num][@"favoriteflag"];
     
     int intFavFlag = [favoriteflag intValue];
     
@@ -75,23 +88,24 @@
         [changedWord setObject:@1 forKey:@"favoriteflag"];
         
         //これからお気に入りに追加されるため、ボタン名を解除にセットしておく
-        [self.wordjumpBtn setTitle:@"お気に入り解除" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳削除" forState:UIControlStateNormal];
         
     }else{
         [changedWord setObject:@0 forKey:@"favoriteflag"];
         
         //これからお気に入り解除されるため、ボタン名を追加にセットしておく
-        [self.wordjumpBtn setTitle:@"お気に入り追加" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳登録" forState:UIControlStateNormal];
         
 }
     
-//    [_note2Array replaceObjectAtIndex:self.select_wordlist withObject:changedWord];
+//    なぜ？？K
+//    [_answerArray replaceObjectAtIndex:self.select_num withObject:changedWord];
     
     //UserDefaultObjectを用意する
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     //文字を保存
-    [defaults setObject:_note2Array forKey:@"WordListTable"];
+    [defaults setObject:_answerArray forKey:@"coffeeTable"];
     [defaults synchronize];
 }
 
@@ -102,4 +116,6 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
+
+
 @end

@@ -8,6 +8,7 @@
 
 #import "note2ViewController.h"
 #import "note3ViewController.h"
+#import "answerViewController.h"
 
 
 @interface note2ViewController ()
@@ -20,8 +21,6 @@
     [super viewDidLoad];
     
     self.title=@"単語帳(単語リスト)note2ViewController";
- 
-
     
     switch (self.select_wordNo) {
         case 0:
@@ -43,71 +42,79 @@
     }//単語種類を一番上に表示させる為のコード
     
 
-    _note2Array = @[@"ant",@"apple",@"cookie",@"strawberry",@"water",@"tea",@"coffee",@"nestea",@"orange",@"mango",@"mikan",@"meat",@"ramen",@"flower",@"pancit",@"karekare",@"pinakbet",@"soup",@"corn",@"porkberry",@"sisig",@"sinigang",];
+    _answerArray = @[@{@"name":@"apple",@"desc":@"apple2"},@{@"name":@"ant",@"desc":@"ant2文"},@{@"name":@"sisig",@"desc":@"sisig2"},@{@"name":@"sinigang",@"desc":@"sinigang2"}];
+    
+    NSLog(@"%lu", (unsigned long)_answerArray.count);
     
     _note2TableView.delegate = self;
     _note2TableView.dataSource = self;
     
-    _note2TableView.separatorColor = [UIColor redColor]; //色は後で変更
-    
-    
-
-//  単語をスワイプできるようにした。
-    [super viewDidLoad];
-//  SwipeGestureのインスタンスを生成
-    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
-//  スワイプの方向（右から左）
-    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-//   self.viewにジェスチャーをのせる
-    [self.view addGestureRecognizer:swipeLeftGesture];
     
 }
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     return _note2Array.count;
+    
 }
+    
+-(UITableViewCell *)tableView:(UITableView *)tableViewcellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    static NSString *CellIdentifer = @"Cell";
+    
 
--(UITableViewCell *)tableView:(UITableView *)tableView
-        cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
+//    なぜ？？
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
     
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:
-                UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+                UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
     
     cell.textLabel.text = _note2Array[indexPath.row];
     return cell;
     
-
+    
 }
-
+    
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
-indexPath
-{
-    NSLog(@"単語が選択されました");
+    indexPath
+    {
+        NSLog(@"単語が選択されました");
+        
+        //  次画面を指定して遷移
+        note3ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
+        
+        dvc.select_num = indexPath.row;
+        
+        dvc.select_wordlist = indexPath.row;
+        dvc.note2Array = _note2Array;
+        
+        
+        
+        //   ナビゲーションコントローラーの機能で画面遷移
+        [[self navigationController]
+         pushViewController:dvc animated:YES];
+        
+    }
+   
     
-//  次画面を指定して遷移
-    note3ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
-    
-    dvc.select_num = indexPath.row;
-    
-    dvc.select_wordlist = indexPath.row;
-    dvc.note2Array = _note2Array;
+
 
     
     
-//   ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController]
-     pushViewController:dvc animated:YES];
-    
-}
+////  単語をスワイプできるようにした。
+////  SwipeGestureのインスタンスを生成
+//    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
+////  スワイプの方向（右から左）
+//    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+////   self.viewにジェスチャーをのせる
+//    [self.view addGestureRecognizer:swipeLeftGesture];
+//    
+
+
 
 //  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
 - (void)swipeLeft:(UISwipeGestureRecognizer *)sender

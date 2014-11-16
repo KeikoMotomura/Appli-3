@@ -25,8 +25,8 @@
 
 @property(nonatomic,assign) int select_categoryNo;
 @property(nonatomic,assign) int select_questionNo;
-
 @property(nonatomic,assign) int select_wordlist;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *menubackBtn;
 @property (weak, nonatomic) IBOutlet UIButton *topbackBtn;

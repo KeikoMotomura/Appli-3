@@ -15,6 +15,7 @@
 
     NSArray *_noteArray;
     NSArray *_note2Array;
+    NSArray *_answerArray;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *notetitleLabel;
