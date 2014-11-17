@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7223C78F1A12032500DEF780 /* resultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7223C78E1A12032500DEF780 /* resultViewController.m */; };
 		729D9B4D1A178FED0016E9C4 /* QuizList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 729D9B4C1A178FED0016E9C4 /* QuizList.plist */; };
+		72ABD0DF1A19E5E100D9953E /* batu.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0DE1A19E5E100D9953E /* batu.png */; };
+		72ABD0E11A19E6B500D9953E /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0E01A19E6B500D9953E /* maru.png */; };
 		72AD41B11A09FD2C00D2DF1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B01A09FD2C00D2DF1D /* main.m */; };
 		72AD41B41A09FD2C00D2DF1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B31A09FD2C00D2DF1D /* AppDelegate.m */; };
 		72AD41B71A09FD2C00D2DF1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B61A09FD2C00D2DF1D /* ViewController.m */; };
@@ -38,6 +40,8 @@
 		7223C78D1A12032500DEF780 /* resultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultViewController.h; sourceTree = "<group>"; };
 		7223C78E1A12032500DEF780 /* resultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultViewController.m; sourceTree = "<group>"; };
 		729D9B4C1A178FED0016E9C4 /* QuizList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuizList.plist; sourceTree = "<group>"; };
+		72ABD0DE1A19E5E100D9953E /* batu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = batu.png; path = ../../../../Desktop/batu.png; sourceTree = "<group>"; };
+		72ABD0E01A19E6B500D9953E /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maru.png; path = ../../../../Desktop/maru.png; sourceTree = "<group>"; };
 		72AD41AB1A09FD2C00D2DF1D /* Appli-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Appli-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AD41AF1A09FD2C00D2DF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72AD41B01A09FD2C00D2DF1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		72AD41AE1A09FD2C00D2DF1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				72ABD0E01A19E6B500D9953E /* maru.png */,
+				72ABD0DE1A19E5E100D9953E /* batu.png */,
 				72AD41AF1A09FD2C00D2DF1D /* Info.plist */,
 				72AD41B01A09FD2C00D2DF1D /* main.m */,
 				729D9B4C1A178FED0016E9C4 /* QuizList.plist */,
@@ -238,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				72AD41BA1A09FD2C00D2DF1D /* Main.storyboard in Resources */,
+				72ABD0DF1A19E5E100D9953E /* batu.png in Resources */,
+				72ABD0E11A19E6B500D9953E /* maru.png in Resources */,
 				729D9B4D1A178FED0016E9C4 /* QuizList.plist in Resources */,
 				72AD41BF1A09FD2C00D2DF1D /* LaunchScreen.xib in Resources */,
 				72AD41BC1A09FD2C00D2DF1D /* Images.xcassets in Resources */,

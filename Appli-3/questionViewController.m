@@ -5,12 +5,7 @@
 //  Created by 本村佳子 on 2014/11/06.
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 
-//＊＊やりたいこと＊＊　すべてひとつの画面で四種類使い回す
-//labelに問題種類を表示させる
-//ちょっと大きめの枠に単語を表示する
-//４つ選択肢をつくる▶︎ひとつが正解画面に飛ぶ、残り３つは不正解画面に飛ぶ
 
-//titleLabel=問題の種類を表示するためのラベル、queLabel=問題の単語を表示する用のラベル,,,
 
 #import "questionViewController.h"
 #import "answerViewController.h"
@@ -25,6 +20,15 @@
     [super viewDidLoad];
     
     self.title=@"questionViewController";
+    
+//    ここに文字列の変数をひとつ用意
+    NSDictionary *wordTitle =
+                @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
+    
+    NSLog(@"%@",[wordTitle objectForKey:@"4"]);
+    
+    
+    
     
 //  一番上に問題種類を表示する為のSwitch構文
     switch (self.select_categoryNo) {
@@ -58,14 +62,15 @@
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
-    _PhrasalVerb = [dic objectForKey:@"PhrasalVerb"];
+//    _question = [dic objectForKey:[self.select_categoryNo]]; ※ここがわからない
+     _question = [dic objectForKey:@"PhrasalVerb"];
     
     //    問題の表示
     self.queLabel.text =
-    [NSString stringWithFormat:@"%@", _PhrasalVerb[self.select_wordlist][@"question"]];
+    [NSString stringWithFormat:@"%@", _question[self.select_categoryNo][@"question"]];
 //＊＊＊ここまで＊＊＊
     
-    _choiseArray = @[ _PhrasalVerb[self.select_wordlist][@"selection1"],_PhrasalVerb[self.select_wordlist][@"selection2"],_PhrasalVerb[self.select_wordlist][@"selection3"],_PhrasalVerb[self.select_wordlist][@"selection4"]];
+    _choiseArray = @[ _question[self.select_wordlist][@"selection1"],_question[self.select_wordlist][@"selection2"],_question[self.select_wordlist][@"selection3"],_question[self.select_wordlist][@"selection4"]];
     
     
     
@@ -115,6 +120,8 @@
 indexPath
 {
     NSLog(@"選択肢がタップされました");
+    
+     
            
 //  次画面を指定して遷移
     answerViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"answerViewController"];

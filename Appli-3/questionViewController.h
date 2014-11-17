@@ -15,7 +15,8 @@
     NSArray *_choiseArray;
     NSArray *_answerArray;
     
-    NSArray *_PhrasalVerb;
+    NSArray *_question;
+    
 }
 
 

@@ -19,6 +19,8 @@
     
     NSMutableArray *answerArray;
     
+    NSArray *_choiseArray;
+    
 }
 
 

@@ -24,9 +24,10 @@
     self.titleLabel.text = @"種類を選択して下さい";
     
     
-    
-    
     _menuArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
+    
+    
+   
     
     _menuTableView.delegate = self;
     _menuTableView.dataSource = self;
@@ -72,10 +73,19 @@
 indexPath{
     
     
+    
+    
     questionViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
-        dvc.select_categoryNo = indexPath.row;
     
+    NSDictionary *wordTitle =
+    @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
+    
+    NSLog(@"%@",[wordTitle objectForKey:@"3"]);
+
+    
+        dvc.select_categoryNo = indexPath.row;
+       
     
     [[self navigationController]
      pushViewController:dvc animated:YES];

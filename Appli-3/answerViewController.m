@@ -5,10 +5,6 @@
 //  Created by 本村佳子 on 2014/11/06.
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 
-//＊＊やりたいこと＊＊
-//回答画面は二種類（正解時と不正解時▶︎４つの選択肢のうち１つだけタップされたら正解画面、３つは不正解画面に遷移する）
-
-
 
 #import "answerViewController.h"
 #import "ViewController.h"
@@ -28,6 +24,7 @@
     
     self.title=@"answerViewController";
     
+
     
     //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
     NSBundle *bundle = [NSBundle mainBundle];
@@ -40,12 +37,21 @@
     
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
     _answerArray = [dic objectForKey:@"PhrasalVerb"];
-
-
                    
                      
-    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_wordlist][@"name"],_answerArray[self.select_wordlist][@"desc"]];
-   
+    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_wordlist][@"question"],_answerArray[self.select_wordlist][@"description"]];
+    
+    
+////    TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外
+//    if ( _choiseArray[self.select_wordlist] == _answerArray[@"answer"])
+//   
+//    {self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
+//
+//    }else { self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
+//        
+//    }
+
+
     
     
     [self _createnextButton];
