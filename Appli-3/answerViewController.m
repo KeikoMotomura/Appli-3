@@ -28,12 +28,23 @@
     
     self.title=@"answerViewController";
     
-    NSLog(@"kotae");
     
-    _answerArray = @[@{@"name":@"apple",@"desc":@"apple2"},@{@"name":@"ant",@"desc":@"ant2文"},@{@"name":@"sisig",@"desc":@"sisig2"},@{@"name":@"sinigang",@"desc":@"sinigang2"}];
+    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    //  読み込むプロパティリストのファイルパス（場所）の指定
+    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
+    
+    //  プロパティリストの中身のデータを取得
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
+    _answerArray = [dic objectForKey:@"PhrasalVerb"];
+
+
                    
                      
-    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_categoryNo][@"name"],_answerArray[self.select_categoryNo][@"desc"]];
+    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_wordlist][@"name"],_answerArray[self.select_wordlist][@"desc"]];
    
     
     
@@ -59,17 +70,17 @@
     
     _note2Array = coffeeTmp.mutableCopy;
     
-//    self.descriptionText.text = _note2Array[self.select_num][@"desc"];
+//    self.answerTextView.text = _note2Array[self.select_num][@"desc"];
     
     id favoriteflag = _answerArray[self.select_wordlist][@"favoriteflag"];
     
     int intFavFlag = [favoriteflag intValue];
     
     if (intFavFlag == 0) {
-        [self.wordjumpBtn setTitle:@"単語帳へ追加" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳追加" forState:UIControlStateNormal];
         
     }else{
-        [self.wordjumpBtn setTitle:@"単語帳から削除" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳削除" forState:UIControlStateNormal];
         
     }
     

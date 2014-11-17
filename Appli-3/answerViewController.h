@@ -16,9 +16,14 @@
     UIButton *_nextButton;
 
     UIButton *_note2Array;
+    
+    NSMutableArray *answerArray;
+    
 }
 
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *answerImageView;
 
 @property (weak, nonatomic) IBOutlet UITextView *answerTextView;
 

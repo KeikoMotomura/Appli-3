@@ -46,11 +46,27 @@
 
 }
     
-
-    //    問題の表示（②画面を４種類で使い回す）
-    self.queLabel.text = @"問題の単語を表示";
     
-    _choiseArray = @[@"（仮）",@"ここに",@"選択肢を",@"表示させたい"];
+//＊＊＊＊問題の単語をプロパティリストから表示させる為のコード＊＊＊
+    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    //  読み込むプロパティリストのファイルパス（場所）の指定
+    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
+    
+    //  プロパティリストの中身のデータを取得
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
+    _PhrasalVerb = [dic objectForKey:@"PhrasalVerb"];
+    
+    //    問題の表示
+    self.queLabel.text =
+    [NSString stringWithFormat:@"%@", _PhrasalVerb[self.select_wordlist][@"question"]];
+//＊＊＊ここまで＊＊＊
+    
+    _choiseArray = @[ _PhrasalVerb[self.select_wordlist][@"selection1"],_PhrasalVerb[self.select_wordlist][@"selection2"],_PhrasalVerb[self.select_wordlist][@"selection3"],_PhrasalVerb[self.select_wordlist][@"selection4"]];
+    
     
     
     _choiseTableView.delegate = self;

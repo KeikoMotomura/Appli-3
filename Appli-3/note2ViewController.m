@@ -22,6 +22,7 @@
     
     self.title=@"単語帳(単語リスト)note2ViewController";
     
+    //単語種類を一番上に表示させる為のコード
     switch (self.select_wordNo) {
         case 0:
             self.notetitleLabel.text = @"Phrasal Verb";
@@ -39,8 +40,7 @@
             self.notetitleLabel.text = @"Two Meaning";
             break;
 
-    }//単語種類を一番上に表示させる為のコード
-    
+    }
 
     _answerArray = @[@{@"name":@"apple",@"desc":@"apple2"},@{@"name":@"ant",@"desc":@"ant2文"},@{@"name":@"sisig",@"desc":@"sisig2"},@{@"name":@"sinigang",@"desc":@"sinigang2"}];
     
@@ -65,8 +65,7 @@
     static NSString *CellIdentifer = @"Cell";
     
 
-//    なぜ？？
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    UITableViewCell *cell = [_note2TableView dequeueReusableCellWithIdentifier:CellIdentifer];
     
     if(cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:
@@ -112,15 +111,12 @@
 //    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
 ////   self.viewにジェスチャーをのせる
 //    [self.view addGestureRecognizer:swipeLeftGesture];
-//    
-
-
-
-//  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
-- (void)swipeLeft:(UISwipeGestureRecognizer *)sender
-{
-    NSLog(@"右から左にスワイプされました");
-}
+//
+////  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
+//- (void)swipeLeft:(UISwipeGestureRecognizer *)sender
+//{
+//    NSLog(@"右から左にスワイプされました");
+//}
 
 
 

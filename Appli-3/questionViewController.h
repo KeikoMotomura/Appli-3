@@ -14,6 +14,8 @@
 {
     NSArray *_choiseArray;
     NSArray *_answerArray;
+    
+    NSArray *_PhrasalVerb;
 }
 
 
@@ -25,6 +27,7 @@
 
 @property(nonatomic,assign) int select_categoryNo;
 @property(nonatomic,assign) int select_questionNo;
+@property(nonatomic,assign) int select_wordlist;
 
 
 @end

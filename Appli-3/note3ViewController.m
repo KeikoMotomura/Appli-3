@@ -97,9 +97,10 @@
         [self.wordjumpBtn setTitle:@"単語帳登録" forState:UIControlStateNormal];
         
 }
-    
-//    なぜ？？K
-//    [_answerArray replaceObjectAtIndex:self.select_num withObject:changedWord];
+   
+//    ？？わからない（エラーになる）
+//    [_answerArray replaceObjectAtIndex:self.select_wordlist withObject:changedWord];
+   
     
     //UserDefaultObjectを用意する
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
