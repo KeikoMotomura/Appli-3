@@ -8,49 +8,55 @@
 			<key>question</key>
 			<string>call in</string>
 			<key>answer</key>
-			<string>3</string>
-			<key>selection1</key>
+			<string>2</string>
+			<key>selection0</key>
 			<string>電話をかける</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>立ち寄る</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>呼ぶ</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>通り過ぎる</string>
 			<key>description</key>
-			<string>意味：呼ぶ、お願いするYou should call in a lowyer. 弁護士にお願いするべきだよ。のように、何かの目的があって呼ぶ・お願いするときに使います。</string>
+			<string>意味：呼ぶ、お願いする
+You should call in a lawyer. 弁護士にお願いするべきだよ。
+のように、何かの目的があって呼ぶ・お願いするときに使います。</string>
 		</dict>
 		<dict>
 			<key>question</key>
 			<string>bring about</string>
 			<key>answer</key>
-			<string>2</string>
-			<key>selection1</key>
+			<string>1</string>
+			<key>selection0</key>
 			<string>頼る</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>〜をもたらす</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>輸送する</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>頼み込む</string>
 			<key>description</key>
-			<string>意味：〜をもたらすMedical breakthrough bring about long life. 医学の発展は長寿をもたらした。のように、何かの原因があり、その結果としてもたらされたものを表現する際に使います。</string>
+			<string>意味：〜をもたらす
+Medical breakthrough bring about long life. 医学の発展は長寿をもたらした。
+のように、何かの原因があり、その結果としてもたらされたものを表現する際に使います。</string>
 		</dict>
 		<dict>
 			<key>question</key>
 			<string>ask out</string>
 			<key>answer</key>
-			<string>1</string>
-			<key>selection1</key>
+			<string>0</string>
+			<key>selection0</key>
 			<string>デートに誘う</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>質問する</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>訪問する</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>プロポーズする</string>
-			<key>discription</key>
-			<string>意味：（異性を）デートに誘うHe asked her out. 彼は彼女をデートに誘いました。のように使います。</string>
+			<key>description</key>
+			<string>意味：（異性を）デートに誘う
+He asked her out. 彼は彼女をデートに誘いました。
+のように使います。</string>
 		</dict>
 	</array>
 	<key>Synonym</key>
@@ -59,14 +65,14 @@
 			<key>question</key>
 			<string>truth</string>
 			<key>answer</key>
-			<string>2</string>
-			<key>selection1</key>
+			<string>1</string>
+			<key>selection0</key>
 			<string>reel</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>fact</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>innocent</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>essential</string>
 			<key>description</key>
 			<string>同意語：fact（名詞）　　意味：真実・事実</string>
@@ -75,33 +81,35 @@
 			<key>question</key>
 			<string>delicious</string>
 			<key>answer</key>
-			<string>1</string>
-			<key>selection1</key>
+			<string>0</string>
+			<key>selection0</key>
 			<string>tasty</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>ridiculous</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>beautiful</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>fun</string>
 			<key>description</key>
-			<string>同意語：tasty（形容詞）　意味：おいしい他にyummy（俗語）もあります。</string>
+			<string>同意語：tasty（形容詞）　意味：おいしい
+他にyummy（俗語）もあります。</string>
 		</dict>
 		<dict>
 			<key>question</key>
 			<string>smell</string>
 			<key>answer</key>
-			<string>4</string>
-			<key>selection1</key>
+			<string>3</string>
+			<key>selection0</key>
 			<string>solid</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>soup</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>sour</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>scent</string>
 			<key>description</key>
-			<string>同意語：scent（名詞）　 意味：匂い・香り他にfragranceも同意語。</string>
+			<string>同意語：scent（名詞）　 意味：匂い・香り
+他にfragranceも同意語。</string>
 		</dict>
 	</array>
 	<key>Antonym</key>
@@ -110,100 +118,106 @@
 			<key>question</key>
 			<string>build</string>
 			<key>answer</key>
-			<string>1</string>
-			<key>selection1</key>
+			<string>0</string>
+			<key>selection0</key>
 			<string>destoroy</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>break</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>bring</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>stand</string>
 			<key>description</key>
-			<string>反意語：destoroy（動詞）　意味：破壊するbuildは　意味：建てる（動詞）</string>
+			<string>反意語：destoroy（動詞）　意味：破壊する
+buildは　意味：建てる（動詞）</string>
 		</dict>
 		<dict>
 			<key>question</key>
 			<string>bend</string>
 			<key>answer</key>
-			<string>4</string>
-			<key>selection1</key>
+			<string>3</string>
+			<key>selection0</key>
 			<string>touch</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>call</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>hug</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>straighten</string>
 			<key>description</key>
-			<string>反意語：straighten（動詞）　意味：まっすぐにするbendは　意味：曲げる（動詞）</string>
+			<string>反意語：straighten（動詞）　意味：まっすぐにする
+bendは　意味：曲げる（動詞）</string>
 		</dict>
 		<dict>
 			<key>question</key>
 			<string>below</string>
 			<key>answer</key>
-			<string>3</string>
-			<key>selection1</key>
+			<string>2</string>
+			<key>selection0</key>
 			<string>over</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>up</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>above</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>next</string>
 			<key>description</key>
-			<string>反意語：above（前置詞）　意味：上のbelowは　意味：下の（前置詞）</string>
+			<string>反意語：above（前置詞）　意味：上の
+belowは　意味：下の（前置詞）</string>
 		</dict>
 	</array>
-	<key>Two Meaning</key>
+	<key>TwoMeaning</key>
 	<array>
 		<dict>
 			<key>question</key>
 			<string>stand</string>
 			<key>answer</key>
-			<string>4</string>
-			<key>selection1</key>
+			<string>3</string>
+			<key>selection0</key>
 			<string>立つ・疲れる</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>立つ・怒る</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>立つ・背伸びする</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>立つ・我慢する</string>
 			<key>description</key>
-			<string>意味：立つ・我慢するstandには立つ（動詞）の意味の他に、我慢する（動詞）の意味があります。</string>
+			<string>意味：立つ・我慢する
+standには立つ（動詞）の意味の他に、我慢する（動詞）の意味があります。</string>
 		</dict>
 		<dict>
 			<key>question</key>
 			<string>novel</string>
 			<key>answer</key>
-			<string>3</string>
-			<key>selection1</key>
+			<string>2</string>
+			<key>selection0</key>
 			<string>小説・つまらない</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>小説・下らない</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>小説・斬新な</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>小説・創造的な</string>
 			<key>description</key>
-			<string>意味：小説・斬新なnovelには小説（名詞）の意味の他に、斬新な（形容詞）の意味があります。</string>
+			<string>意味：小説・斬新な
+novelには小説（名詞）の意味の他に、斬新な（形容詞）の意味があります。</string>
 		</dict>
 		<dict>
 			<key>question</key>
 			<string>bear</string>
 			<key>answer</key>
-			<string>2</string>
-			<key>selection1</key>
+			<string>1</string>
+			<key>selection0</key>
 			<string>くま・かわいい</string>
-			<key>selection2</key>
+			<key>selection1</key>
 			<string>くま・耐える</string>
-			<key>selection3</key>
+			<key>selection2</key>
 			<string>クマ・不細工</string>
-			<key>selection4</key>
+			<key>selection3</key>
 			<string>クマ・疲れる</string>
 			<key>description</key>
-			<string>意味：くま・耐えるbearにはクマ（名詞）の意味の他に、耐える（動詞）の意味があります。</string>
+			<string>意味：くま・耐える
+bearにはクマ（名詞）の意味の他に、耐える（動詞）の意味があります。</string>
 		</dict>
 	</array>
 </dict>

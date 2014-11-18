@@ -81,7 +81,7 @@ indexPath{
     NSDictionary *wordTitle =
     @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
     
-    NSLog(@"%@",[wordTitle objectForKey:@"3"]);
+//    NSLog(@"%@",[wordTitle objectForKey:@"3"]);
 
     
         questionvc.select_categoryNo = indexPath.row;

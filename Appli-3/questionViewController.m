@@ -20,12 +20,13 @@
     [super viewDidLoad];
     
     self.title=@"questionViewController";
+   
     
-//    ここに文字列の変数をひとつ用意
-    NSDictionary *wordTitle =
-                @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
+    NSDictionary *categoryTitle =
+    @{@"0":@"PhrasalVerb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"TwoMeaning"};
     
-    NSLog(@"%@",[wordTitle objectForKey:@"4"]);
+    NSLog(@"%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]]);
+    
     
     
     
@@ -61,16 +62,21 @@
     //  プロパティリストの中身のデータを取得
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     
+    NSString *categoryName;
+    
+    categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
+    
+
+    
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
-//    _question = [dic objectForKey:[self.select_categoryNo]]; ※ここがわからない
-      _question = [dic objectForKey:@"PhrasalVerb"];
+    _question = [dic objectForKey:categoryName];
     
     //    問題の表示
     self.queLabel.text =
-    [NSString stringWithFormat:@"%@", _question[self.select_categoryNo][@"question"]];
+    [NSString stringWithFormat:@"%@", _question[self.select_questionNo][@"question"]];
 //＊＊＊ここまで＊＊＊
     
-    _choiseArray = @[ _question[self.select_wordlist][@"selection1"],_question[self.select_wordlist][@"selection2"],_question[self.select_wordlist][@"selection3"],_question[self.select_wordlist][@"selection4"]];
+    _choiseArray = @[ _question[self.select_questionNo][@"selection0"],_question[self.select_questionNo][@"selection1"],_question[self.select_questionNo][@"selection2"],_question[self.select_questionNo][@"selection3"]];
     
     
     
@@ -126,7 +132,8 @@ indexPath
 
 //  移動した先のセレクトナムというプロパティに値がわたる
     answervc.select_categoryNo = self.select_categoryNo;
-    answervc.select_wordlist = indexPath.row;//選択肢の番号をanswerViewに渡す
+    answervc.select_questionNo = indexPath.row;
+    answervc.select_selectionNo = indexPath.row;//選択肢の番号をanswerViewに渡す
 
     
 //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた

@@ -26,20 +26,17 @@
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *answerImageView;
-
 @property (weak, nonatomic) IBOutlet UITextView *answerTextView;
 
 
 @property(nonatomic,assign) int select_categoryNo;
 @property(nonatomic,assign) int select_questionNo;
-@property(nonatomic,assign) int select_wordlist;
+@property(nonatomic,assign) int select_selectionNo;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *menubackBtn;
 @property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
-
 @property (weak, nonatomic) IBOutlet UIButton *wordjumpBtn;
-
 
 
 - (IBAction)menubackBtn:(id)sender;

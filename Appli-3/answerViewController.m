@@ -35,29 +35,60 @@
     //  プロパティリストの中身のデータを取得
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     
+    NSString *categoryName;
+    
+    NSDictionary *categoryTitle =
+    @{@"0":@"PhrasalVerb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"TwoMeaning"};
+    
+    NSLog(@"%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]]);
+    
+    categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
+
+    
+    
+    
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
-    _answerArray = [dic objectForKey:@"PhrasalVerb"];
+    _answerArray = [dic objectForKey:categoryName];
                    
-                     
-    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_wordlist][@"question"],_answerArray[self.select_wordlist][@"description"]];
+    // ここの_answerArray[self.select_questionNo][@"answer"]部分は試しに書いているのみ。
+    self.answerTextView.text = [NSString stringWithFormat:@"%@%@%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description"],_answerArray[self.select_questionNo][@"answer"]];
     
 
     
-////    TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外 (0だと常に○、1以上だと常に×）
-    
-    self.select_wordlist = self.select_wordlist; //前のページでタップされた値を持ってくる
-    
-    NSLog(@"select_wordlistの数→%d",self.select_wordlist);
-    
-    if ( self.select_wordlist　== 1)　//前のページの値が１だったら○のイメージとかにしたい
-   
-    {self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
+////    TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外   
+    self.select_selectionNo = self.select_selectionNo; //前のページでタップされた値を持ってくる
 
-    }else { self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
+    NSLog(@"select_selectionNoの数→%d",self.select_selectionNo);
+    
+    NSLog(@"PListのanswer番号→%@",_answerArray[self.select_questionNo][@"answer"]);
+    
+//    ＝＝＝ここから下の部分が無ければ、選択肢④もちゃんと動く＝＝＝
+    
+    NSString *answerKey;
+    
+    answerKey = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
+    
+
+    
+    
+    
+    
+//    NSString *answerKey = _answerArray[self.select_questionNo][@"answer"];
+
+//  これだとエラーにはならないが、画像は全て×が表示される。
+    
+    if (self.select_selectionNo == answerKey)
+        
+//    }
+//    if ( self.select_selectionNo ==  _answerArray[self.select_questionNo][@"answer"])
+    
+    {
+    self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
+        
+    } else { self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
         
     }
-
-
+   
     
     
     [self _createnextButton];
@@ -82,9 +113,8 @@
     
     _note2Array = coffeeTmp.mutableCopy;
     
-//    self.answerTextView.text = _note2Array[self.select_num][@"desc"];
     
-    id favoriteflag = _answerArray[self.select_wordlist][@"favoriteflag"];
+    id favoriteflag = _answerArray[self.select_questionNo][@"favoriteflag"];
     
     int intFavFlag = [favoriteflag intValue];
     
@@ -186,11 +216,11 @@
     
     NSLog(@"単語帳登録ボタンが押されました");
 
-    NSDictionary *selectedWord = _answerArray[self.select_wordlist];
+    NSDictionary *selectedWord = _answerArray[self.select_questionNo];
     
     NSMutableDictionary *changedWord = selectedWord.mutableCopy;
     
-    id favoriteflag = _answerArray[self.select_wordlist][@"favoriteflag"];
+    id favoriteflag = _answerArray[self.select_questionNo][@"favoriteflag"];
     
     int intFavFlag = [favoriteflag intValue];
     
