@@ -41,15 +41,21 @@
                      
     self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_wordlist][@"question"],_answerArray[self.select_wordlist][@"description"]];
     
+
     
-////    TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外
-//    if ( _choiseArray[self.select_wordlist] == _answerArray[@"answer"])
-//   
-//    {self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
-//
-//    }else { self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
-//        
-//    }
+////    TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外 (0だと常に○、1以上だと常に×）
+    
+    self.select_wordlist = self.select_wordlist; //前のページでタップされた値を持ってくる
+    
+    NSLog(@"select_wordlistの数→%d",self.select_wordlist);
+    
+    if ( self.select_wordlist　== 1)　//前のページの値が１だったら○のイメージとかにしたい
+   
+    {self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
+
+    }else { self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
+        
+    }
 
 
     
@@ -112,7 +118,7 @@
     [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
     
     if (self.select_questionNo == 2) {
-        NSLog(@"問題カウント数10になりました");
+        NSLog(@"問題カウント数３になりました");
         
     //  ボタンに表示する文字を指定
         [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
@@ -147,7 +153,7 @@
 //    //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
     qvc.select_questionNo = self.select_questionNo+1;
     
-    NSLog(@"%d" ,qvc.select_questionNo);
+    NSLog(@"select_questionNoの値→%d" ,qvc.select_questionNo);
     
     
     if (self.select_questionNo == 2) {

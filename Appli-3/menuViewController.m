@@ -75,7 +75,7 @@ indexPath{
     
     
     
-    questionViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
+    questionViewController *questionvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
     
     NSDictionary *wordTitle =
@@ -84,11 +84,11 @@ indexPath{
     NSLog(@"%@",[wordTitle objectForKey:@"3"]);
 
     
-        dvc.select_categoryNo = indexPath.row;
+        questionvc.select_categoryNo = indexPath.row;
        
     
     [[self navigationController]
-     pushViewController:dvc animated:YES];
+     pushViewController:questionvc animated:YES];
     
 }
 

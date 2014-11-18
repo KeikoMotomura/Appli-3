@@ -63,7 +63,7 @@
     
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
 //    _question = [dic objectForKey:[self.select_categoryNo]]; ※ここがわからない
-     _question = [dic objectForKey:@"PhrasalVerb"];
+      _question = [dic objectForKey:@"PhrasalVerb"];
     
     //    問題の表示
     self.queLabel.text =
@@ -120,21 +120,21 @@
 indexPath
 {
     NSLog(@"選択肢がタップされました");
-    
-     
            
 //  次画面を指定して遷移
-    answerViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"answerViewController"];
+    answerViewController *answervc = [self.storyboard instantiateViewControllerWithIdentifier:@"answerViewController"];
 
 //  移動した先のセレクトナムというプロパティに値がわたる
-    dvc.select_categoryNo = self.select_categoryNo;
+    answervc.select_categoryNo = self.select_categoryNo;
+    answervc.select_wordlist = indexPath.row;//選択肢の番号をanswerViewに渡す
+
     
 //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた
-    dvc.select_questionNo = self.select_questionNo;
+    answervc.select_questionNo = self.select_questionNo;
     
 //  ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController]
-     pushViewController:dvc animated:YES];
+     pushViewController:answervc animated:YES];
     
     
     
