@@ -49,9 +49,8 @@
     
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
     _answerArray = [dic objectForKey:categoryName];
-                   
-    // ここの_answerArray[self.select_questionNo][@"answer"]部分は試しに書いているのみ。
-    self.answerTextView.text = [NSString stringWithFormat:@"%@%@%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description"],_answerArray[self.select_questionNo][@"answer"]];
+    
+    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description"]];
     
 
     
@@ -62,30 +61,15 @@
     
     NSLog(@"PListのanswer番号→%@",_answerArray[self.select_questionNo][@"answer"]);
     
-//    ＝＝＝ここから下の部分が無ければ、選択肢④もちゃんと動く＝＝＝
+//    この２つはあってもなくても変わらないので、たぶんいらない。
+//    NSString *answerKey;
+//    answerKey = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
     
-    NSString *answerKey;
-    
-    answerKey = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
-    
-
-    
-    
-    
-    
-//    NSString *answerKey = _answerArray[self.select_questionNo][@"answer"];
-
-//  これだとエラーにはならないが、画像は全て×が表示される。
-    
-    if (self.select_selectionNo == answerKey)
+    if ( self.select_selectionNo == [_answerArray[self.select_questionNo][@"answer"] intValue])
+    {   self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
         
-//    }
-//    if ( self.select_selectionNo ==  _answerArray[self.select_questionNo][@"answer"])
-    
-    {
-    self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
-        
-    } else { self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
+    } else {
+        self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
         
     }
    
@@ -180,7 +164,7 @@
     
     questionViewController *qvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
-//    //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
+//        次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
     qvc.select_questionNo = self.select_questionNo+1;
     
     NSLog(@"select_questionNoの値→%d" ,qvc.select_questionNo);
@@ -191,7 +175,7 @@
         // 次画面を指定して遷移
         resultViewController *kvc = [self.storyboard instantiateViewControllerWithIdentifier:@"resultViewController"];
         
-        //    ナビゲーションコントローラーの機能で画面遷移
+        //  ナビゲーションコントローラーの機能で画面遷移
         [[self navigationController]
          pushViewController:kvc animated:YES];
     
@@ -201,10 +185,10 @@
         
         
         //  questionViewからわたってきたself.select numをここに代入＝ここを入れることで値が前の選択したものを覚えている
-        //    Synonymなら１だな。Twomeaningなら３だな。
+        //  Synonymなら１だな。Twomeaningなら３だな。
         qvc.select_categoryNo = self.select_categoryNo;
         
-        //    ナビゲーションコントローラーの機能で画面遷移
+        //  ナビゲーションコントローラーの機能で画面遷移
         [[self navigationController]
          pushViewController:qvc animated:YES];
 
