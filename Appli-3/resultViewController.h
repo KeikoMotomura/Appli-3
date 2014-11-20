@@ -18,4 +18,7 @@
 
 - (IBAction)topbackBtn:(id)sender;
 
+
+@property(nonatomic,assign) int select_correctanswerNo;
+
 @end

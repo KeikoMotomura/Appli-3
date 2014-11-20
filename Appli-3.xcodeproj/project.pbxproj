@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		7223C78F1A12032500DEF780 /* resultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7223C78E1A12032500DEF780 /* resultViewController.m */; };
 		729D9B4D1A178FED0016E9C4 /* QuizList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 729D9B4C1A178FED0016E9C4 /* QuizList.plist */; };
-		72ABD0DF1A19E5E100D9953E /* batu.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0DE1A19E5E100D9953E /* batu.png */; };
-		72ABD0E11A19E6B500D9953E /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0E01A19E6B500D9953E /* maru.png */; };
-		72ABD0E31A1C6E4100D9953E /* pancake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0E21A1C6E4100D9953E /* pancake.gif */; };
-		72ABD0E51A1C6E5000D9953E /* cupcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0E41A1C6E5000D9953E /* cupcake.gif */; };
-		72ABD0E91A1C736000D9953E /* specialcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0E81A1C736000D9953E /* specialcake.gif */; };
+		72ABD1001A1DD17000D9953E /* batu.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0F71A1DD17000D9953E /* batu.png */; };
+		72ABD1011A1DD17000D9953E /* cupcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0F81A1DD17000D9953E /* cupcake.gif */; };
+		72ABD1021A1DD17000D9953E /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0F91A1DD17000D9953E /* maru.png */; };
+		72ABD1031A1DD17000D9953E /* pancake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0FA1A1DD17000D9953E /* pancake.gif */; };
+		72ABD1051A1DD17000D9953E /* perfectcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0FC1A1DD17000D9953E /* perfectcake.gif */; };
+		72ABD1061A1DD17000D9953E /* specialcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0FD1A1DD17000D9953E /* specialcake.gif */; };
 		72AD41B11A09FD2C00D2DF1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B01A09FD2C00D2DF1D /* main.m */; };
 		72AD41B41A09FD2C00D2DF1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B31A09FD2C00D2DF1D /* AppDelegate.m */; };
 		72AD41B71A09FD2C00D2DF1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B61A09FD2C00D2DF1D /* ViewController.m */; };
@@ -43,11 +44,12 @@
 		7223C78D1A12032500DEF780 /* resultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultViewController.h; sourceTree = "<group>"; };
 		7223C78E1A12032500DEF780 /* resultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultViewController.m; sourceTree = "<group>"; };
 		729D9B4C1A178FED0016E9C4 /* QuizList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuizList.plist; sourceTree = "<group>"; };
-		72ABD0DE1A19E5E100D9953E /* batu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = batu.png; path = ../../../../Desktop/batu.png; sourceTree = "<group>"; };
-		72ABD0E01A19E6B500D9953E /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maru.png; path = ../../../../Desktop/maru.png; sourceTree = "<group>"; };
-		72ABD0E21A1C6E4100D9953E /* pancake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pancake.gif; path = ../../../../Desktop/pancake.gif; sourceTree = "<group>"; };
-		72ABD0E41A1C6E5000D9953E /* cupcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = cupcake.gif; path = ../../../../Desktop/cupcake.gif; sourceTree = "<group>"; };
-		72ABD0E81A1C736000D9953E /* specialcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = specialcake.gif; path = ../../../../Desktop/specialcake.gif; sourceTree = "<group>"; };
+		72ABD0F71A1DD17000D9953E /* batu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batu.png; sourceTree = "<group>"; };
+		72ABD0F81A1DD17000D9953E /* cupcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cupcake.gif; sourceTree = "<group>"; };
+		72ABD0F91A1DD17000D9953E /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
+		72ABD0FA1A1DD17000D9953E /* pancake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pancake.gif; sourceTree = "<group>"; };
+		72ABD0FC1A1DD17000D9953E /* perfectcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = perfectcake.gif; sourceTree = "<group>"; };
+		72ABD0FD1A1DD17000D9953E /* specialcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = specialcake.gif; sourceTree = "<group>"; };
 		72AD41AB1A09FD2C00D2DF1D /* Appli-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Appli-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AD41AF1A09FD2C00D2DF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72AD41B01A09FD2C00D2DF1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +95,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72ABD0F41A1DD17000D9953E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				72ABD0F71A1DD17000D9953E /* batu.png */,
+				72ABD0F81A1DD17000D9953E /* cupcake.gif */,
+				72ABD0F91A1DD17000D9953E /* maru.png */,
+				72ABD0FA1A1DD17000D9953E /* pancake.gif */,
+				72ABD0FC1A1DD17000D9953E /* perfectcake.gif */,
+				72ABD0FD1A1DD17000D9953E /* specialcake.gif */,
+			);
+			name = images;
+			path = ../../../../Desktop/images;
+			sourceTree = "<group>";
+		};
 		72AD41A21A09FD2C00D2DF1D = {
 			isa = PBXGroup;
 			children = (
@@ -143,11 +159,7 @@
 		72AD41AE1A09FD2C00D2DF1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				72ABD0E81A1C736000D9953E /* specialcake.gif */,
-				72ABD0E41A1C6E5000D9953E /* cupcake.gif */,
-				72ABD0E21A1C6E4100D9953E /* pancake.gif */,
-				72ABD0E01A19E6B500D9953E /* maru.png */,
-				72ABD0DE1A19E5E100D9953E /* batu.png */,
+				72ABD0F41A1DD17000D9953E /* images */,
 				72AD41AF1A09FD2C00D2DF1D /* Info.plist */,
 				72AD41B01A09FD2C00D2DF1D /* main.m */,
 				729D9B4C1A178FED0016E9C4 /* QuizList.plist */,
@@ -252,13 +264,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72ABD0E91A1C736000D9953E /* specialcake.gif in Resources */,
-				72ABD0E31A1C6E4100D9953E /* pancake.gif in Resources */,
+				72ABD1031A1DD17000D9953E /* pancake.gif in Resources */,
 				72AD41BA1A09FD2C00D2DF1D /* Main.storyboard in Resources */,
-				72ABD0DF1A19E5E100D9953E /* batu.png in Resources */,
-				72ABD0E51A1C6E5000D9953E /* cupcake.gif in Resources */,
-				72ABD0E11A19E6B500D9953E /* maru.png in Resources */,
+				72ABD1011A1DD17000D9953E /* cupcake.gif in Resources */,
+				72ABD1051A1DD17000D9953E /* perfectcake.gif in Resources */,
+				72ABD1061A1DD17000D9953E /* specialcake.gif in Resources */,
 				729D9B4D1A178FED0016E9C4 /* QuizList.plist in Resources */,
+				72ABD1001A1DD17000D9953E /* batu.png in Resources */,
+				72ABD1021A1DD17000D9953E /* maru.png in Resources */,
 				72AD41BF1A09FD2C00D2DF1D /* LaunchScreen.xib in Resources */,
 				72AD41BC1A09FD2C00D2DF1D /* Images.xcassets in Resources */,
 			);

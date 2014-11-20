@@ -67,7 +67,6 @@
     categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
     
 
-    
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
     _question = [dic objectForKey:categoryName];
     
@@ -134,6 +133,11 @@ indexPath
     answervc.select_categoryNo = self.select_categoryNo;
     answervc.select_questionNo = indexPath.row;
     answervc.select_selectionNo = indexPath.row;//選択肢の番号をanswerViewに渡す
+
+    
+//  正解数を次の画面に渡す
+    answervc.select_correctanswerNo = self.select_correctanswerNo;
+    NSLog(@"正解数▶︎%d",self.select_correctanswerNo);
 
     
 //  次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた

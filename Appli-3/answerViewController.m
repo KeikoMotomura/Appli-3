@@ -43,7 +43,7 @@
     NSLog(@"%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]]);
     
     categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
-
+    
     
     
     
@@ -54,24 +54,29 @@
     
 
     
-////    TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外   
+//TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外
     self.select_selectionNo = self.select_selectionNo; //前のページでタップされた値を持ってくる
 
     NSLog(@"select_selectionNoの数→%d",self.select_selectionNo);
     
     NSLog(@"PListのanswer番号→%@",_answerArray[self.select_questionNo][@"answer"]);
     
-//    この２つはあってもなくても変わらないので、たぶんいらない。
-//    NSString *answerKey;
-//    answerKey = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
+    //    この２つはあってもなくても変わらないので、たぶんいらない。
+    //    NSString *answerKey;
+    //    answerKey = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
     
     if ( self.select_selectionNo == [_answerArray[self.select_questionNo][@"answer"] intValue])
     {   self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
+        self.select_correctanswerNo +=1;
         
     } else {
         self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
         
     }
+    
+//正解数に応じて結果画面のメッセージと画像を変えるため
+    self.select_correctanswerNo = self.select_correctanswerNo;
+    NSLog(@"正解数▶︎%d",self.select_correctanswerNo);
    
     
     
@@ -169,20 +174,25 @@
     
     NSLog(@"select_questionNoの値→%d" ,qvc.select_questionNo);
     
+    qvc.select_correctanswerNo = self.select_correctanswerNo;
+    
     
     if (self.select_questionNo == 2) {
         
         // 次画面を指定して遷移
         resultViewController *kvc = [self.storyboard instantiateViewControllerWithIdentifier:@"resultViewController"];
         
+        // resultViewControllerの画面に正解数を渡す
+        kvc.select_correctanswerNo  = self.select_correctanswerNo;
+        
         //  ナビゲーションコントローラーの機能で画面遷移
         [[self navigationController]
          pushViewController:kvc animated:YES];
     
+        
  
     }else{
         //  次画面を指定して遷移
-        
         
         //  questionViewからわたってきたself.select numをここに代入＝ここを入れることで値が前の選択したものを覚えている
         //  Synonymなら１だな。Twomeaningなら３だな。

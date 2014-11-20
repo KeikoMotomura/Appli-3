@@ -97,8 +97,15 @@
         [[self navigationController]
          pushViewController:dvc animated:YES];
         
-    }
-   
+            
+}
+
+//  画面を戻したときに前回選択した行の選択状況を解除する
+- (void)viewWillAppear:(BOOL)animated{
+    [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
+
+    
+}
     
 
 

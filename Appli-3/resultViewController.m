@@ -25,7 +25,7 @@
     
 
     
-    NSInteger correctanswer = 3;
+//    NSInteger correctanswer = 1;
     
     // keyNameという名前でhoge(数値)を保存する
 //    [[NSUserDefaults standardUserDefaults] setInteger:correctanswer forKey:@"keyName"];
@@ -34,22 +34,37 @@
 //    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:@"keyName"];
 //    NSInteger integer = [[NSUserDefaults standardUserDefaults] integerForKey:@"keyName"];
     
-    switch (correctanswer) {
+    self.select_correctanswerNo = self.select_correctanswerNo;
+    NSLog(@"正解数@%d", self.select_correctanswerNo);
+    
+    switch (self.select_correctanswerNo) {
         case 0:
-        case 1:
+//        case 1:
+//        case 2:
+//        case 3:
+//        case 4:
             self.resultLabel.text = @"パンケーキをどうぞ";
             self.resultImage.image = [UIImage imageNamed:@"pancake.gif"];
             break;
 
-        case 2:
+        case 1:
+//        case 6:
+//        case 7:
             self.resultLabel.text = @"カップケーキをどうぞ";
             self.resultImage.image = [UIImage imageNamed:@"cupcake.gif"];
             break;
             
-        case 3:
+        case 2:
+//        case 9:
             self.resultLabel.text = @"スペシャルケーキをどうぞ";
             self.resultImage.image = [UIImage imageNamed:@"specialcake.gif"];
             break;
+            
+        case 3:
+            self.resultLabel.text = @"パーフェクト！";
+            self.resultImage.image = [UIImage imageNamed:@"perfectcake.gif"];
+            break;
+
             
           }
 

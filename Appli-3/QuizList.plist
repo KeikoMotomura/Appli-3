@@ -5,6 +5,8 @@
 	<key>PhrasalVerb</key>
 	<array>
 		<dict>
+			<key>questionNo</key>
+			<string>1001</string>
 			<key>question</key>
 			<string>call in</string>
 			<key>answer</key>
@@ -23,6 +25,8 @@ You should call in a lawyer. 弁護士にお願いするべきだよ。
 のように、何かの目的があって呼ぶ・お願いするときに使います。</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>1002</string>
 			<key>question</key>
 			<string>bring about</string>
 			<key>answer</key>
@@ -41,6 +45,8 @@ Medical breakthrough bring about long life. 医学の発展は長寿をもたら
 のように、何かの原因があり、その結果としてもたらされたものを表現する際に使います。</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>1003</string>
 			<key>question</key>
 			<string>ask out</string>
 			<key>answer</key>
@@ -62,6 +68,8 @@ He asked her out. 彼は彼女をデートに誘いました。
 	<key>Synonym</key>
 	<array>
 		<dict>
+			<key>questionNo</key>
+			<string>2001</string>
 			<key>question</key>
 			<string>truth</string>
 			<key>answer</key>
@@ -78,6 +86,8 @@ He asked her out. 彼は彼女をデートに誘いました。
 			<string>同意語：fact（名詞）　　意味：真実・事実</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>2002</string>
 			<key>question</key>
 			<string>delicious</string>
 			<key>answer</key>
@@ -95,6 +105,8 @@ He asked her out. 彼は彼女をデートに誘いました。
 他にyummy（俗語）もあります。</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>2003</string>
 			<key>question</key>
 			<string>smell</string>
 			<key>answer</key>
@@ -115,6 +127,8 @@ He asked her out. 彼は彼女をデートに誘いました。
 	<key>Antonym</key>
 	<array>
 		<dict>
+			<key>questionNo</key>
+			<string>3001</string>
 			<key>question</key>
 			<string>build</string>
 			<key>answer</key>
@@ -132,6 +146,8 @@ He asked her out. 彼は彼女をデートに誘いました。
 buildは　意味：建てる（動詞）</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>3002</string>
 			<key>question</key>
 			<string>bend</string>
 			<key>answer</key>
@@ -149,6 +165,8 @@ buildは　意味：建てる（動詞）</string>
 bendは　意味：曲げる（動詞）</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>3003</string>
 			<key>question</key>
 			<string>below</string>
 			<key>answer</key>
@@ -169,6 +187,8 @@ belowは　意味：下の（前置詞）</string>
 	<key>TwoMeaning</key>
 	<array>
 		<dict>
+			<key>questionNo</key>
+			<string>4001</string>
 			<key>question</key>
 			<string>stand</string>
 			<key>answer</key>
@@ -186,6 +206,8 @@ belowは　意味：下の（前置詞）</string>
 standには立つ（動詞）の意味の他に、我慢する（動詞）の意味があります。</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>4002</string>
 			<key>question</key>
 			<string>novel</string>
 			<key>answer</key>
@@ -203,14 +225,16 @@ standには立つ（動詞）の意味の他に、我慢する（動詞）の意
 novelには小説（名詞）の意味の他に、斬新な（形容詞）の意味があります。</string>
 		</dict>
 		<dict>
+			<key>questionNo</key>
+			<string>4003</string>
 			<key>question</key>
 			<string>bear</string>
 			<key>answer</key>
 			<string>1</string>
 			<key>selection0</key>
-			<string>くま・かわいい</string>
+			<string>クマ・かわいい</string>
 			<key>selection1</key>
-			<string>くま・耐える</string>
+			<string>クマ・耐える</string>
 			<key>selection2</key>
 			<string>クマ・不細工</string>
 			<key>selection3</key>

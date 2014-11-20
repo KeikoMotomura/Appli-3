@@ -29,6 +29,7 @@
 @property(nonatomic,assign) int select_categoryNo;
 @property(nonatomic,assign) int select_questionNo;
 @property(nonatomic,assign) int select_selectionNo;
+@property(nonatomic,assign) int select_correctanswerNo;
 
 
 @end
