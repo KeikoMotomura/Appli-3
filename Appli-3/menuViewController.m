@@ -19,20 +19,18 @@
     [super viewDidLoad];
     
     self.title=@"問題種類を選択 menuViewController";
-
     
     self.titleLabel.text = @"種類を選択して下さい";
-    
     
     _menuArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
     
     
    
-    
     _menuTableView.delegate = self;
     _menuTableView.dataSource = self;
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 }
 
 //  画面を戻したときに前回選択した行の選択状況を解除する

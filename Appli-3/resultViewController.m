@@ -5,8 +5,6 @@
 //  Created by 本村佳子 on 2014/11/11.
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 //
-//＊＊やりたいこと
-//正解数によって表示させるメッセージと画像を変える
 
 #import "resultViewController.h"
 
@@ -20,6 +18,10 @@
     [super viewDidLoad];
     
     self.title=@"resultViewController";
+    
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
+    
     
 
     

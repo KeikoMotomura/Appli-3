@@ -24,6 +24,10 @@
     
     self.title=@"answerViewController";
     
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
+    
+    
 
     
     //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
@@ -67,7 +71,7 @@
     
     if ( self.select_selectionNo == [_answerArray[self.select_questionNo][@"answer"] intValue])
     {   self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
-        self.select_correctanswerNo +=1;
+        self.select_correctanswerNo +=1; //+=1 で１プラスの意味になる
         
     } else {
         self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
@@ -82,38 +86,6 @@
     
     [self _createnextButton];
     
-    
-    
-    //UserDefaultからデータを取り出す
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    NSArray *coffeeTmp;
-    
-    //保存されたデータを取り出す
-    coffeeTmp = [defaults objectForKey:@"coffeeTable"];
-    
-    if (coffeeTmp == nil) {
-        //一度も保存されていない場合はデフォルトリストを代入する
-        
-        //配列を使った場合
-        coffeeTmp = _answerArray;
-        
-    }
-    
-    _note2Array = coffeeTmp.mutableCopy;
-    
-    
-    id favoriteflag = _answerArray[self.select_questionNo][@"favoriteflag"];
-    
-    int intFavFlag = [favoriteflag intValue];
-    
-    if (intFavFlag == 0) {
-        [self.wordjumpBtn setTitle:@"単語帳追加" forState:UIControlStateNormal];
-        
-    }else{
-        [self.wordjumpBtn setTitle:@"単語帳削除" forState:UIControlStateNormal];
-        
-    }
     
 }
 
@@ -209,28 +181,52 @@
 - (IBAction)wordjumpBtn:(id)sender {
     
     NSLog(@"単語帳登録ボタンが押されました");
+//  ＊＊＊このボタンが押されたら、ユーザーでフォルトにquestionNoとquestionが保存されるようにしたい。
+//  ここにしたの設定の条件で保存されていなかったら「追加」表示にする。されていたら「削除」表示にする
 
-    NSDictionary *selectedWord = _answerArray[self.select_questionNo];
     
-    NSMutableDictionary *changedWord = selectedWord.mutableCopy;
-    
-    id favoriteflag = _answerArray[self.select_questionNo][@"favoriteflag"];
-    
-    int intFavFlag = [favoriteflag intValue];
-    
-    if (intFavFlag == 0) {
-        [changedWord setObject:@1 forKey:@"favoriteflag"];
+    if (_wordjumpBtn == YES) {
         
-        //これからお気に入りに追加されるため、ボタン名を解除にセットしておく
-        [self.wordjumpBtn setTitle:@"単語帳削除" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
         
     }else{
-        [changedWord setObject:@0 forKey:@"favoriteflag"];
         
-        //これからお気に入り解除されるため、ボタン名を追加にセットしておく
-        [self.wordjumpBtn setTitle:@"単語帳追加" forState:UIControlStateNormal];
-        
+        [self.wordjumpBtn setTitle:@"単語帳に追加する" forState:UIControlStateNormal];
     }
+    
+    
+
+    
+//    このボタンが押されたらユーザーデフォルトにqueNoとqueが保存される配列を作る
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    
+    
+//    保存したデータを取り出す　元々保存している単語をまず取り出す。
+    NSArray *wordnote = [myDefaults arrayForKey:@"wordnote"];
+
+    NSLog(@"wordnote=%@",wordnote);
+ 
+//    wordnoteがnilだったら初期化する（これを書かないと０の掛け算状態でいつまでも単語を追加しても表示されないまま）
+    if (wordnote == nil) {
+        wordnote = [[NSArray alloc] init];
+    }
+
+//   Arrayを書き換え可能な配列に書き換える
+    NSMutableArray *changedword = wordnote.mutableCopy;
+    
+    NSDictionary *savedquestion = @{@"questionNo":_answerArray[self.select_questionNo][@"questionNo"],
+                                    @"question":_answerArray[self.select_questionNo][@"question"]};
+
+//  リストを追加
+    [changedword addObject:savedquestion];
+
+//  ひとつリストを追加したあとにリスト全部を表示
+   [myDefaults setObject:changedword forKey:@"wordnote"];
+  
+//   設定してすぐ保存したいときのメソッド(最後に書く)
+    [myDefaults synchronize];
+  
+
 
 }
 
@@ -249,7 +245,7 @@
     // 次画面を指定して遷移
     menuViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
     
-    //    ナビゲーションコントローラーの機能で画面遷移
+    // ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController]
      pushViewController:dvc animated:YES];
 

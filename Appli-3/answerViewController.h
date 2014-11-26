@@ -11,15 +11,19 @@
 @interface answerViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 {
-    NSArray *_answerArray;
     
     UIButton *_nextButton;
-
     UIButton *_note2Array;
     
-    NSMutableArray *answerArray;
     
     NSArray *_choiseArray;
+    NSArray *_answerArray;
+    NSArray *_wordnoteArray;
+    NSArray *_question;
+    
+    
+    NSMutableArray *answerArray;
+
     
 }
 

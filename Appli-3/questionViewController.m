@@ -19,8 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+  
     self.title=@"questionViewController";
-   
+    
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
+    
     
     NSDictionary *categoryTitle =
     @{@"0":@"PhrasalVerb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"TwoMeaning"};

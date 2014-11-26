@@ -5,6 +5,9 @@
 //  Created by 本村佳子 on 2014/11/06.
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 //
+//  answerViewControllerで登録ボタンが押されたらここのTableViewに単語を表示させる。
+//  answerViewでボタンをしたときにquestionNoとquestionが入っている配列をユーザーデフォルトに保存
+//  ▶︎それを呼び出して、単語だけを表示させる。
 
 #import "note2ViewController.h"
 #import "note3ViewController.h"
@@ -40,18 +43,87 @@
             self.notetitleLabel.text = @"Two Meaning";
             break;
 
-    }
-
-    _answerArray = @[@{@"name":@"apple",@"desc":@"apple2"},@{@"name":@"ant",@"desc":@"ant2文"},@{@"name":@"sisig",@"desc":@"sisig2"},@{@"name":@"sinigang",@"desc":@"sinigang2"}];
     
-    NSLog(@"%lu", (unsigned long)_answerArray.count);
+}
+    
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    _note2Array = [myDefaults arrayForKey:@"wordnote"];
+
+    
+    
+
+//＊＊＊この配列いらない？
+//    _answerArray = @[@{@"name":@"apple",@"desc":@"apple2"},@{@"name":@"ant",@"desc":@"ant2文"},@{@"name":@"sisig",@"desc":@"sisig2"},@{@"name":@"sinigang",@"desc":@"sinigang2"}];
+//    NSLog(@"note2_answerArrayの値▶︎%lu", (unsigned long)_answerArray.count);
     
     _note2TableView.delegate = self;
     _note2TableView.dataSource = self;
     
     
-}
+    
+    
+    
+    //お気に入りリスト（最初はお気に入りでないものも全て保存）
+    _noteArray = answerArray.mutableCopy;
+    
+    //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
+    for (NSDictionary *note2Array_each in _noteArray) {
+        id favoriteflag = note2Array_each[@"favoriteflag"];
+        
+        //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
+        // 文字列をNSIntegerに変換
+        NSString *str= _note2Array[self.select_wordlist];
+        NSInteger questionNo = str.integerValue;
+        NSLog(@"文字列→NSInteger：%ld", questionNo);
+        
+        
+//        if (intFavFlag == 0) {
+//            //お気に入り指定されてないので削除
+//            [_noteArray removeObject:note2Array_each];
+//            
+//        }
+//    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
+    
+//  単語をスワイプできるようにした。
+    // SwipeGestureのインスタンスを生成
+    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:
+                                                  self action:@selector(swipeLeft:)];
+    //  スワイプの方向（右から左）
+    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    //   self.viewにジェスチャーをのせる
+    [self.view addGestureRecognizer:swipeLeftGesture];
+    
+    
+} //ViewDidRoadの終わり
+
+
+//  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
+    - (void)swipeLeft:(UISwipeGestureRecognizer *)sender
+    {
+        NSLog(@"右から左にスワイプされました");
+    }
+    
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -59,7 +131,7 @@
     
 }
     
--(UITableViewCell *)tableView:(UITableView *)tableViewcellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
     static NSString *CellIdentifer = @"Cell";
@@ -72,7 +144,7 @@
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
     
-    cell.textLabel.text = _note2Array[indexPath.row];
+    cell.textLabel.text = _note2Array[indexPath.row][@"question"];
     return cell;
     
     
@@ -92,7 +164,6 @@
         dvc.note2Array = _note2Array;
         
         
-        
         //   ナビゲーションコントローラーの機能で画面遷移
         [[self navigationController]
          pushViewController:dvc animated:YES];
@@ -109,21 +180,7 @@
     
 
 
-    
-    
-////  単語をスワイプできるようにした。
-////  SwipeGestureのインスタンスを生成
-//    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
-////  スワイプの方向（右から左）
-//    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-////   self.viewにジェスチャーをのせる
-//    [self.view addGestureRecognizer:swipeLeftGesture];
-//
-////  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
-//- (void)swipeLeft:(UISwipeGestureRecognizer *)sender
-//{
-//    NSLog(@"右から左にスワイプされました");
-//}
+
 
 
 
