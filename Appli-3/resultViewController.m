@@ -27,15 +27,6 @@
     
 
     
-//    NSInteger correctanswer = 1;
-    
-    // keyNameという名前でhoge(数値)を保存する
-//    [[NSUserDefaults standardUserDefaults] setInteger:correctanswer forKey:@"keyName"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-    // 保存した物を取り出す
-//    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:@"keyName"];
-//    NSInteger integer = [[NSUserDefaults standardUserDefaults] integerForKey:@"keyName"];
-    
     self.select_correctanswerNo = self.select_correctanswerNo;
     NSLog(@"正解数@%d", self.select_correctanswerNo);
     

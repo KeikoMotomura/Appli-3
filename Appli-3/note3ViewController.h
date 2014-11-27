@@ -16,6 +16,8 @@
     NSArray *_note2Array;
     NSArray *_answerArray;
     
+    NSArray *_question;
+    
     NSMutableArray *answerArray;
     
 }
@@ -35,7 +37,9 @@
 
 @property(nonatomic,assign) int select_num;
 @property(nonatomic,assign) int select_wordNo;
-@property(nonatomic,assign) int select_wordlist; //View2→View3にタップした単語を渡す為に書いてみた
+@property(nonatomic,assign) int select_wordlist; //View2→View3にタップした単語を渡す為
+@property(nonatomic,assign) int select_categoryNo;
+
 @property(nonatomic,retain) NSArray *note2Array;
 
 @property (weak, nonatomic) IBOutlet UIButton *wordjumpBtn;

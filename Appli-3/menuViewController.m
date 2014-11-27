@@ -20,23 +20,29 @@
     
     self.title=@"問題種類を選択 menuViewController";
     
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
+    
+    
+    
     self.titleLabel.text = @"種類を選択して下さい";
+    
     
     _menuArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
     
     
-   
+    
+    
     _menuTableView.delegate = self;
     _menuTableView.dataSource = self;
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
 }
 
 //  画面を戻したときに前回選択した行の選択状況を解除する
 - (void)viewWillAppear:(BOOL)animated
-    {
-        [_menuTableView deselectRowAtIndexPath:_menuTableView.indexPathForSelectedRow animated:YES];
+{
+    [_menuTableView deselectRowAtIndexPath:_menuTableView.indexPathForSelectedRow animated:YES];
 }
 
 
@@ -72,21 +78,25 @@ indexPath{
     
     
     
+    questionViewController *questionvc = [self.storyboard instantiateViewControllerWithIdentifier
+                                          :@"questionViewController"];
     
-    questionViewController *questionvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
+    questionvc.select_categoryNo = indexPath.row;
     
-    NSDictionary *wordTitle =
-    @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
-    
-//    NSLog(@"%@",[wordTitle objectForKey:@"3"]);
-
-    
-        questionvc.select_categoryNo = indexPath.row;
-       
     
     [[self navigationController]
      pushViewController:questionvc animated:YES];
+    
+    
+    
+    //    もしかして使っていないかもしれないので、他に影響がなさそうだったら後で消す。
+    //    NSDictionary *wordTitle =
+    //    @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
+    //
+    //    //    NSLog(@"%@",[wordTitle objectForKey:@"3"]);
+    //    
+
     
 }
 
@@ -98,9 +108,10 @@ indexPath{
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
- 
+    
 }
 
 
-    
+
+
 @end

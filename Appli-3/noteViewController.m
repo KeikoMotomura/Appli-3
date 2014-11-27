@@ -19,6 +19,10 @@
     [super viewDidLoad];
     
     self.title=@"単語帳(目次)noteViewController";
+    
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
+    
   
     _noteArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
     

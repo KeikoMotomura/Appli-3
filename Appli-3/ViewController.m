@@ -18,8 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
+    
+
     
     self.titleLabel.text = @"アプリ名";
+    
 }
 
 

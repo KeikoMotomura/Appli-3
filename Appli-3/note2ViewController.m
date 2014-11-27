@@ -25,6 +25,10 @@
     
     self.title=@"単語帳(単語リスト)note2ViewController";
     
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
+    
+    
     //単語種類を一番上に表示させる為のコード
     switch (self.select_wordNo) {
         case 0:
@@ -68,7 +72,7 @@
     
     //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
     for (NSDictionary *note2Array_each in _noteArray) {
-        id favoriteflag = note2Array_each[@"favoriteflag"];
+        id favoriteflag = note2Array_each[@"question"];
         
         //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
         // 文字列をNSIntegerに変換
@@ -154,13 +158,15 @@
     indexPath
     {
         NSLog(@"単語が選択されました");
+        NSLog(@"wordlistの数字%d", self.select_wordlist);
         
         //  次画面を指定して遷移
         note3ViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
         
         dvc.select_num = indexPath.row;
         
-        dvc.select_wordlist = indexPath.row;
+        dvc.select_wordlist = indexPath.row;　//選んだ単語を次の画面へ渡す
+        
         dvc.note2Array = _note2Array;
         
         

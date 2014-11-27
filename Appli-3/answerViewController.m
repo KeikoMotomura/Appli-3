@@ -27,7 +27,6 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
-    
 
     
     //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
@@ -54,15 +53,16 @@
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
     _answerArray = [dic objectForKey:categoryName];
     
-    self.answerTextView.text = [NSString stringWithFormat:@"%@%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description"]];
+    self.answerTextView.text = [NSString stringWithFormat:@"%@//%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description"]];
     
+    
+    self.answerTextView.editable = NO;
 
     
 //TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外
     self.select_selectionNo = self.select_selectionNo; //前のページでタップされた値を持ってくる
 
-    NSLog(@"select_selectionNoの数→%d",self.select_selectionNo);
-    
+    NSLog(@"select_selectionNoの数→%d",self.select_selectionNo);    
     NSLog(@"PListのanswer番号→%@",_answerArray[self.select_questionNo][@"answer"]);
     
     //    この２つはあってもなくても変わらないので、たぶんいらない。
@@ -70,6 +70,7 @@
     //    answerKey = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
     
     if ( self.select_selectionNo == [_answerArray[self.select_questionNo][@"answer"] intValue])
+    
     {   self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
         self.select_correctanswerNo +=1; //+=1 で１プラスの意味になる
         
@@ -142,8 +143,7 @@
     questionViewController *qvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
 //        次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
-    qvc.select_questionNo = self.select_questionNo+1;
-    
+    qvc.select_questionNo = self.select_questionNo+1;    
     NSLog(@"select_questionNoの値→%d" ,qvc.select_questionNo);
     
     qvc.select_correctanswerNo = self.select_correctanswerNo;
