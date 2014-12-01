@@ -22,12 +22,12 @@
     
     self.title=@"単語帳(説明画面)note3ViewController";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     
     self.note3Label.text = [NSString stringWithFormat:@"%@", _note2Array[self.select_wordlist][@"question"]];
-    NSLog(@"note3のNSLog▶︎%@",_note2Array[self.select_wordlist][@"questionNo"]);
+    NSLog(@"選択した単語のNo▶︎%@",_note2Array[self.select_wordlist][@"questionNo"]);
     
 
 //  この方法でquestionNoを取り出し▶︎それのdiscriptionを持ってくる表示に変更する

@@ -30,7 +30,7 @@
     NSDictionary *categoryTitle =
     @{@"0":@"PhrasalVerb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"TwoMeaning"};
     
-    NSLog(@"%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]]);
+    NSLog(@"questionで選んだcategory▶︎%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]]);
     
     
     

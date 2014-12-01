@@ -20,7 +20,7 @@
     
     self.title=@"問題種類を選択 menuViewController";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     
@@ -38,6 +38,7 @@
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
+
 
 //  画面を戻したときに前回選択した行の選択状況を解除する
 - (void)viewWillAppear:(BOOL)animated

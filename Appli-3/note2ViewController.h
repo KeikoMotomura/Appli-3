@@ -13,8 +13,8 @@
 
 {
 
-    NSArray *_noteArray;
-    NSArray *_note2Array;
+    NSMutableArray *_noteArray;
+    NSMutableArray *_note2Array;
     NSArray *_answerArray;
     
     NSMutableArray *answerArray;

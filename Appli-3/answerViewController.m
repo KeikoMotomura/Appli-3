@@ -204,7 +204,7 @@
 //    保存したデータを取り出す　元々保存している単語をまず取り出す。
     NSArray *wordnote = [myDefaults arrayForKey:@"wordnote"];
 
-    NSLog(@"wordnote=%@",wordnote);
+    NSLog(@"wordnote=%@",wordnote); //questionとquestionNoを全部持って来ている（callinがいくつもある）
  
 //    wordnoteがnilだったら初期化する（これを書かないと０の掛け算状態でいつまでも単語を追加しても表示されないまま）
     if (wordnote == nil) {

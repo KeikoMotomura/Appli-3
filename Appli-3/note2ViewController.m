@@ -5,9 +5,6 @@
 //  Created by 本村佳子 on 2014/11/06.
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 //
-//  answerViewControllerで登録ボタンが押されたらここのTableViewに単語を表示させる。
-//  answerViewでボタンをしたときにquestionNoとquestionが入っている配列をユーザーデフォルトに保存
-//  ▶︎それを呼び出して、単語だけを表示させる。
 
 #import "note2ViewController.h"
 #import "note3ViewController.h"
@@ -25,30 +22,35 @@
     
     self.title=@"単語帳(単語リスト)note2ViewController";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     
     //単語種類を一番上に表示させる為のコード
     switch (self.select_wordNo) {
         case 0:
+            //1001~2000
             self.notetitleLabel.text = @"Phrasal Verb";
             break;
             
         case 1:
+//            2001~3000
             self.notetitleLabel.text = @"Synonym";
             break;
             
         case 2:
+//            3001~4000
             self.notetitleLabel.text = @"Antonym";
             break;
             
         case 3:
+//            4001~5000
             self.notetitleLabel.text = @"Two Meaning";
             break;
+            
 
     
-}
+    }
     
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     _note2Array = [myDefaults arrayForKey:@"wordnote"];
@@ -70,27 +72,60 @@
     //お気に入りリスト（最初はお気に入りでないものも全て保存）
     _noteArray = answerArray.mutableCopy;
     
+    NSArray *checkArray = answerArray.mutableCopy; //削除する対象の検索用にcheckArrayを用意
+    
     //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
-    for (NSDictionary *note2Array_each in _noteArray) {
-        id favoriteflag = note2Array_each[@"question"];
+    for (NSDictionary *note2Array_each in checkArray) {
+        id questionNoid = note2Array_each[@"questionNo"];
         
         //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
         // 文字列をNSIntegerに変換
-        NSString *str= _note2Array[self.select_wordlist];
-        NSInteger questionNo = str.integerValue;
+        NSInteger questionNo = [questionNoid intValue];
         NSLog(@"文字列→NSInteger：%ld", questionNo);
         
+        switch (self.select_wordNo) {
+            case 0:
+                if (questionNo==1001) { //==1001でもcallinは削除されなかった
+                
+                    [_noteArray removeObject:note2Array_each];
+                }
+
+                break;
+                
+            case 1:
+                if ((questionNo>2000) && (questionNo>3000)) {
+                    
+                    [_noteArray removeObject:note2Array_each];
+                }
+                break;
+                
+            case 2:
+                if ((questionNo>3000) && (questionNo>4000)) {
+                    
+                    [_noteArray removeObject:note2Array_each];
+            
+                break;
+                
+            case 3:
+                if ((questionNo>4000) && (questionNo>5000)) {
+                    
+                    [_noteArray removeObject:note2Array_each];
+                }
+               break;
+                
+                }
+
         
-//        if (intFavFlag == 0) {
-//            //お気に入り指定されてないので削除
-//            [_noteArray removeObject:note2Array_each];
-//            
-//        }
-//    
-    }
+ 
+
+        }}
     
-    
-    
+//    オブジェクトを末尾に追加するコード
+//    - (void)addObject:(id)anObject{
+//        NSMutableArray *note2Array = [[NSMutableArray alloc] init];
+//        NSString *str = [[NSString alloc] initWithString:@"文字列"];
+//        [note2Array addObject:str];
+//        [str release];
     
     
     
@@ -123,7 +158,7 @@
 
 
 //  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
-    - (void)swipeLeft:(UISwipeGestureRecognizer *)sender
+- (void)swipeLeft:(UISwipeGestureRecognizer *)sender
     {
         NSLog(@"右から左にスワイプされました");
     }

@@ -20,7 +20,7 @@
     
     self.title=@"単語帳(目次)noteViewController";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
   
@@ -66,6 +66,11 @@
 //     何か行が押されたときにnote2ViewControllerに画面推移する
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
 indexPath{
+    
+    NSLog(@"noteViewで選択したselect_wordNo▶︎%@", _noteArray[self.select_wordNo]);
+//    👆いつでもPhrasalVerbで出てくる（note3のも同様？）
+    
+    
     
     note2ViewController *nvc = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
     

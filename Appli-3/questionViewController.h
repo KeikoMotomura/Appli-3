@@ -13,7 +13,7 @@
 
 {
     NSArray *_choiseArray;
-    NSArray *_answerArray;
+//    NSArray *_answerArray; いらないかも。他に影響なかったら後で消す
     
     NSArray *_question;
     
