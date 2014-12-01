@@ -23,6 +23,8 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
+   
+    
     
     
     self.titleLabel.text = @"種類を選択して下さい";
@@ -40,6 +42,8 @@
 }
 
 
+
+
 //  画面を戻したときに前回選択した行の選択状況を解除する
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -55,7 +59,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+ 
     
     static NSString *CellIdentifier = @"Cell";
     
@@ -71,7 +75,11 @@
     cell.textLabel.text = _menuArray[indexPath.row];
     return cell;
     
+//    cell.contentView.backgroundColor = [UIColor redColor]; 背景色を変更したかったがうまく行かなかった。
+    
 }
+
+
 
 //何か行が押されたときにquestionViewControllerに画面推移する
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)

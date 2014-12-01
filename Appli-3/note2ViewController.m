@@ -70,9 +70,9 @@
     
     
     //お気に入りリスト（最初はお気に入りでないものも全て保存）
-    _noteArray = answerArray.mutableCopy;
+    _noteArray = _note2Array.mutableCopy;
     
-    NSArray *checkArray = answerArray.mutableCopy; //削除する対象の検索用にcheckArrayを用意
+    NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
     
     //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
     for (NSDictionary *note2Array_each in checkArray) {
@@ -85,7 +85,7 @@
         
         switch (self.select_wordNo) {
             case 0:
-                if (questionNo==1001) { //==1001でもcallinは削除されなかった
+                if (questionNo==1001) {
                 
                     [_noteArray removeObject:note2Array_each];
                 }
@@ -166,7 +166,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _note2Array.count;
+    return _noteArray.count;
     
 }
     
@@ -183,7 +183,7 @@
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
     
-    cell.textLabel.text = _note2Array[indexPath.row][@"question"];
+    cell.textLabel.text = _noteArray[indexPath.row][@"question"];
     return cell;
     
     
