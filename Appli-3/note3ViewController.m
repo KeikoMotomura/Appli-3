@@ -66,16 +66,52 @@
     
     
     
-//  for{
-//    if(wordnoteから取り出したNo = PListで検索して取り出したNo)
-//      プロパティリストからQuestionDataを取り出して表示に使用する　}
+    //    ここから下は単語帳登録・削除ボタンの指示
+    //    最初はFlagをNOにしておく
+    _wordjumpflag = NO;
+    
+    //    単語帳を検索する
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    _note2Array = [myDefaults arrayForKey:@"wordnote"];
+    
+    //    お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
+    for (NSDictionary *note2Array_each in _note2Array) {
+        id questionNoid = note2Array_each[@"questionNo"];
+        
+        //     単語帳に登録されていたら（見つかったら）フラグをYESに変更する
+        //        （PListのquestionNoとquestionNoidが一致したら）
+        if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] == [questionNoid intValue]) {
+            _wordjumpflag = YES;
+            
+            break;//単語帳から見つかったら検索を中止するのでここでbreak
+        }
+    }
     
     
     
+    //    wordjumpflag用意　単語帳登録していたらYESとかにして条件を付ける
     
+    if(_wordjumpflag){ //==YESの意味になる
+        
+        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+    }else{
+        [self.wordjumpBtn setTitle:@"単語帳に追加する" forState:UIControlStateNormal];
+        
+        
+    }
     
     
 }
+
+
+    
+    
+    
+    
+    
+    
+    
+
 
 
 - (void)didReceiveMemoryWarning {
@@ -85,15 +121,96 @@
 
 
 - (IBAction)wordjumpBtn:(id)sender {
-    if (_noteArray[self.select_wordlist][@"questionNo"]) { //noteArrayに値があったら
+    
+    
+    
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults]; //宣言（ここに入れるとif else両方で使える）
+    
+    if (_wordjumpflag == YES) {
         
-        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+        _noteArray = _note2Array.mutableCopy;
+        
+        NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
+        
+        //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
+        for (NSDictionary *note2Array_each in checkArray) {
+            id questionNoid = note2Array_each[@"questionNo"];
+            
+            //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
+            // 文字列をNSIntegerに変換
+            NSInteger questionNo = [questionNoid intValue];
+            
+            if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] == [questionNoid intValue]) {
+                [_noteArray removeObject:note2Array_each];
+                
+                break;
+            }
+            
+            
+            
+        }
+        
+        [myDefaults setObject:_noteArray forKey:@"wordnote"];
+        
+        //   設定してすぐ保存したいときのメソッド(最後に書く)
+        [myDefaults synchronize];
+        
+        
+        _wordjumpflag = NO;
+        
+        [self.wordjumpBtn setTitle:@"単語帳から追加する" forState:UIControlStateNormal];
         
     }else{
         
-        [self.wordjumpBtn setTitle:@"単語帳に追加する" forState:UIControlStateNormal];
+        
+        //    このボタンが押されたらユーザーデフォルトにqueNoとqueが保存される配列を作る
+        
+        
+        
+        //    保存したデータを取り出す　元々保存している単語をまず取り出す。
+        NSArray *wordnote = [myDefaults arrayForKey:@"wordnote"];
+        
+        NSLog(@"wordnote=%@",wordnote); //questionとquestionNoを全部持って来ている（callinがいくつもある TODOひとつにしたい）
+        
+        //    wordnoteがnilだったら初期化する（これを書かないと０の掛け算状態でいつまでも単語を追加しても表示されないまま）
+        if (wordnote == nil) {
+            wordnote = [[NSArray alloc] init];
+        }
+        
+        //   Arrayを書き換え可能な配列に書き換える
+        NSMutableArray *changedword = wordnote.mutableCopy;
+        
+        NSDictionary *savedquestion = @{@"questionNo":_answerArray[self.select_questionNo][@"questionNo"],
+                                        @"question":_answerArray[self.select_questionNo][@"question"]};
+        
+        //  リストを追加
+        [changedword addObject:savedquestion];
+        
+        //  ひとつリストを追加したあとにリスト全部を表示
+        [myDefaults setObject:changedword forKey:@"wordnote"];
+        
+        //   設定してすぐ保存したいときのメソッド(最後に書く)
+        [myDefaults synchronize];
+        
+        
+        _wordjumpflag = YES;
+        
+        
+        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+        
+        
+        
     }
-    
+
+//    if (_noteArray[self.select_wordlist][@"questionNo"]) { //noteArrayに値があったら
+//        
+//        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+//        
+//    }else{
+//        
+//        [self.wordjumpBtn setTitle:@"単語帳に追加する" forState:UIControlStateNormal];
+//    }
+//    
    
 }
 

@@ -116,35 +116,50 @@
 
         }}
     
-//    オブジェクトを末尾に追加するコード
-//    - (void)addObject:(id)anObject{
-//        NSMutableArray *note2Array = [[NSMutableArray alloc] init];
-//        NSString *str = [[NSString alloc] initWithString:@"文字列"];
-//        [note2Array addObject:str];
-//        [str release];
-    
-    
- 
 
     
 } //ViewDidRoadの終わり
 
 
 
-//  単語をスワイプして一覧から削除（途中:スワイプだけできる）
+//  単語をスワイプして一覧から削除
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    
+        _noteArray = _note2Array.mutableCopy;
         
-//        //消したいデーターをセレクトナムを使って消す
-//        NSDictionary *delDec =_noteArray[indexPath.row];
-//        [_noteArray removeObject:noteArray_each];
+        NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
         
-//          削除した後、残りの単語を全てUser Defaultに保存する
-      
+        //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
+        for (NSDictionary *note2Array_each in checkArray) {
+            id questionNoid = note2Array_each[@"questionNo"];
+            
+            //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
+            // 文字列をNSIntegerに変換
+            NSInteger questionNo = [questionNoid intValue];
+            
+//            if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] == [questionNoid intValue]) {
+//                [_noteArray removeObject:note2Array_each];
+            
+                [_noteArray removeObject:_note2Array[_select_num]];
+                
+//                break;
+//            }
+            
         
-    }}
+        
+        [myDefaults setObject:_noteArray forKey:@"wordnote"];
+        
+        //   設定してすぐ保存したいときのメソッド(最後に書く)
+        [myDefaults synchronize];
+        
+        
+        _wordjumpflag = NO;
+
+    
+}}
 
 
 

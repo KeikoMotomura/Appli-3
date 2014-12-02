@@ -12,7 +12,7 @@
 
 {
     
-    NSArray *_noteArray;
+    NSMutableArray *_noteArray;
     NSArray *_note2Array;
     NSArray *_answerArray;
     
@@ -20,6 +20,8 @@
     
     NSMutableArray *answerArray;
     
+    
+     BOOL _wordjumpflag;
 }
 
 
@@ -39,6 +41,7 @@
 @property(nonatomic,assign) int select_wordNo;
 @property(nonatomic,assign) int select_wordlist; //View2→View3にタップした単語を渡す為
 @property(nonatomic,assign) int select_categoryNo;
+@property(nonatomic,assign) int select_questionNo;
 
 @property(nonatomic,retain) NSArray *note2Array;
 

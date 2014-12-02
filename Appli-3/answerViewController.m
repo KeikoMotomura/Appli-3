@@ -83,6 +83,7 @@
     
     [self _createnextButton];
     
+//    ここから下は単語帳登録・削除ボタンの指示
 //    最初はFlagをNOにしておく
     _wordjumpflag = NO;
     
@@ -119,7 +120,7 @@
     
 }
 
-    
+
 
 
 
@@ -246,14 +247,9 @@
         
         _wordjumpflag = NO;
         
-        [self.wordjumpBtn setTitle:@"単語帳から追加する" forState:UIControlStateNormal];
+        [self.wordjumpBtn setTitle:@"単語帳へ追加する" forState:UIControlStateNormal];
         
     }else{
-        
-        
-        //    このボタンが押されたらユーザーデフォルトにqueNoとqueが保存される配列を作る
-        
-        
         
         //    保存したデータを取り出す　元々保存している単語をまず取り出す。
         NSArray *wordnote = [myDefaults arrayForKey:@"wordnote"];
