@@ -45,5 +45,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *wordjumpBtn;
 - (IBAction)wordjumpBtn:(id)sender;
 
+- (IBAction)nextpageBtn:(id)sender;
 
 @end

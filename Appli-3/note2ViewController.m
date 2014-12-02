@@ -85,7 +85,7 @@
         
         switch (self.select_wordNo) {
             case 0:
-                if (questionNo==1001) {
+                if (questionNo>=2000) {
                 
                     [_noteArray removeObject:note2Array_each];
                 }
@@ -93,21 +93,21 @@
                 break;
                 
             case 1:
-                if ((questionNo>2000) && (questionNo>3000)) {
+                if ((questionNo<2001) || (questionNo>3000)) {
                     
                     [_noteArray removeObject:note2Array_each];
                 }
                 break;
                 
             case 2:
-                if ((questionNo>3000) && (questionNo>4000)) {
+                if ((questionNo<3001) || (questionNo>4000)) {
                     
                     [_noteArray removeObject:note2Array_each];
             
                 break;
                 
             case 3:
-                if ((questionNo>4000) && (questionNo>5000)) {
+                if (questionNo<4001) {
                     
                     [_noteArray removeObject:note2Array_each];
                 }
@@ -128,48 +128,37 @@
 //        [str release];
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
 
-    
-//  単語をスワイプできるようにした。
-    // SwipeGestureのインスタンスを生成
-    UISwipeGestureRecognizer *swipeLeftGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:
-                                                  self action:@selector(swipeLeft:)];
-    //  スワイプの方向（右から左）
-    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-    //   self.viewにジェスチャーをのせる
-    [self.view addGestureRecognizer:swipeLeftGesture];
-    
     
 } //ViewDidRoadの終わり
 
 
-//  単語をスワイプしたときに一覧から削除できるようにしたい　Deleteボタンの表示（ex:めもだもん）
-- (void)swipeLeft:(UISwipeGestureRecognizer *)sender
-    {
-        NSLog(@"右から左にスワイプされました");
-    }
-    
 
+//  単語をスワイプして一覧から削除（途中:スワイプだけできる）
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+//        //消したいデーターをセレクトナムを使って消す
+        NSDictionary *delDec =_noteArray[indexPath.row];
+        [_noteArray removeObject:delDec];
+        
+       
+      
+        
+    }}
+
+
+
+    
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return _noteArray.count;
     
 }
-    
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
@@ -202,7 +191,7 @@
         
         dvc.select_wordlist = indexPath.row;　//選んだ単語を次の画面へ渡す
         
-        dvc.note2Array = _note2Array;
+        dvc.note2Array = _noteArray;
         
         
         //   ナビゲーションコントローラーの機能で画面遷移

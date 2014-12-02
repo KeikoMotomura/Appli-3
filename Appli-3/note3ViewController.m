@@ -32,8 +32,8 @@
 
 //  この方法でquestionNoを取り出し▶︎それのdiscriptionを持ってくる表示に変更する
     
-    self.select_wordlist = self.select_wordlist;
-    NSLog(@"select_wordlistの数→%d",self.select_wordlist); //これで持って来てるのは何行目かということだけ（意味ないし、下も機能してない）
+//    self.select_wordlist = self.select_wordlist;
+//    NSLog(@"select_wordlistの数→%d",self.select_wordlist); //これで持って来てるのは何行目かということだけ（意味ないし、下も機能してない）
     
     //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
     NSBundle *bundle = [NSBundle mainBundle];
@@ -52,16 +52,15 @@
     
     _answerArray = [dic objectForKey:[categoryTitle objectForKey:@"0"]];
     
-    
     for (NSDictionary *tmpQuestion in _answerArray) {
         if (_note2Array[self.select_wordlist][@"questionNo"] == tmpQuestion[@"questionNo"]) {
             self.wordTextView.text = tmpQuestion[@"description"];
             break;
         }
-    }
 
+}
 
-    
+    self.wordTextView.text = [NSString stringWithFormat:@"%@", _noteArray[self.select_wordlist][@"description"]];
     
     self.wordTextView.editable = NO;
     
@@ -86,7 +85,7 @@
 
 
 - (IBAction)wordjumpBtn:(id)sender {
-    if (_wordjumpBtn) {
+    if (_noteArray[self.select_wordlist][@"questionNo"]) { //noteArrayに値があったら
         
         [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
         
@@ -96,6 +95,17 @@
     }
     
    
+}
+
+- (IBAction)nextpageBtn:(id)sender {
+    NSLog(@"次の単語へボタンが押されました");
+    
+    note3ViewController *notevc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
+    
+    [[self navigationController] pushViewController:notevc animated:YES];
+    
+
+
 }
 
 
