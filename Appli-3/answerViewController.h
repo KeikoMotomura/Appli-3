@@ -13,7 +13,7 @@
 {
     
     UIButton *_nextButton;
-    UIButton *_note2Array;
+    NSArray *_note2Array;
     
     
     NSArray *_choiseArray;
@@ -23,7 +23,9 @@
     
     
     NSMutableArray *answerArray;
+    BOOL _wordjumpflag; //BOOL Integer型はアスタリスク着かない。ポインタ変数じゃないやつ
 
+    NSMutableArray *_noteArray;
     
 }
 

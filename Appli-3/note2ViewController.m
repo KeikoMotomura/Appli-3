@@ -29,22 +29,18 @@
     //単語種類を一番上に表示させる為のコード
     switch (self.select_wordNo) {
         case 0:
-            //1001~2000
             self.notetitleLabel.text = @"Phrasal Verb";
             break;
             
         case 1:
-//            2001~3000
             self.notetitleLabel.text = @"Synonym";
             break;
             
         case 2:
-//            3001~4000
             self.notetitleLabel.text = @"Antonym";
             break;
             
         case 3:
-//            4001~5000
             self.notetitleLabel.text = @"Two Meaning";
             break;
             
@@ -142,10 +138,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
 //        //消したいデーターをセレクトナムを使って消す
-        NSDictionary *delDec =_noteArray[indexPath.row];
-        [_noteArray removeObject:delDec];
+//        NSDictionary *delDec =_noteArray[indexPath.row];
+//        [_noteArray removeObject:noteArray_each];
         
-       
+//          削除した後、残りの単語を全てUser Defaultに保存する
       
         
     }}
