@@ -34,8 +34,6 @@
     
     
     
-    
-    
 //  一番上に問題種類を表示する為のSwitch構文
     switch (self.select_categoryNo) {
                     case 0:

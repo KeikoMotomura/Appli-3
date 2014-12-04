@@ -210,8 +210,6 @@
 - (IBAction)wordjumpBtn:(id)sender {
     
     NSLog(@"単語帳登録ボタンが押されました");
-//  ＊＊＊このボタンが押されたら、ユーザーでフォルトにquestionNoとquestionが保存されるようにしたい。
-//  ここにしたの設定の条件で保存されていなかったら「追加」表示にする。されていたら「削除」表示にする
 
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults]; //宣言（ここに入れるとif else両方で使える）
     

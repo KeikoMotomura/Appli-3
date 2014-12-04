@@ -27,7 +27,7 @@
     
     
     //単語種類を一番上に表示させる為のコード
-    switch (self.select_wordNo) {
+    switch (self.select_wordNo) { //selectword categoryNoとしてcategoryNoとして三個目のページに渡す
         case 0:
             self.notetitleLabel.text = @"Phrasal Verb";
             break;
@@ -51,8 +51,6 @@
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     _note2Array = [myDefaults arrayForKey:@"wordnote"];
 
-    
-    
 
 //＊＊＊この配列いらない？
 //    _answerArray = @[@{@"name":@"apple",@"desc":@"apple2"},@{@"name":@"ant",@"desc":@"ant2文"},@{@"name":@"sisig",@"desc":@"sisig2"},@{@"name":@"sinigang",@"desc":@"sinigang2"}];
@@ -111,9 +109,6 @@
                 
                 }
 
-        
- 
-
         }}
     
 
@@ -122,44 +117,50 @@
 
 
 
-//  単語をスワイプして一覧から削除
+//  単語をスワイプして一覧から削除 **現状：ひとつ削除したら全ての単語が一緒に消える
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-        NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
-    
-        _noteArray = _note2Array.mutableCopy;
-        
-        NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
-        
-        //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
-        for (NSDictionary *note2Array_each in checkArray) {
-            id questionNoid = note2Array_each[@"questionNo"];
-            
-            //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
-            // 文字列をNSIntegerに変換
-            NSInteger questionNo = [questionNoid intValue];
-            
+//    
+//    if (editingStyle == UITableViewCellEditingStyleDelete){
+//
+//    
+//        NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+//    
+//        _noteArray = _note2Array.mutableCopy;
+//        
+//        NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
+//        
+//        //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
+//        for (NSDictionary *note2Array_each in checkArray) {
+//            id questionNoid = note2Array_each[@"questionNo"];
+//            
+//            //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
+//            // 文字列をNSIntegerに変換
+//            NSInteger questionNo = [questionNoid intValue];
+//            
 //            if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] == [questionNoid intValue]) {
-//                [_noteArray removeObject:note2Array_each];
-            
-                [_noteArray removeObject:_note2Array[_select_num]];
-                
+//            
+//            [_noteArray removeObject:note2Array_each];
+//            
 //                break;
 //            }
-            
-        
-        
-        [myDefaults setObject:_noteArray forKey:@"wordnote"];
-        
-        //   設定してすぐ保存したいときのメソッド(最後に書く)
-        [myDefaults synchronize];
-        
-        
-        _wordjumpflag = NO;
+//            
+//        
+//        
+//        [myDefaults setObject:_noteArray forKey:@"wordnote"];
+//        
+//        //   設定してすぐ保存したいときのメソッド(最後に書く)
+//        [myDefaults synchronize];
+//        
+//        _wordjumpflag = NO;
+//            
+//      
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//    
+//
+//}}
 
-    
-}}
+}
 
 
 
@@ -200,9 +201,11 @@
         
         dvc.select_num = indexPath.row;
         
-        dvc.select_wordlist = indexPath.row;　//選んだ単語を次の画面へ渡す
+        dvc.select_wordlist = indexPath.row;　//選んだ単語を次の画面へ渡す（押した場所）
         
         dvc.note2Array = _noteArray;
+        
+        dvc.select_wordNo = self.select_wordNo; //前の画面からもらった番号
         
         
         //   ナビゲーションコントローラーの機能で画面遷移
