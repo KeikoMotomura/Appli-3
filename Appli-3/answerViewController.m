@@ -27,7 +27,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
-
+    
     
     //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
     NSBundle *bundle = [NSBundle mainBundle];
@@ -57,16 +57,16 @@
     
     
     self.answerTextView.editable = NO;
-
     
-//TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外
+    
+    //TODO正解なら○の画像、不正解なら×の画像を出す▶︎正解keyとそれ以外
     self.select_selectionNo = self.select_selectionNo; //前のページでタップされた値を持ってくる
-
-    NSLog(@"select_selectionNoの数→%d",self.select_selectionNo);    
+    
+    NSLog(@"select_selectionNoの数→%d",self.select_selectionNo);
     NSLog(@"PListのanswer番号→%@",_answerArray[self.select_questionNo][@"answer"]);
     
     if ( self.select_selectionNo == [_answerArray[self.select_questionNo][@"answer"] intValue])
-    
+        
     {   self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
         self.select_correctanswerNo +=1; //+=1 で１プラスの意味になる
         
@@ -75,45 +75,45 @@
         
     }
     
-//正解数に応じて結果画面のメッセージと画像を変えるため
+    //正解数に応じて結果画面のメッセージと画像を変えるため
     self.select_correctanswerNo = self.select_correctanswerNo;
     NSLog(@"正解数▶︎%d",self.select_correctanswerNo);
-   
+    
     
     
     [self _createnextButton];
     
-//    ここから下は単語帳登録・削除ボタンの指示
-//    最初はFlagをNOにしておく
+    //    ここから下は単語帳登録・削除ボタンの指示
+    //    最初はFlagをNOにしておく
     _wordjumpflag = NO;
     
-//    単語帳を検索する
+    //    単語帳を検索する
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     _note2Array = [myDefaults arrayForKey:@"wordnote"];
     
-//    お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
+    //    お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
     for (NSDictionary *note2Array_each in _note2Array) {
         id questionNoid = note2Array_each[@"questionNo"];
         
-//     単語帳に登録されていたら（見つかったら）フラグをYESに変更する
-//        （PListのquestionNoとquestionNoidが一致したら）
+        //     単語帳に登録されていたら（見つかったら）フラグをYESに変更する
+        //        （PListのquestionNoとquestionNoidが一致したら）
         if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] == [questionNoid intValue]) {
-        _wordjumpflag = YES;
+            _wordjumpflag = YES;
             
             break;//単語帳から見つかったら検索を中止するのでここでbreak
         }
-}
+    }
     
     
     
-//    wordjumpflag用意　単語帳登録していたらYESとかにして条件を付ける
+    //    wordjumpflag用意　単語帳登録していたらYESとかにして条件を付ける
     
     if(_wordjumpflag){ //==YESの意味になる
-  
+        
         [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
     }else{
         [self.wordjumpBtn setTitle:@"単語帳に追加する" forState:UIControlStateNormal];
-
+        
         
     }
     
@@ -140,12 +140,12 @@
     if (self.select_questionNo == 2) {
         NSLog(@"問題カウント数３になりました");
         
-    //  ボタンに表示する文字を指定
+        //  ボタンに表示する文字を指定
         [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
         
-}
+    }
     
-
+    
     //  ボタンの色を指定
     [_nextButton setTitleColor:[UIColor blueColor]forState:UIControlStateNormal];
     
@@ -155,23 +155,23 @@
     [_nextButton addTarget:self action:@selector(tapButton)
           forControlEvents:UIControlEventTouchUpInside];
     
-   
+    
     
     
 }
 
 
-    //   ボタンをタップしたときに反応
+//   ボタンをタップしたときに反応
 -(void)tapButton{
-
+    
     //  「次の問題へ」ボタンが押されたら次のquestion画面が開く
     NSLog(@"次の問題へボタンが押されました");
     
     
     questionViewController *qvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
-//        次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
-    qvc.select_questionNo = self.select_questionNo+1;    
+    //        次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
+    qvc.select_questionNo = self.select_questionNo+1;
     NSLog(@"select_questionNoの値→%d" ,qvc.select_questionNo);
     
     qvc.select_correctanswerNo = self.select_correctanswerNo;
@@ -188,9 +188,9 @@
         //  ナビゲーションコントローラーの機能で画面遷移
         [[self navigationController]
          pushViewController:kvc animated:YES];
-    
         
- 
+        
+        
     }else{
         //  次画面を指定して遷移
         
@@ -201,16 +201,16 @@
         //  ナビゲーションコントローラーの機能で画面遷移
         [[self navigationController]
          pushViewController:qvc animated:YES];
-
+        
     }
-
+    
 }
 
 
 - (IBAction)wordjumpBtn:(id)sender {
     
     NSLog(@"単語帳登録ボタンが押されました");
-
+    
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults]; //宣言（ここに入れるとif else両方で使える）
     
     if (_wordjumpflag == YES) {
@@ -222,7 +222,7 @@
         //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
         for (NSDictionary *note2Array_each in checkArray) {
             id questionNoid = note2Array_each[@"questionNo"];
-        
+            
             //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
             // 文字列をNSIntegerに変換
             NSInteger questionNo = [questionNoid intValue];
@@ -241,7 +241,7 @@
         
         //   設定してすぐ保存したいときのメソッド(最後に書く)
         [myDefaults synchronize];
-
+        
         
         _wordjumpflag = NO;
         
@@ -262,8 +262,21 @@
         //   Arrayを書き換え可能な配列に書き換える
         NSMutableArray *changedword = wordnote.mutableCopy;
         
+        //      保存した日付をとる
+        today = [NSDate date];
+        
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        df.dateFormat = @"yyyy/MM/dd HH:mm:ss";
+        
+        //時刻、日付を書式の通りに変換する
+        datestr = [df stringFromDate:today];
+        
+        //コンソールに出力
+        NSLog(@"%@",datestr);
+        
         NSDictionary *savedquestion = @{@"questionNo":_answerArray[self.select_questionNo][@"questionNo"],
-                                        @"question":_answerArray[self.select_questionNo][@"question"]};
+                                        @"question":_answerArray[self.select_questionNo][@"question"]
+                                        @"created":[df stringFromDate:datestr];};//追加した日時を保存する
         
         //  リストを追加
         [changedword addObject:savedquestion];
@@ -274,7 +287,7 @@
         //   設定してすぐ保存したいときのメソッド(最後に書く)
         [myDefaults synchronize];
         
-
+        
         _wordjumpflag = YES;
         
         
@@ -285,7 +298,7 @@
     }
     
     
-
+    
     
 }
 
@@ -293,7 +306,7 @@
     [super didReceiveMemoryWarning];
     
 }
-        
+
 
 
 //問題種類へ戻るボタンが押されたら反応
@@ -307,7 +320,7 @@
     // ナビゲーションコントローラーの機能で画面遷移
     [[self navigationController]
      pushViewController:dvc animated:YES];
-
+    
 }
 
 //  トップ画面へ戻るボタンが押されたらトップ画面へ戻る
@@ -323,5 +336,5 @@
 
 
 
-    
+
 @end

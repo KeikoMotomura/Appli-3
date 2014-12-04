@@ -353,8 +353,18 @@
                                     <action selector="topbackBtn:" destination="r7X-br-SwS" eventType="touchUpInside" id="2Lm-Nj-avD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VFa-DS-B2f">
+                                <rect key="frame" x="12" y="482" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="種類選択画面へ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="categorybackBtn:" destination="r7X-br-SwS" eventType="touchUpInside" id="klH-hD-ikl"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i80-fj-hgA">
-                                <rect key="frame" x="77" y="463" width="227" height="30"/>
+                                <rect key="frame" x="118" y="482" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,6 +377,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="categorybackBtn" destination="VFa-DS-B2f" id="jBM-rm-Fcx"/>
                         <outlet property="nextpageBtn" destination="Sse-lx-ZMk" id="iZD-26-7a0"/>
                         <outlet property="note3Label" destination="M8b-Ub-f2S" id="yj8-Gi-PfC"/>
                         <outlet property="topbackBtn" destination="MZu-bg-7Pv" id="48x-BF-oZA"/>

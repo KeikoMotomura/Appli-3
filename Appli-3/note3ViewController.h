@@ -13,7 +13,7 @@
 {
     
     NSMutableArray *_noteArray;
-    NSArray *_note2Array;
+    NSMutableArray *_note2Array;
     NSArray *_answerArray;
     
     NSArray *_question;
@@ -49,5 +49,7 @@
 - (IBAction)wordjumpBtn:(id)sender;
 
 - (IBAction)nextpageBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *categorybackBtn;
+- (IBAction)categorybackBtn:(id)sender;
 
 @end

@@ -27,6 +27,13 @@
 
     NSMutableArray *_noteArray;
     
+    
+    
+    NSDateFormatter *df;   //日にちの表示の書式を設定
+    NSDate *today;         //今日の日付を呼び出す
+    NSString *datestr;     //書式の設定
+
+    
 }
 
 

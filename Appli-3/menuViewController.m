@@ -23,7 +23,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
-   
+    
     
     
     
@@ -59,7 +59,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
- 
+    
     
     static NSString *CellIdentifier = @"Cell";
     
@@ -75,7 +75,7 @@
     cell.textLabel.text = _menuArray[indexPath.row];
     return cell;
     
-//    cell.contentView.backgroundColor = [UIColor redColor]; 背景色を変更したかったがうまく行かなかった。
+    //    cell.contentView.backgroundColor = [UIColor redColor]; 背景色を変更したかったがうまく行かなかった。
     
 }
 
@@ -104,8 +104,8 @@ indexPath{
     //    @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
     //
     //    //    NSLog(@"%@",[wordTitle objectForKey:@"3"]);
-    //    
-
+    //
+    
     
 }
 

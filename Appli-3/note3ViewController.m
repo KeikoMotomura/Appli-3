@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 keikomotomura. All rights reserved.
 
 
-
+#import "noteViewController.h"
 #import "note3ViewController.h"
 #import "note2ViewController.h"
 #import "answerViewController.h"
@@ -44,10 +44,10 @@
     
     NSString *key;
     
-
+    
     switch (self.select_categoryNo) {
             
-        
+            
         case 0:
             key = @"PhrasalVerb";
             break;
@@ -67,7 +67,6 @@
             
             
     }
-
     
     
     
@@ -75,166 +74,178 @@
     _answerArray = [dic objectForKey:key];
     //  currentNoに前画面からわたって来た「選択した単語のquestionNo」 を代入（型を整数型にするため）
     int currentNo = [_note2Array[self.select_wordlist][@"questionNo"] intValue];
-
+    
     //　For文で_answerArrayの中身を探してひとつづつtmpQuestionに入れていく
     for (NSDictionary *tmpQuestion in _answerArray) {//answerArrayから一個づつ取り出します▶︎とりだしたひとつがtmpquestionに入る
         NSLog(@"%@",tmpQuestion);
-    // 　checkNoに👆で探したtmpQuestionの中のquestionNoだけを持って来て代入する（型を整数型にするため）
+        // 　checkNoに👆で探したtmpQuestionの中のquestionNoだけを持って来て代入する（型を整数型にするため）
         int checkNo = [tmpQuestion[@"questionNo"] intValue];
-    //　　currentNoとcheckNoがイコールだったら　＝　前画面からもらったqueNoと_answerArrayのqueNoがイコールだったら        
+        //　　currentNoとcheckNoがイコールだったら　＝　前画面からもらったqueNoと_answerArrayのqueNoがイコールだったら
         if (currentNo == checkNo)
         {
             self.wordTextView.text = tmpQuestion[@"description"];
-
+            
             break;
         }
-
+        
     }
-    
     
     self.wordTextView.editable = NO;
     
     
     
-//    ここから下は単語帳登録・削除ボタンの指示
-    //    最初はFlagをYESにしておく
-        _wordjumpflag = YES;
+    //＊＊＊ここから下は単語帳登録・削除ボタンの指示＊＊＊
+    //    最初はFlagをYESにしておく(ボタンの初期表示を「削除」にするため）
+    _wordjumpflag = YES;
     
-        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
-    //wordjumpflag用意　単語帳登録されている＝YES
-    //if(_wordjumpflag){ //==YESの意味になる
+    [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
     
-
     
     //    単語帳を検索する
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
-    _note2Array = [myDefaults arrayForKey:@"wordnote"];
+    
+    NSArray *tmp = [myDefaults arrayForKey:@"wordnote"];//単語帳のデータを取り出して
+    
+    _note2Array = tmp.mutableCopy;//編集可能な形で代入
     
     //    お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
     for (NSDictionary *note2Array_each in _note2Array) {
         id questionNoid = note2Array_each[@"questionNo"];
         
-        //     単語帳に登録されていたら（見つかったら）フラグをYESに変更する
-        //        （PListのquestionNoとquestionNoidが一致したら）
+        //     単語帳に登録されていなかったらフラグをNOに変更する
+        //    （PListのquestionNoとquestionNoidが一致したら）
         if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] != [questionNoid intValue]) {
             _wordjumpflag = NO;
             
+            [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+            
             break;//単語帳から見つかったら検索を中止するのでここでbreak
             
-             [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
-        }
-    }
+            
+        }}
+    
+    //    if (単語帳の一覧で最後のページだったら) {
+    //        self.nextpageBtn.hidden = YES;　ボタンを非表示にする
+    //    }
     
     
-    
-
 }//DidRoadの終わり
 
 
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (IBAction)wordjumpBtn:(id)sender {//単語帳から削除ボタンを押したら
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"単語帳から削除" message:@"削除しますか？" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    
+    [alert show];
+    
 }
 
-
-- (IBAction)wordjumpBtn:(id)sender {
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
-    NSLog(@"note3単語帳登録ボタンが押されました");
     
-    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults]; //宣言（ここに入れるとif else両方で使える）
+    //アラートビューの削除でオッケーが押されたらインデックスに画面遷移
     
-    if (_wordjumpflag == YES) {
+    if (buttonIndex == 1) {
         
-        _noteArray = _note2Array.mutableCopy;
         
-        NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
+        NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
         
-        //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
-    for (NSDictionary *note2Array_each in checkArray) {
+        int currentNo = [_note2Array[self.select_questionNo][@"questionNo"] intValue];
+        
+        NSMutableArray *checkArray = _note2Array.mutableCopy;
+        
+        for (NSDictionary *note2Array_each in checkArray) {
             id questionNoid = note2Array_each[@"questionNo"];
             
-            //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
-            // 文字列をNSIntegerに変換
             NSInteger questionNo = [questionNoid intValue];
             
-    if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] == [questionNoid intValue]) {
-                [_noteArray removeObject:note2Array_each];
+            if (currentNo == questionNo) {
+                [_note2Array removeObject:note2Array_each];
+                
+                
+                [myDefaults setObject:_note2Array forKey:@"wordnote"];
+                
+                //  設定してすぐ保存したいときのメソッド(最後に書く)
+                [myDefaults synchronize];
                 
                 break;
+                
+            }
         }
-            
-            
-}
-        
-        [myDefaults setObject:_noteArray forKey:@"wordnote"];
-        
-        //   設定してすぐ保存したいときのメソッド(最後に書く)
-        [myDefaults synchronize];
         
         _wordjumpflag = NO;
         
-        [self.wordjumpBtn setTitle:@"単語帳へ追加する" forState:UIControlStateNormal];
         
-    }else{
-        
-        //    保存したデータを取り出す　元々保存している単語をまず取り出す。
-        NSArray *wordnote = [myDefaults arrayForKey:@"wordnote"];
-        
-        //    wordnoteがnilだったら初期化する（これを書かないと０の掛け算状態でいつまでも単語を追加しても表示されないまま）
-        if (wordnote == nil) {
-            wordnote = [[NSArray alloc] init];
-        }
-        
-        //   Arrayを書き換え可能な配列に書き換える(編集可能な状態にする為にこの１行が必要）
-        NSMutableArray *changedword = wordnote.mutableCopy;
-        
-        NSDictionary *savedquestion = @{@"questionNo":_answerArray[self.select_questionNo][@"questionNo"],
-                                        @"question":_answerArray[self.select_questionNo][@"question"]};
-        
-        //  リストを追加
-        [changedword addObject:savedquestion];
-        
-        //  ひとつリストを追加したあとにリスト全部を表示
-        [myDefaults setObject:changedword forKey:@"wordnote"];
-        
-        //   設定してすぐ保存したいときのメソッド(最後に書く)
-        [myDefaults synchronize];
-        
-        
-        _wordjumpflag = YES;
-        
-        
-        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+        //ひとつ前の画面に戻る▶︎このやり方だとカテゴリ表示が全てPhrasalVerbになる。
+        //        note2ViewController *notevc
+        //        = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
+        //
+        //        [[self navigationController]
+        //         pushViewController:notevc animated:YES];
+        //
+        NSInteger count       = self.navigationController.viewControllers.count - 2;
+        note3ViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
+        [self.navigationController popToViewController:vc animated:YES];
         
         
         
+        
+        //
     }
-    
     
     
 }
 
-- (IBAction)nextpageBtn:(id)sender {
+
+
+
+- (IBAction)nextpageBtn:(id)sender {//次のページへは移動する。次の行のデータを持ってくるようにしたい。
     NSLog(@"次の単語へボタンが押されました");
     
     note3ViewController *notevc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
     
     [[self navigationController] pushViewController:notevc animated:YES];
     
-
-
+    
+    
+    
 }
+
+
+
+
+
 
 
 
 - (IBAction)topbackBtn:(id)sender {
     
     [self.navigationController popToRootViewControllerAnimated:YES];
-
+    
 }
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    
+}
+
+- (IBAction)categorybackBtn:(id)sender {
+    
+    // 次画面を指定して遷移
+    noteViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"noteViewController"];
+    
+    // ナビゲーションコントローラーの機能で画面遷移
+    [[self navigationController]
+     pushViewController:dvc animated:YES];
+    
+    
+}
 
 @end

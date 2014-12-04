@@ -12,15 +12,16 @@
 
 
 {
+    
+    NSArray *_answerArray;
 
     NSMutableArray *_noteArray;
     NSMutableArray *_note2Array;
-    NSArray *_answerArray;
-    
     NSMutableArray *answerArray;
     
     BOOL _wordjumpflag;
 }
+
 
 @property (weak, nonatomic) IBOutlet UILabel *notetitleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *note2TableView;

@@ -23,7 +23,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
-  
+    
     _noteArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
     
     _noteTableView.delegate = self;
@@ -45,11 +45,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
         cellForRowAtIndexPath:(NSIndexPath *)indexPath{
- 
+    
     
     static NSString *CellIdentifier = @"Cell";
     
-  
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     
@@ -68,7 +68,7 @@
 indexPath{
     
     NSLog(@"noteViewで選択したselect_wordNo▶︎%@", _noteArray[self.select_wordNo]);
-//    👆いつでもPhrasalVerbで出てくる（note3のも同様？）
+    //    👆いつでもPhrasalVerbで出てくる（note3のも同様？）
     
     
     
@@ -76,7 +76,7 @@ indexPath{
     
     nvc.select_wordNo = indexPath.row;
     nvc.select_num = self.select_wordNo;
-
+    
     
     [[self navigationController]
      pushViewController:nvc animated:YES];
