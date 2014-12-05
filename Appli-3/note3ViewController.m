@@ -20,14 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.title=@"単語帳(説明画面)note3ViewController";
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
-    
-    self.note3Label.text = [NSString stringWithFormat:@"%@", _note2Array[self.select_wordlist][@"question"]];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+        self.note3Label.text = [NSString stringWithFormat:@"%@", _note2Array[self.select_wordlist][@"question"]];
     NSLog(@"選択した単語のNo▶︎%@",_note2Array[self.select_wordlist][@"questionNo"]);
     
     self.select_categoryNo = self.select_wordNo;//前画面からわたって来たwordNoをcategoryNoに代入する
@@ -72,6 +73,7 @@
     
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
     _answerArray = [dic objectForKey:key];
+    
     //  currentNoに前画面からわたって来た「選択した単語のquestionNo」 を代入（型を整数型にするため）
     int currentNo = [_note2Array[self.select_wordlist][@"questionNo"] intValue];
     
@@ -129,7 +131,30 @@
     //    }
     
     
-}//DidRoadの終わり
+
+    //ソート対象となるキーを指定した、NSSortDescriptorの生成
+    NSSortDescriptor *sortDescNumber;
+    
+    // NSSortDescriptorは配列に入れてNSArrayに渡す
+    NSArray *sortDescArray; //ソートの材料をいれる
+    
+    NSArray *sortArray; //ソート後のもの
+    
+    sortDescNumber = [[NSSortDescriptor alloc] initWithKey:@"wordnote" ascending:YES];
+            
+            
+    sortDescArray = [NSArray arrayWithObjects:sortDescNumber, nil];
+    
+    // ソートの実行
+    sortArray = [_note2Array sortedArrayUsingDescriptors:sortDescArray];
+            
+
+
+
+
+
+
+}//ViewWillAppearの終わり
 
 
 
@@ -140,7 +165,7 @@
 - (IBAction)wordjumpBtn:(id)sender {//単語帳から削除ボタンを押したら
     
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"単語帳から削除" message:@"削除しますか？" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"＊単語帳から削除＊" message:@"削除しますか？" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
     
     [alert show];
     
@@ -180,27 +205,27 @@
         }
         
         _wordjumpflag = NO;
-        
-        
-        //ひとつ前の画面に戻る▶︎このやり方だとカテゴリ表示が全てPhrasalVerbになる。
-        //        note2ViewController *notevc
-        //        = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
-        //
-        //        [[self navigationController]
-        //         pushViewController:notevc animated:YES];
-        //
-        NSInteger count       = self.navigationController.viewControllers.count - 2;
-        note3ViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
-        [self.navigationController popToViewController:vc animated:YES];
-        
-        
-        
-        
-        //
-    }
     
-    
+
+//        ひとつ前の画面に戻る▶︎このやり方だとカテゴリ表示が全てPhrasalVerbになる。(&戻った画面では全部消えてる）
+//                note2ViewController *notevc
+//                = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
+//        
+//                [[self navigationController]
+//                 pushViewController:notevc animated:YES];
+//        
+
+//        このやり方だと戻ったときに削除した単語がそのまま表示されている。画面を開き直せば正しく表示される。
+              NSInteger count = self.navigationController.viewControllers.count - 2;
+              note3ViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
+              [self.navigationController popToViewController:vc animated:YES];
+        
+        
 }
+
+
+}
+
 
 
 

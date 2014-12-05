@@ -24,7 +24,7 @@
     
     self.title=@"answerViewController";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];  // バーアイテムカラー
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     
@@ -161,16 +161,12 @@
 }
 
 
-//   ボタンをタップしたときに反応
+//   「次の問題へ」ボタンが押されたら次のquestion画面が開く
 -(void)tapButton{
-    
-    //  「次の問題へ」ボタンが押されたら次のquestion画面が開く
-    NSLog(@"次の問題へボタンが押されました");
-    
     
     questionViewController *qvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
-    //        次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
+    // 次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
     qvc.select_questionNo = self.select_questionNo+1;
     NSLog(@"select_questionNoの値→%d" ,qvc.select_questionNo);
     
@@ -252,7 +248,7 @@
         //    保存したデータを取り出す　元々保存している単語をまず取り出す。
         NSArray *wordnote = [myDefaults arrayForKey:@"wordnote"];
         
-        NSLog(@"wordnote=%@",wordnote); //questionとquestionNoを全部持って来ている（callinがいくつもある TODOひとつにしたい）
+        NSLog(@"wordnote=%@",wordnote);
         
         //    wordnoteがnilだったら初期化する（これを書かないと０の掛け算状態でいつまでも単語を追加しても表示されないまま）
         if (wordnote == nil) {
@@ -262,29 +258,28 @@
         //   Arrayを書き換え可能な配列に書き換える
         NSMutableArray *changedword = wordnote.mutableCopy;
         
-        //      保存した日付をとる
+        // 保存した日付をとる
         today = [NSDate date];
         
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         df.dateFormat = @"yyyy/MM/dd HH:mm:ss";
         
-        //時刻、日付を書式の通りに変換する
+        // 時刻、日付を書式の通りに変換する
         datestr = [df stringFromDate:today];
         
-        //コンソールに出力
-        NSLog(@"%@",datestr);
+        NSLog(@"datestrの中身▶︎%@",datestr);
         
         NSDictionary *savedquestion = @{@"questionNo":_answerArray[self.select_questionNo][@"questionNo"],
-                                        @"question":_answerArray[self.select_questionNo][@"question"]
-                                        @"created":[df stringFromDate:datestr];};//追加した日時を保存する
-        
-        //  リストを追加
+                                        @"question":_answerArray[self.select_questionNo][@"question"],
+                                        @"created":datestr};
+    
+        // リストを追加
         [changedword addObject:savedquestion];
         
-        //  ひとつリストを追加したあとにリスト全部を表示
+        // ひとつリストを追加したあとにリスト全部を表示
         [myDefaults setObject:changedword forKey:@"wordnote"];
         
-        //   設定してすぐ保存したいときのメソッド(最後に書く)
+        // 設定してすぐ保存したいときのメソッド(最後に書く)
         [myDefaults synchronize];
         
         
@@ -294,10 +289,8 @@
         [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
         
         
-        
+  
     }
-    
-    
     
     
 }
@@ -312,7 +305,6 @@
 //問題種類へ戻るボタンが押されたら反応
 - (IBAction)menubackBtn:(id)sender {
     
-    NSLog(@"問題種類へ戻るボタンがタップされました");
     
     // 次画面を指定して遷移
     menuViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];

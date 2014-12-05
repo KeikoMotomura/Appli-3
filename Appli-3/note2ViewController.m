@@ -114,11 +114,34 @@
                 
         }}
     
+//    画面が戻ったときに前回の選択状況を解除する
+        [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
+    
+    
+    //ソート対象となるキーを指定した、NSSortDescriptorの生成
+    NSSortDescriptor *sortDescNumber;
+    
+    // NSSortDescriptorは配列に入れてNSArrayに渡す
+    NSArray *sortDescArray; //ソートの材料をいれる
+    
+    NSArray *sortArray; //ソート後のもの
+    
+    sortDescNumber = [[NSSortDescriptor alloc] initWithKey:@"wordnote" ascending:YES];
+    
+    
+    sortDescArray = [NSArray arrayWithObjects:sortDescNumber, nil];
+    
+    // ソートの実行
+    sortArray = [_note2Array sortedArrayUsingDescriptors:sortDescArray];
+    
+
     
     
     
     
-}
+    }
+
+
 
 
 
