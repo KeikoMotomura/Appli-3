@@ -130,26 +130,6 @@
     //        self.nextpageBtn.hidden = YES;　ボタンを非表示にする
     //    }
     
-    
-
-    //ソート対象となるキーを指定した、NSSortDescriptorの生成
-    NSSortDescriptor *sortDescNumber;
-    
-    // NSSortDescriptorは配列に入れてNSArrayに渡す
-    NSArray *sortDescArray; //ソートの材料をいれる
-    
-    NSArray *sortArray; //ソート後のもの
-    
-    sortDescNumber = [[NSSortDescriptor alloc] initWithKey:@"wordnote" ascending:YES];
-            
-            
-    sortDescArray = [NSArray arrayWithObjects:sortDescNumber, nil];
-    
-    // ソートの実行
-    sortArray = [_note2Array sortedArrayUsingDescriptors:sortDescArray];
-            
-
-
 
 
 
@@ -165,7 +145,7 @@
 - (IBAction)wordjumpBtn:(id)sender {//単語帳から削除ボタンを押したら
     
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"＊単語帳から削除＊" message:@"削除しますか？" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"＊単語帳から削除＊" message:@"Delete？" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
     
     [alert show];
     
@@ -174,10 +154,9 @@
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     
-    //アラートビューの削除でオッケーが押されたらインデックスに画面遷移
+    //アラートビューの削除でYESが押されたらインデックスに画面遷移
     
     if (buttonIndex == 1) {
-        
         
         NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
         
@@ -191,7 +170,7 @@
             NSInteger questionNo = [questionNoid intValue];
             
             if (currentNo == questionNo) {
-                [_note2Array removeObject:note2Array_each];
+                [_noteArray removeObject:note2Array_each];
                 
                 
                 [myDefaults setObject:_note2Array forKey:@"wordnote"];

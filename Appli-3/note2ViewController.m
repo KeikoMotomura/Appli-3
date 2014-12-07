@@ -9,13 +9,15 @@
 #import "note2ViewController.h"
 #import "note3ViewController.h"
 #import "answerViewController.h"
+#import "AppDelegate.h"
 
 
 @interface note2ViewController ()
 
 @end
 
-@implementation note2ViewController
+
+@implementation note2ViewController {NSString *boxname;} //メンバ変数
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -106,17 +108,18 @@
                 case 3:
                     if (questionNo<4001) {
                         
-                        [_noteArray removeObject:note2Array_each];
+                    [_noteArray removeObject:note2Array_each];
+                        
+                        
                     }
                     break;
                     
                 }
                 
+                
+
+                
         }}
-    
-//    画面が戻ったときに前回の選択状況を解除する
-        [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
-    
     
     //ソート対象となるキーを指定した、NSSortDescriptorの生成
     NSSortDescriptor *sortDescNumber;
@@ -132,10 +135,16 @@
     sortDescArray = [NSArray arrayWithObjects:sortDescNumber, nil];
     
     // ソートの実行
-    sortArray = [_note2Array sortedArrayUsingDescriptors:sortDescArray];
+    sortArray = [_noteArray sortedArrayUsingDescriptors:sortDescArray];
+    
+    
     
 
     
+    //    画面が戻ったときに前回の選択状況を解除する
+    [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
+    
+
     
     
     
@@ -149,52 +158,36 @@
 //  単語をスワイプして一覧から削除 **現状：ひとつ削除したら全ての単語が一緒に消える
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    _wordjumpflag = YES;
-    //
-    //    if (editingStyle == UITableViewCellEditingStyleDelete){
-    //
-    //        NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
-    //
-    //        _noteArray = _note2Array.mutableCopy;
-    //
-    //        NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
-    //
-    //        //お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
-    //        for (NSDictionary *note2Array_each in checkArray) {
-    //            id questionNoid = note2Array_each[@"questionNo"];
-    //
-    //            //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
-    //            // 文字列をNSIntegerに変換
-    //            NSInteger questionNo = [questionNoid intValue];
-    //
-    //            if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] != [questionNoid intValue]) {
-    //
-    //            [_noteArray removeObject:note2Array_each];
-    //
-    //            NSDictionary *delDec =_noteArray[indexPath.row];
-    //                [_noteArray removeObject:delDec];
-    //
-    //                break;
-    //            }
-    //
-    //
-    //
-    //        [myDefaults setObject:_noteArray forKey:@"wordnote"];
-    //
-    //        //   設定してすぐ保存したいときのメソッド(最後に書く)
-    //        [myDefaults synchronize];
-    //
-    //        _wordjumpflag = NO;
-    //
-    //
-    //        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    //
-    //
-    //}}
     
-}
-
-
+//    
+//        if (editingStyle == UITableViewCellEditingStyleDelete)
+//            
+//        {
+//            
+//            //ユーザーデフォルトを使えるようにする
+//            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//            //_listArray = [defaults objectForKey:@"_listArray"];
+//            //NSMutableDictionary *list = [[NSMutableDictionary alloc]initWithDictionary:_listArray];
+//            //消したいデーターをセレクトナムを使って消す
+//            NSDictionary *delDec =_noteArray[indexPath.row];
+//            [_noteArray removeObject:delDec];
+//            
+//            // NSString *boxname = @"favoritelist";
+//            //グローバ変数を扱うオブジェクト
+//            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//            
+//            //番号にそった名前を代入
+////            boxname = [_noteArray:app.select_wordlist];
+//            
+//            [defaults setObject:_noteArray forKey:boxname];
+//            [defaults synchronize];
+//    
+//            
+//            
+//        }
+//
+//
+    }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface note2ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface note2ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITabBarDelegate,UIActionSheetDelegate>
 
 
 {
@@ -18,6 +18,7 @@
     NSMutableArray *_noteArray;
     NSMutableArray *_note2Array;
     NSMutableArray *answerArray;
+    NSMutableArray *_sortArray;
     
     BOOL _wordjumpflag;
 }

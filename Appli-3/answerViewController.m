@@ -124,11 +124,6 @@
 
 
 
--(void)viewWillAppear:(BOOL)animated{
-}
-
-
-
 -(void) _createnextButton{
     
     //  ボタンの位置を決定
