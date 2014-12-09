@@ -24,7 +24,7 @@
 }
 
 
-@property (weak, nonatomic) IBOutlet UILabel *notetitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *notetitleLabel;//使わない
 @property (weak, nonatomic) IBOutlet UITableView *note2TableView;
 
 

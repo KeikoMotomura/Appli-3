@@ -39,6 +39,7 @@
 - (IBAction)categorybackBtn:(id)sender;
 
 @property(nonatomic,retain) NSArray *note2Array;
+@property(nonatomic,retain) NSArray *noteArray;
 
 @property(nonatomic,assign) int select_num;
 @property(nonatomic,assign) int select_wordNo;

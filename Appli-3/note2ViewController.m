@@ -30,46 +30,42 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     
-    self.title=@"単語帳(単語リスト)note2ViewController";
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     
     //単語種類を一番上に表示させる為のコード
-    switch (self.select_wordNo) { //selectword categoryNoとしてcategoryNoとして三個目のページに渡す
+    switch (self.select_wordNo) { //selectword categoryNoとして三個目のページに渡す
         case 0:
-            self.notetitleLabel.text = @"Phrasal Verb";
+            self.title = @"Phrasal Verb";
             break;
             
         case 1:
-            self.notetitleLabel.text = @"Synonym";
+            self.title = @"Synonym";
             break;
             
         case 2:
-            self.notetitleLabel.text = @"Antonym";
+            self.title = @"Antonym";
             break;
             
         case 3:
-            self.notetitleLabel.text = @"Two Meaning";
+            self.title = @"Two Meaning";
             break;
             
-            
-            
+     
     }
     
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     _note2Array = [myDefaults arrayForKey:@"wordnote"];
     
-    _note2TableView.delegate = self;
-    _note2TableView.dataSource = self;
     
     
     
     
     
     //お気に入りリスト（最初はお気に入りでないものも全て保存）
-    _noteArray = _note2Array.mutableCopy;
+    _noteArray = _note2Array.mutableCopy;//ここをsortに買えると一覧表示が全部消えるnote
     
     NSArray *checkArray = _note2Array.mutableCopy; //削除する対象の検索用にcheckArrayを用意
     
@@ -80,7 +76,7 @@
         //取り出したデータ(queNoをint型に変換（if文で判定しやすいように)
         // 文字列をNSIntegerに変換
         NSInteger questionNo = [questionNoid intValue];
-        NSLog(@"文字列→NSInteger：%ld", questionNo);
+        NSLog(@"文字列→NSInteger：%@", questionNoid);
         
         switch (self.select_wordNo) {
             case 0:
@@ -137,15 +133,20 @@
     // ソートの実行
     sortArray = [_noteArray sortedArrayUsingDescriptors:sortDescArray];
     
+   
     
-    
+    _noteArray = sortArray.mutableCopy;
 
+    _note2TableView.delegate = self;
+    _note2TableView.dataSource = self;
     
-    //    画面が戻ったときに前回の選択状況を解除する
+    
+    
+    //  画面が戻ったときに前回の選択状況を解除する
     [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
     
 
-    
+
     
     
     }
@@ -155,44 +156,16 @@
 
 
 
-//  単語をスワイプして一覧から削除 **現状：ひとつ削除したら全ての単語が一緒に消える
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-//    
-//        if (editingStyle == UITableViewCellEditingStyleDelete)
-//            
-//        {
-//            
-//            //ユーザーデフォルトを使えるようにする
-//            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//            //_listArray = [defaults objectForKey:@"_listArray"];
-//            //NSMutableDictionary *list = [[NSMutableDictionary alloc]initWithDictionary:_listArray];
-//            //消したいデーターをセレクトナムを使って消す
-//            NSDictionary *delDec =_noteArray[indexPath.row];
-//            [_noteArray removeObject:delDec];
-//            
-//            // NSString *boxname = @"favoritelist";
-//            //グローバ変数を扱うオブジェクト
-//            AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//            
-//            //番号にそった名前を代入
-////            boxname = [_noteArray:app.select_wordlist];
-//            
-//            [defaults setObject:_noteArray forKey:boxname];
-//            [defaults synchronize];
-//    
-//            
-//            
-//        }
-//
-//
-    }
+//  単語をスワイプして一覧から削除 ＊スワイプ機能のみ＊
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    }
+
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _noteArray.count;
+    return _noteArray.count;//note ここだけsortにしても全部きえる
     
 }
 
@@ -209,7 +182,7 @@
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
     
-    cell.textLabel.text = _noteArray[indexPath.row][@"question"];
+    cell.textLabel.text = _noteArray[indexPath.row][@"question"];//ここを変えたらダメ
     return cell;
     
     
@@ -228,9 +201,10 @@ indexPath
     
     dvc.select_wordlist = indexPath.row;//選んだ単語を次の画面へ渡す（押した場所）
     
-    dvc.note2Array = _noteArray;
+    dvc.note2Array = _noteArray;//ここをsortに変えると一覧表示が全部消える
     
     dvc.select_wordNo = self.select_wordNo; //前の画面からもらった番号
+    
     
     
     //   ナビゲーションコントローラーの機能で画面遷移

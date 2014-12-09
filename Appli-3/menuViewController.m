@@ -39,7 +39,19 @@
     _menuTableView.dataSource = self;
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+
+
+    self.categoryExplainText.text = @"Phrasal Verb・・・フレーズ動詞\nSynonym・・・同意語\nAbtonym・・・反意語\nTwo Meaning・・・異なる意味を持つ単語";
+
+    self.categoryExplainText.editable = NO;
+
 }
+
+
+
+
+
 
 
 

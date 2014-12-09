@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"answerViewController";
+    self.title=@"answer";
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
@@ -127,7 +127,7 @@
 -(void) _createnextButton{
     
     //  ボタンの位置を決定
-    _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (200, 550, 100, 10)];
+    _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (130, 400, 270, 10)];
     
     //  ボタンに表示する文字を指定
     [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
@@ -140,7 +140,6 @@
         
     }
     
-    
     //  ボタンの色を指定
     [_nextButton setTitleColor:[UIColor blueColor]forState:UIControlStateNormal];
     
@@ -149,6 +148,8 @@
     
     [_nextButton addTarget:self action:@selector(tapButton)
           forControlEvents:UIControlEventTouchUpInside];
+    
+    
     
     
     

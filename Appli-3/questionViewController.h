@@ -20,7 +20,7 @@
 }
 
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;//使わない
 @property (weak, nonatomic) IBOutlet UILabel *queLabel;
 @property (weak, nonatomic) IBOutlet UITableView *choiseTableView;
 

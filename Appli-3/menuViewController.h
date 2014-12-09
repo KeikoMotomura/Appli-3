@@ -21,4 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
+
+@property (weak, nonatomic) IBOutlet UITextView *categoryExplainText;
+
+
 @end

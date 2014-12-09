@@ -20,8 +20,6 @@
     [super viewDidLoad];
     
     
-    self.title=@"questionViewController";
-    
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
@@ -37,19 +35,19 @@
     //  一番上に問題種類を表示する為のSwitch構文
     switch (self.select_categoryNo) {
         case 0:
-            self.titleLabel.text = @"Phrasal Verb";
+            self.title = @"Phrasal Verb";
             break;
             
         case 1:
-            self.titleLabel.text = @"Synonym";
+            self.title = @"Synonym";
             break;
             
         case 2:
-            self.titleLabel.text = @"Antonym";
+            self.title = @"Antonym";
             break;
             
         case 3:
-            self.titleLabel.text = @"Two Meaning";
+            self.title = @"Two Meaning";
             break;
             
     }

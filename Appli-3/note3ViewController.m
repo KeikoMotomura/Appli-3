@@ -28,7 +28,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-        self.note3Label.text = [NSString stringWithFormat:@"%@", _note2Array[self.select_wordlist][@"question"]];
+    
+    self.note3Label.text = [NSString stringWithFormat:@"%@", _note2Array[self.select_wordlist][@"question"]];
     NSLog(@"選択した単語のNo▶︎%@",_note2Array[self.select_wordlist][@"questionNo"]);
     
     self.select_categoryNo = self.select_wordNo;//前画面からわたって来たwordNoをcategoryNoに代入する
@@ -78,7 +79,8 @@
     int currentNo = [_note2Array[self.select_wordlist][@"questionNo"] intValue];
     
     //　For文で_answerArrayの中身を探してひとつづつtmpQuestionに入れていく
-    for (NSDictionary *tmpQuestion in _answerArray) {//answerArrayから一個づつ取り出します▶︎とりだしたひとつがtmpquestionに入る
+    for (NSDictionary *tmpQuestion in _answerArray) {
+        //answerArrayから一個づつ取り出します▶︎とりだしたひとつがtmpquestionに入る
         NSLog(@"%@",tmpQuestion);
         // 　checkNoに👆で探したtmpQuestionの中のquestionNoだけを持って来て代入する（型を整数型にするため）
         int checkNo = [tmpQuestion[@"questionNo"] intValue];
@@ -111,7 +113,7 @@
     _note2Array = tmp.mutableCopy;//編集可能な形で代入
     
     //    お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
-    for (NSDictionary *note2Array_each in _note2Array) {
+    for (NSDictionary *note2Array_each in _note2Array) {//note2
         id questionNoid = note2Array_each[@"questionNo"];
         
         //     単語帳に登録されていなかったらフラグをNOに変更する
@@ -131,7 +133,7 @@
     //    }
     
 
-
+    _noteArray = _sortArray.mutableCopy;
 
 
 }//ViewWillAppearの終わり
@@ -162,7 +164,7 @@
         
         int currentNo = [_note2Array[self.select_questionNo][@"questionNo"] intValue];
         
-        NSMutableArray *checkArray = _note2Array.mutableCopy;
+        NSMutableArray *checkArray = _note2Array.mutableCopy;//note2
         
         for (NSDictionary *note2Array_each in checkArray) {
             id questionNoid = note2Array_each[@"questionNo"];
@@ -170,36 +172,31 @@
             NSInteger questionNo = [questionNoid intValue];
             
             if (currentNo == questionNo) {
-                [_noteArray removeObject:note2Array_each];
+                [_sortArray removeObject:note2Array_each];//note
                 
                 
-                [myDefaults setObject:_note2Array forKey:@"wordnote"];
+                [myDefaults setObject:_sortArray forKey:@"wordnote"];///////note2
                 
                 //  設定してすぐ保存したいときのメソッド(最後に書く)
                 [myDefaults synchronize];
                 
                 break;
                 
+                
+                
             }
         }
         
         _wordjumpflag = NO;
     
-
-//        ひとつ前の画面に戻る▶︎このやり方だとカテゴリ表示が全てPhrasalVerbになる。(&戻った画面では全部消えてる）
-//                note2ViewController *notevc
-//                = [self.storyboard instantiateViewControllerWithIdentifier:@"note2ViewController"];
-//        
-//                [[self navigationController]
-//                 pushViewController:notevc animated:YES];
-//        
+     
 
 //        このやり方だと戻ったときに削除した単語がそのまま表示されている。画面を開き直せば正しく表示される。
               NSInteger count = self.navigationController.viewControllers.count - 2;
               note3ViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
               [self.navigationController popToViewController:vc animated:YES];
         
-        
+
 }
 
 
@@ -215,6 +212,19 @@
     note3ViewController *notevc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
     
     [[self navigationController] pushViewController:notevc animated:YES];
+    
+    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    //  読み込むプロパティリストのファイルパス（場所）の指定
+    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
+    
+    //  プロパティリストの中身のデータを取得
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+   
+//    次ページの単語を表示させる為に追加してみた（必要かは不明）
+    self.select_wordlist = self.select_wordlist+1;
+    NSLog(@"note3のwoldlistNO▶︎%d", _select_wordlist);
     
     
     
@@ -240,6 +250,7 @@
     
 }
 
+
 - (IBAction)categorybackBtn:(id)sender {
     
     // 次画面を指定して遷移
@@ -251,5 +262,6 @@
     
     
 }
+
 
 @end
