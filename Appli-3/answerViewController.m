@@ -127,7 +127,10 @@
 -(void) _createnextButton{
     
     //  ボタンの位置を決定
-    _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (130, 400, 270, 10)];
+    //if ( 画面サイズの縦の長さ == 568) {
+        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 525, 270, 10)];
+  //  }
+    
     
     //  ボタンに表示する文字を指定
     [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];

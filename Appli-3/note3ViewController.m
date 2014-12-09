@@ -109,8 +109,26 @@
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     
     NSArray *tmp = [myDefaults arrayForKey:@"wordnote"];//単語帳のデータを取り出して
+    //ソート（ichinohe 追加）
+    //ソート対象となるキーを指定した、NSSortDescriptorの生成
+    NSSortDescriptor *sortDescNumber;
     
-    _note2Array = tmp.mutableCopy;//編集可能な形で代入
+    // NSSortDescriptorは配列に入れてNSArrayに渡す
+    NSArray *sortDescArray; //ソートの材料をいれる
+    
+    NSArray *sortArray; //ソート後のもの
+    
+    sortDescNumber = [[NSSortDescriptor alloc] initWithKey:@"wordnote" ascending:YES];
+    
+    
+    sortDescArray = [NSArray arrayWithObjects:sortDescNumber, nil];
+    
+    // ソートの実行
+    sortArray = [tmp sortedArrayUsingDescriptors:sortDescArray];
+    
+    
+    
+    _note2Array = sortArray.mutableCopy;//編集可能な形で代入
     
     //    お気に入りとして指定されているか、チェック後、おきにいりのものだけを残し、他は削除する
     for (NSDictionary *note2Array_each in _note2Array) {//note2
@@ -172,10 +190,10 @@
             NSInteger questionNo = [questionNoid intValue];
             
             if (currentNo == questionNo) {
-                [_sortArray removeObject:note2Array_each];//note
+                [_note2Array removeObject:note2Array_each];//note
                 
                 
-                [myDefaults setObject:_sortArray forKey:@"wordnote"];///////note2
+                [myDefaults setObject:_note2Array forKey:@"wordnote"];///////note2
                 
                 //  設定してすぐ保存したいときのメソッド(最後に書く)
                 [myDefaults synchronize];
@@ -191,10 +209,10 @@
     
      
 
-//        このやり方だと戻ったときに削除した単語がそのまま表示されている。画面を開き直せば正しく表示される。
-              NSInteger count = self.navigationController.viewControllers.count - 2;
-              note3ViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
-              [self.navigationController popToViewController:vc animated:YES];
+        NSInteger count = self.navigationController.viewControllers.count - 2;
+        note3ViewController *vc = [self.navigationController.viewControllers
+        objectAtIndex:count];
+        [self.navigationController popToViewController:vc animated:YES];
         
 
 }

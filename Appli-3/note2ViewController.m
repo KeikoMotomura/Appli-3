@@ -140,7 +140,7 @@
     _note2TableView.delegate = self;
     _note2TableView.dataSource = self;
     
-    
+     [_note2TableView reloadData];
     
     //  画面が戻ったときに前回の選択状況を解除する
     [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
@@ -199,17 +199,18 @@ indexPath
     
     dvc.select_num = indexPath.row;
     
+    dvc.select_questionNo = indexPath.row;
+    
     dvc.select_wordlist = indexPath.row;//選んだ単語を次の画面へ渡す（押した場所）
     
-    dvc.note2Array = _noteArray;//ここをsortに変えると一覧表示が全部消える
+    dvc.note2Array = _noteArray;
     
     dvc.select_wordNo = self.select_wordNo; //前の画面からもらった番号
     
     
     
     //   ナビゲーションコントローラーの機能で画面遷移
-    [[self navigationController]
-     pushViewController:dvc animated:YES];
+    [[self navigationController] pushViewController:dvc animated:YES];
     
     
     
