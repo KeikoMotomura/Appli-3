@@ -176,9 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				72566E9A1A386279000E9ACD /* QuizList.plist */,
-				72ABD0F41A1DD17000D9953E /* images */,
 				72AD41AF1A09FD2C00D2DF1D /* Info.plist */,
 				72AD41B01A09FD2C00D2DF1D /* main.m */,
+				72ABD0F41A1DD17000D9953E /* images */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
