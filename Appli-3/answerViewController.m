@@ -53,7 +53,7 @@
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
     _answerArray = [dic objectForKey:categoryName];
     
-    self.answerTextView.text = [NSString stringWithFormat:@"%@\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description"]];
+    self.answerTextView.text = [NSString stringWithFormat:@"%@\n%@\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description1"],_answerArray[self.select_questionNo][@"description2"]];
     
     
     self.answerTextView.editable = NO;
@@ -126,10 +126,16 @@
 
 -(void) _createnextButton{
     
-    //  ボタンの位置を決定
-    //if ( 画面サイズの縦の長さ == 568) {
+//    //  ボタンの位置を決定
+    if ( self.view.bounds.size.height == 568) {
+        NSLog(@"画面の高さ%f",self.view.bounds.size.height);
         _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 525, 270, 10)];
-  //  }
+    }
+    
+    if ( self.view.bounds.size.height == 480) {
+            NSLog(@"画面の高さ%f",self.view.bounds.size.height);
+            _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 437, 270, 10)];
+    }
     
     
     //  ボタンに表示する文字を指定

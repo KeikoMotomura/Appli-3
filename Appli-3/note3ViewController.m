@@ -87,7 +87,7 @@
         //　　currentNoとcheckNoがイコールだったら　＝　前画面からもらったqueNoと_answerArrayのqueNoがイコールだったら
         if (currentNo == checkNo)
         {
-            self.wordTextView.text = tmpQuestion[@"description"];
+            self.wordTextView.text = tmpQuestion[@"description1"][@"description2"];
             
             break;
         }

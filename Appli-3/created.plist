@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PhrasalVerb</key>
+	<array>
+		<dict>
+			<key>answer</key>
+			<string>2</string>
+			<key>description</key>
+			<string>意味：呼ぶ、お願いする</string>
+			<key>question</key>
+			<string>call in</string>
+			<key>questionNo</key>
+			<string>1001</string>
+			<key>selection0</key>
+			<string>電話をかける</string>
+			<key>selection1</key>
+			<string>立ち寄る</string>
+			<key>selection2</key>
+			<string>呼ぶ</string>
+			<key>selection3</key>
+			<string>通り過ぎる</string>
+		</dict>
+		<dict>
+			<key>answer</key>
+			<string>1</string>
+			<key>description</key>
+			<string>〜をもたらす</string>
+			<key>question</key>
+			<string>bring about</string>
+			<key>questionNo</key>
+			<string>1002</string>
+			<key>selection0</key>
+			<string>頼る</string>
+			<key>selection1</key>
+			<string>〜をもたらす</string>
+			<key>selection2</key>
+			<string>輸送する</string>
+			<key>selection3</key>
+			<string>頼み込む</string>
+		</dict>
+	</array>
+	<key>Synonym</key>
+	<array>
+		<dict>
+			<key>answer</key>
+			<string>2</string>
+			<key>description</key>
+			<string>意味：呼ぶ、お願いする</string>
+			<key>question</key>
+			<string>call in aa</string>
+			<key>questionNo</key>
+			<string>2001</string>
+			<key>selection0</key>
+			<string>電話をかける</string>
+			<key>selection1</key>
+			<string>立ち寄る</string>
+			<key>selection2</key>
+			<string>呼ぶ</string>
+			<key>selection3</key>
+			<string>通り過ぎる</string>
+		</dict>
+		<dict>
+			<key>answer</key>
+			<string>1</string>
+			<key>description</key>
+			<string>〜をもたらす</string>
+			<key>question</key>
+			<string>bring about aa</string>
+			<key>questionNo</key>
+			<string>2002</string>
+			<key>selection0</key>
+			<string>頼る</string>
+			<key>selection1</key>
+			<string>〜をもたらす</string>
+			<key>selection2</key>
+			<string>輸送する</string>
+			<key>selection3</key>
+			<string>頼み込む</string>
+		</dict>
+	</array>
+</dict>
+</plist>
