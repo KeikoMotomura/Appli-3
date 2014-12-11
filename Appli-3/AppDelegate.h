@@ -13,9 +13,12 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
+@property(nonatomic,retain)NSMutableArray *shufflequestion10;//グローバル変数
+
+
 @end
 
 
 
 
-//  ＊＊＊これがオリジナル＊＊＊
+//  ＊＊＊これがオリジナル(元に戻す！！）＊＊＊

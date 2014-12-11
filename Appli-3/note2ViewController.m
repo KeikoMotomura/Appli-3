@@ -53,7 +53,7 @@
             self.title = @"Two Meaning";
             break;
             
-     
+            
     }
     
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
@@ -104,7 +104,7 @@
                 case 3:
                     if (questionNo<4001) {
                         
-                    [_noteArray removeObject:note2Array_each];
+                        [_noteArray removeObject:note2Array_each];
                         
                         
                     }
@@ -113,7 +113,7 @@
                 }
                 
                 
-
+                
                 
         }}
     
@@ -133,23 +133,23 @@
     // ソートの実行
     sortArray = [_noteArray sortedArrayUsingDescriptors:sortDescArray];
     
-   
+    
     
     _noteArray = sortArray.mutableCopy;
-
+    
     _note2TableView.delegate = self;
     _note2TableView.dataSource = self;
     
-     [_note2TableView reloadData];
+    [_note2TableView reloadData];
     
     //  画面が戻ったときに前回の選択状況を解除する
     [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
     
-
-
     
     
-    }
+    
+    
+}
 
 
 

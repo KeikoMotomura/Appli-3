@@ -8,6 +8,7 @@
 
 #import "menuViewController.h"
 #import "questionViewController.h"
+#import "AppDelegate.h"//グローバル変数を使う為に必要
 
 @interface menuViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"問題種類を選択 menuViewController";
+//    self.title=@"問題種類を選択 menuViewController";
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
@@ -32,6 +33,8 @@
     
     _menuArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
     
+    self.categoryExplainText.text = @"Phrasal Verb・・フレーズ動詞\nSynonym・・・同意語\nAntonym・・・反意語\nTwo Meaning・・複数の意味を持つ単語";
+    
     
     
     
@@ -39,19 +42,7 @@
     _menuTableView.dataSource = self;
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-
-
-    self.categoryExplainText.text = @"Phrasal Verb・・・フレーズ動詞\nSynonym・・・同意語\nAbtonym・・・反意語\nTwo Meaning・・・異なる意味を持つ単語";
-
-    self.categoryExplainText.editable = NO;
-
 }
-
-
-
-
-
 
 
 
@@ -104,6 +95,71 @@ indexPath{
     
     
     questionvc.select_categoryNo = indexPath.row;
+    
+    
+    //    ここにシャッフルを描く
+    NSDictionary *categoryTitle =
+    @{@"0":@"PhrasalVerb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"TwoMeaning"};
+    
+    NSLog(@"questionで選んだcategory▶︎%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", questionvc.select_categoryNo]]);
+    
+    NSString *select_title;
+    
+    //  一番上に問題種類を表示する為のSwitch構文
+    switch (questionvc.select_categoryNo) {
+        case 0:
+            select_title = @"Phrasal Verb";
+            break;
+            
+        case 1:
+            select_title = @"Synonym";
+            break;
+            
+        case 2:
+            select_title = @"Antonym";
+            break;
+            
+        case 3:
+            select_title = @"Two Meaning";
+            break;
+            
+    }
+    
+    
+    //＊＊＊＊問題の単語をプロパティリストから表示させる為のコード＊＊＊
+    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
+    NSBundle *bundle = [NSBundle mainBundle];
+    
+    //  読み込むプロパティリストのファイルパス（場所）の指定
+    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
+    
+    //  プロパティリストの中身のデータを取得
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    NSString *categoryName;
+    
+    categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", questionvc.select_categoryNo]];
+    
+    
+    // AppDelegate Object作成（インスタンス化(オブジェクトを作成すること)）
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    app.shufflequestion10 = [[dic objectForKey:categoryName] mutableCopy];
+    
+    
+    
+    
+    
+    for (int i=0; i<[app.shufflequestion10 count]; i++)//0~69にひとつづつ増えて行く
+    {
+        int j = arc4random() % ([app.shufflequestion10 count]-1);//j=    arc4random
+        [app.shufflequestion10 exchangeObjectAtIndex:i withObjectAtIndex:j];
+    }
+    
+    
+    
+    
     
     
     [[self navigationController]

@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"単語帳(説明画面)note3ViewController";
+    self.title=@"Detail";
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
@@ -45,6 +45,13 @@
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     
     NSString *key;
+    
+    
+    //    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //
+    //    _answerArray = app.shufflequestion10;
+    //
+    
     
     
     switch (self.select_categoryNo) {
@@ -75,6 +82,7 @@
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
     _answerArray = [dic objectForKey:key];
     
+    
     //  currentNoに前画面からわたって来た「選択した単語のquestionNo」 を代入（型を整数型にするため）
     int currentNo = [_note2Array[self.select_wordlist][@"questionNo"] intValue];
     
@@ -87,11 +95,9 @@
         //　　currentNoとcheckNoがイコールだったら　＝　前画面からもらったqueNoと_answerArrayのqueNoがイコールだったら
         if (currentNo == checkNo)
         {
-            self.wordTextView.text = tmpQuestion[@"description1"][@"description2"];
-            
+            self.wordTextView.text = [NSString stringWithFormat:@"%@\n\n\n\n%@\n\n%@", tmpQuestion[@"description1"],tmpQuestion[@"description2"],tmpQuestion[@"description3"]];
             break;
         }
-        
     }
     
     self.wordTextView.editable = NO;
@@ -150,10 +156,10 @@
     //        self.nextpageBtn.hidden = YES;　ボタンを非表示にする
     //    }
     
-
+    
     _noteArray = _sortArray.mutableCopy;
-
-
+    
+    
 }//ViewWillAppearの終わり
 
 
@@ -206,18 +212,18 @@
         }
         
         _wordjumpflag = NO;
-    
-     
-
+        
+        
+        
         NSInteger count = self.navigationController.viewControllers.count - 2;
         note3ViewController *vc = [self.navigationController.viewControllers
-        objectAtIndex:count];
+                                   objectAtIndex:count];
         [self.navigationController popToViewController:vc animated:YES];
         
-
-}
-
-
+        
+    }
+    
+    
 }
 
 
@@ -239,8 +245,8 @@
     
     //  プロパティリストの中身のデータを取得
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-   
-//    次ページの単語を表示させる為に追加してみた（必要かは不明）
+    
+    //    次ページの単語を表示させる為に追加してみた（必要かは不明）
     self.select_wordlist = self.select_wordlist+1;
     NSLog(@"note3のwoldlistNO▶︎%d", _select_wordlist);
     

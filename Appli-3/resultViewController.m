@@ -24,42 +24,70 @@
     
     
     
-    
-    
-    
     self.select_correctanswerNo = self.select_correctanswerNo;
     NSLog(@"正解数@%d", self.select_correctanswerNo);
     
     switch (self.select_correctanswerNo) {
         case 0:
-            //        case 1:
-            //        case 2:
-            //        case 3:
-            //        case 4:
-            self.resultLabel.text = @"パンケーキをどうぞ";
+            self.resultLabel.text = @"０問正解";
             self.resultImage.image = [UIImage imageNamed:@"pancake.gif"];
             break;
             
         case 1:
-            //        case 6:
-            //        case 7:
-            self.resultLabel.text = @"カップケーキをどうぞ";
+            self.resultLabel.text = @"１問正解";
             self.resultImage.image = [UIImage imageNamed:@"cupcake.gif"];
             break;
             
         case 2:
-            //        case 9:
-            self.resultLabel.text = @"スペシャルケーキをどうぞ";
+            self.resultLabel.text = @"２問正解";
             self.resultImage.image = [UIImage imageNamed:@"specialcake.gif"];
             break;
             
         case 3:
+            self.resultLabel.text = @"３問正解";
+            self.resultImage.image = [UIImage imageNamed:@"perfectcake.gif"];
+            break;
+            
+        case 4:
+            self.resultLabel.text = @"４問正解";
+            self.resultImage.image = [UIImage imageNamed:@"pancake.gif"];
+            break;
+            
+        case 5:
+            self.resultLabel.text = @"５問正解";
+            self.resultImage.image = [UIImage imageNamed:@"cupcake.gif"];
+            break;
+            
+        case 6:
+            self.resultLabel.text = @"６問正解";
+            self.resultImage.image = [UIImage imageNamed:@"specialcake.gif"];
+            break;
+            
+        case 7:
+            self.resultLabel.text = @"７問正解";
+            self.resultImage.image = [UIImage imageNamed:@"perfectcake.gif"];
+            break;
+            
+        case 8:
+            self.resultLabel.text = @"８問正解";
+            self.resultImage.image = [UIImage imageNamed:@"cupcake.gif"];
+            break;
+            
+        case 9:
+            self.resultLabel.text = @"９問正解";
+            self.resultImage.image = [UIImage imageNamed:@"specialcake.gif"];
+            break;
+            
+        case 10:
             self.resultLabel.text = @"パーフェクト！";
             self.resultImage.image = [UIImage imageNamed:@"perfectcake.gif"];
             break;
             
             
+            
+            
     }
+
     
     
     

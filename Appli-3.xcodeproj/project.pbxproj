@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7223C78F1A12032500DEF780 /* resultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7223C78E1A12032500DEF780 /* resultViewController.m */; };
-		72566E9B1A386279000E9ACD /* QuizList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72566E9A1A386279000E9ACD /* QuizList.plist */; };
-		72ABD1001A1DD17000D9953E /* batu.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0F71A1DD17000D9953E /* batu.png */; };
-		72ABD1011A1DD17000D9953E /* cupcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0F81A1DD17000D9953E /* cupcake.gif */; };
-		72ABD1021A1DD17000D9953E /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0F91A1DD17000D9953E /* maru.png */; };
-		72ABD1031A1DD17000D9953E /* pancake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0FA1A1DD17000D9953E /* pancake.gif */; };
-		72ABD1051A1DD17000D9953E /* perfectcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0FC1A1DD17000D9953E /* perfectcake.gif */; };
-		72ABD1061A1DD17000D9953E /* specialcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72ABD0FD1A1DD17000D9953E /* specialcake.gif */; };
 		72AD41B11A09FD2C00D2DF1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B01A09FD2C00D2DF1D /* main.m */; };
 		72AD41B41A09FD2C00D2DF1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B31A09FD2C00D2DF1D /* AppDelegate.m */; };
 		72AD41B71A09FD2C00D2DF1D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD41B61A09FD2C00D2DF1D /* ViewController.m */; };
@@ -28,6 +21,15 @@
 		72AD42171A0B4C4B00D2DF1D /* note2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD42161A0B4C4B00D2DF1D /* note2ViewController.m */; };
 		72AD421A1A0B551700D2DF1D /* note3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD42191A0B551700D2DF1D /* note3ViewController.m */; };
 		72AD421D1A0BC1DA00D2DF1D /* answerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AD421C1A0BC1DA00D2DF1D /* answerViewController.m */; };
+		72D33B821A39E47800654747 /* QuizList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B811A39E47800654747 /* QuizList.plist */; };
+		72D33B8B1A39E49400654747 /* batu.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B841A39E49400654747 /* batu.png */; };
+		72D33B8C1A39E49400654747 /* cupcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B851A39E49400654747 /* cupcake.gif */; };
+		72D33B8D1A39E49400654747 /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B861A39E49400654747 /* maru.png */; };
+		72D33B8E1A39E49400654747 /* pancake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B871A39E49400654747 /* pancake.gif */; };
+		72D33B8F1A39E49400654747 /* perfect.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B881A39E49400654747 /* perfect.gif */; };
+		72D33B901A39E49400654747 /* perfectcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B891A39E49400654747 /* perfectcake.gif */; };
+		72D33B911A39E49400654747 /* specialcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B8A1A39E49400654747 /* specialcake.gif */; };
+		72D33B931A39E4A700654747 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B921A39E4A700654747 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,15 +45,7 @@
 /* Begin PBXFileReference section */
 		7223C78D1A12032500DEF780 /* resultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultViewController.h; sourceTree = "<group>"; };
 		7223C78E1A12032500DEF780 /* resultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultViewController.m; sourceTree = "<group>"; };
-		72566E9A1A386279000E9ACD /* QuizList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = QuizList.plist; path = ../../../../Desktop/QuizList.plist; sourceTree = "<group>"; };
-		72ABD0F71A1DD17000D9953E /* batu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batu.png; sourceTree = "<group>"; };
-		72ABD0F81A1DD17000D9953E /* cupcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cupcake.gif; sourceTree = "<group>"; };
-		72ABD0F91A1DD17000D9953E /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
-		72ABD0FA1A1DD17000D9953E /* pancake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pancake.gif; sourceTree = "<group>"; };
-		72ABD0FC1A1DD17000D9953E /* perfectcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = perfectcake.gif; sourceTree = "<group>"; };
-		72ABD0FD1A1DD17000D9953E /* specialcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = specialcake.gif; sourceTree = "<group>"; };
 		72AD41AB1A09FD2C00D2DF1D /* Appli-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Appli-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		72AD41AF1A09FD2C00D2DF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72AD41B01A09FD2C00D2DF1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72AD41B21A09FD2C00D2DF1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72AD41B31A09FD2C00D2DF1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +69,15 @@
 		72AD42191A0B551700D2DF1D /* note3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = note3ViewController.m; sourceTree = "<group>"; };
 		72AD421B1A0BC1DA00D2DF1D /* answerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = answerViewController.h; sourceTree = "<group>"; };
 		72AD421C1A0BC1DA00D2DF1D /* answerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = answerViewController.m; sourceTree = "<group>"; };
+		72D33B811A39E47800654747 /* QuizList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = QuizList.plist; path = ../../../../Desktop/QuizList.plist; sourceTree = "<group>"; };
+		72D33B841A39E49400654747 /* batu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batu.png; sourceTree = "<group>"; };
+		72D33B851A39E49400654747 /* cupcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cupcake.gif; sourceTree = "<group>"; };
+		72D33B861A39E49400654747 /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
+		72D33B871A39E49400654747 /* pancake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pancake.gif; sourceTree = "<group>"; };
+		72D33B881A39E49400654747 /* perfect.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = perfect.gif; sourceTree = "<group>"; };
+		72D33B891A39E49400654747 /* perfectcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = perfectcake.gif; sourceTree = "<group>"; };
+		72D33B8A1A39E49400654747 /* specialcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = specialcake.gif; sourceTree = "<group>"; };
+		72D33B921A39E4A700654747 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../../Desktop/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,20 +98,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		72ABD0F41A1DD17000D9953E /* images */ = {
-			isa = PBXGroup;
-			children = (
-				72ABD0F71A1DD17000D9953E /* batu.png */,
-				72ABD0F81A1DD17000D9953E /* cupcake.gif */,
-				72ABD0F91A1DD17000D9953E /* maru.png */,
-				72ABD0FA1A1DD17000D9953E /* pancake.gif */,
-				72ABD0FC1A1DD17000D9953E /* perfectcake.gif */,
-				72ABD0FD1A1DD17000D9953E /* specialcake.gif */,
-			);
-			name = images;
-			path = ../../../../Desktop/images;
-			sourceTree = "<group>";
-		};
 		72ABD1071A271D9000D9953E /* question-answer */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,10 +164,10 @@
 		72AD41AE1A09FD2C00D2DF1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				72566E9A1A386279000E9ACD /* QuizList.plist */,
-				72AD41AF1A09FD2C00D2DF1D /* Info.plist */,
+				72D33B921A39E4A700654747 /* Info.plist */,
+				72D33B831A39E49400654747 /* images */,
+				72D33B811A39E47800654747 /* QuizList.plist */,
 				72AD41B01A09FD2C00D2DF1D /* main.m */,
-				72ABD0F41A1DD17000D9953E /* images */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -198,6 +187,21 @@
 				72AD41C91A09FD2C00D2DF1D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		72D33B831A39E49400654747 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				72D33B841A39E49400654747 /* batu.png */,
+				72D33B851A39E49400654747 /* cupcake.gif */,
+				72D33B861A39E49400654747 /* maru.png */,
+				72D33B871A39E49400654747 /* pancake.gif */,
+				72D33B881A39E49400654747 /* perfect.gif */,
+				72D33B891A39E49400654747 /* perfectcake.gif */,
+				72D33B8A1A39E49400654747 /* specialcake.gif */,
+			);
+			name = images;
+			path = ../../../../Desktop/images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,16 +284,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72ABD1031A1DD17000D9953E /* pancake.gif in Resources */,
+				72D33B911A39E49400654747 /* specialcake.gif in Resources */,
+				72D33B821A39E47800654747 /* QuizList.plist in Resources */,
+				72D33B8C1A39E49400654747 /* cupcake.gif in Resources */,
+				72D33B8E1A39E49400654747 /* pancake.gif in Resources */,
+				72D33B8B1A39E49400654747 /* batu.png in Resources */,
+				72D33B901A39E49400654747 /* perfectcake.gif in Resources */,
 				72AD41BA1A09FD2C00D2DF1D /* Main.storyboard in Resources */,
-				72ABD1011A1DD17000D9953E /* cupcake.gif in Resources */,
-				72ABD1051A1DD17000D9953E /* perfectcake.gif in Resources */,
-				72ABD1061A1DD17000D9953E /* specialcake.gif in Resources */,
-				72ABD1001A1DD17000D9953E /* batu.png in Resources */,
-				72ABD1021A1DD17000D9953E /* maru.png in Resources */,
 				72AD41BF1A09FD2C00D2DF1D /* LaunchScreen.xib in Resources */,
+				72D33B931A39E4A700654747 /* Info.plist in Resources */,
 				72AD41BC1A09FD2C00D2DF1D /* Images.xcassets in Resources */,
-				72566E9B1A386279000E9ACD /* QuizList.plist in Resources */,
+				72D33B8D1A39E49400654747 /* maru.png in Resources */,
+				72D33B8F1A39E49400654747 /* perfect.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

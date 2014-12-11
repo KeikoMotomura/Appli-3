@@ -9,6 +9,7 @@
 
 #import "questionViewController.h"
 #import "answerViewController.h"
+#import "AppDelegate.h"//グローバル変数を使う為に必要
 
 @interface questionViewController ()
 
@@ -19,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    //    self.title=@"questionViewController";
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
@@ -53,30 +56,38 @@
     }
     
     
-    //＊＊＊＊問題の単語をプロパティリストから表示させる為のコード＊＊＊
-    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
-    NSBundle *bundle = [NSBundle mainBundle];
-    
-    //  読み込むプロパティリストのファイルパス（場所）の指定
-    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
-    
-    //  プロパティリストの中身のデータを取得
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    
-    NSString *categoryName;
-    
-    categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
-    
+    //    //＊＊＊＊問題の単語をプロパティリストから表示させる為のコード＊＊＊
+    //    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
+    //    NSBundle *bundle = [NSBundle mainBundle];
+    //
+    //    //  読み込むプロパティリストのファイルパス（場所）の指定
+    //    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
+    //
+    //    //  プロパティリストの中身のデータを取得
+    //    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    //
+    //    NSString *categoryName;
+    //
+    //    categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
+    //
     
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
-    _question = [dic objectForKey:categoryName];
+    //_question = [dic objectForKey:categoryName];
+    
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    _question = app.shufflequestion10;
+    
+    
+    
     
     //    問題の表示
     self.queLabel.text =
     [NSString stringWithFormat:@"%@", _question[self.select_questionNo][@"question"]];
     //＊＊＊ここまで＊＊＊
     
-    _choiseArray = @[ _question[self.select_questionNo][@"selection0"],_question[self.select_questionNo][@"selection1"],_question[self.select_questionNo][@"selection2"],_question[self.select_questionNo][@"selection3"]];
+    _choiseArray = @[ _question[self.select_questionNo][@"selection1"],_question[self.select_questionNo][@"selection2"],_question[self.select_questionNo][@"selection3"],_question[self.select_questionNo][@"selection4"]];
     
     
     

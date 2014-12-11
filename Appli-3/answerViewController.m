@@ -11,6 +11,7 @@
 #import "menuViewController.h"
 #import "questionViewController.h"
 #import "resultViewController.h"
+#import "AppDelegate.h"//グローバル変数を使う為に必要
 
 
 @interface answerViewController ()
@@ -22,38 +23,47 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"answer";
+    //    self.title=@"answerViewController";
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     
     
-    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
-    NSBundle *bundle = [NSBundle mainBundle];
-    
-    //  読み込むプロパティリストのファイルパス（場所）の指定
-    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
-    
-    //  プロパティリストの中身のデータを取得
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    
-    NSString *categoryName;
-    
-    NSDictionary *categoryTitle =
-    @{@"0":@"PhrasalVerb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"TwoMeaning"};
-    
-    NSLog(@"%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]]);
-    
-    categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
-    
+    //    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
+    //    NSBundle *bundle = [NSBundle mainBundle];
+    //
+    //    //  読み込むプロパティリストのファイルパス（場所）の指定
+    //    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
+    //
+    //    //  プロパティリストの中身のデータを取得
+    //    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    //
+    //    NSString *categoryName;
+    //
+    //    NSDictionary *categoryTitle =
+    //    @{@"0":@"PhrasalVerb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"TwoMeaning"};
+    //
+    //    NSLog(@"%@",[categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]]);
+    //
+    //    categoryName = [categoryTitle objectForKey:[NSString stringWithFormat:@"%d", self.select_categoryNo]];
+    //
     
     
     
     //  取得できた配列のデータをメンバ変数に代入(リストのPrefectureListからデータを取ってきます▶︎これをPListに代入）
-    _answerArray = [dic objectForKey:categoryName];
+    //    _answerArray = [dic objectForKey:categoryName];
     
-    self.answerTextView.text = [NSString stringWithFormat:@"%@\n%@\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description1"],_answerArray[self.select_questionNo][@"description2"]];
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    _answerArray = app.shufflequestion10;
+    
+    
+    
+    
+    
+    
+    self.answerTextView.text = [NSString stringWithFormat:@"%@\n\n\n\n%@\n\n%@\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description1"],_answerArray[self.select_questionNo][@"description2"],_answerArray[self.select_questionNo][@"description3"]];
     
     
     self.answerTextView.editable = NO;
@@ -124,30 +134,27 @@
 
 
 
+-(void)viewWillAppear:(BOOL)animated{
+}
+
+
+
 -(void) _createnextButton{
     
-//    //  ボタンの位置を決定
-    if ( self.view.bounds.size.height == 568) {
-        NSLog(@"画面の高さ%f",self.view.bounds.size.height);
-        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 525, 270, 10)];
-    }
-    
-    if ( self.view.bounds.size.height == 480) {
-            NSLog(@"画面の高さ%f",self.view.bounds.size.height);
-            _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 437, 270, 10)];
-    }
-    
+    //  ボタンの位置を決定
+    _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (200, 550, 100, 10)];
     
     //  ボタンに表示する文字を指定
     [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
     
-    if (self.select_questionNo == 2) {
-        NSLog(@"問題カウント数３になりました");
+    if (self.select_questionNo == 9) {
+        NSLog(@"問題カウント数10になりました");
         
         //  ボタンに表示する文字を指定
         [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
         
     }
+    
     
     //  ボタンの色を指定
     [_nextButton setTitleColor:[UIColor blueColor]forState:UIControlStateNormal];
@@ -161,24 +168,26 @@
     
     
     
-    
-    
 }
 
 
-//   「次の問題へ」ボタンが押されたら次のquestion画面が開く
+//   ボタンをタップしたときに反応
 -(void)tapButton{
+    
+    //  「次の問題へ」ボタンが押されたら次のquestion画面が開く
+    NSLog(@"次の問題へボタンが押されました");
+    
     
     questionViewController *qvc = [self.storyboard instantiateViewControllerWithIdentifier:@"questionViewController"];
     
-    // 次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
+    //        次の問題へ行くときに問題数を数える（１ずつ足していく）ために書いた。
     qvc.select_questionNo = self.select_questionNo+1;
     NSLog(@"select_questionNoの値→%d" ,qvc.select_questionNo);
     
     qvc.select_correctanswerNo = self.select_correctanswerNo;
     
     
-    if (self.select_questionNo == 2) {
+    if (self.select_questionNo == 9) {
         
         // 次画面を指定して遷移
         resultViewController *kvc = [self.storyboard instantiateViewControllerWithIdentifier:@"resultViewController"];
@@ -253,7 +262,7 @@
         //    保存したデータを取り出す　元々保存している単語をまず取り出す。
         NSArray *wordnote = [myDefaults arrayForKey:@"wordnote"];
         
-        NSLog(@"wordnote=%@",wordnote);
+        NSLog(@"wordnote=%@",wordnote); //questionとquestionNoを全部持って来ている（callinがいくつもある TODOひとつにしたい）
         
         //    wordnoteがnilだったら初期化する（これを書かないと０の掛け算状態でいつまでも単語を追加しても表示されないまま）
         if (wordnote == nil) {
@@ -263,28 +272,29 @@
         //   Arrayを書き換え可能な配列に書き換える
         NSMutableArray *changedword = wordnote.mutableCopy;
         
-        // 保存した日付をとる
+        //      保存した日付をとる
         today = [NSDate date];
         
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         df.dateFormat = @"yyyy/MM/dd HH:mm:ss";
         
-        // 時刻、日付を書式の通りに変換する
+        //時刻、日付を書式の通りに変換する
         datestr = [df stringFromDate:today];
         
-        NSLog(@"datestrの中身▶︎%@",datestr);
+        //コンソールに出力
+        NSLog(@"%@",datestr);
         
         NSDictionary *savedquestion = @{@"questionNo":_answerArray[self.select_questionNo][@"questionNo"],
                                         @"question":_answerArray[self.select_questionNo][@"question"],
-                                        @"created":datestr};
-    
-        // リストを追加
+                                        @"created":datestr};//追加した日時を保存する
+        
+        //  リストを追加
         [changedword addObject:savedquestion];
         
-        // ひとつリストを追加したあとにリスト全部を表示
+        //  ひとつリストを追加したあとにリスト全部を表示
         [myDefaults setObject:changedword forKey:@"wordnote"];
         
-        // 設定してすぐ保存したいときのメソッド(最後に書く)
+        //   設定してすぐ保存したいときのメソッド(最後に書く)
         [myDefaults synchronize];
         
         
@@ -294,8 +304,10 @@
         [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
         
         
-  
+        
     }
+    
+    
     
     
 }
@@ -310,6 +322,7 @@
 //問題種類へ戻るボタンが押されたら反応
 - (IBAction)menubackBtn:(id)sender {
     
+    NSLog(@"問題種類へ戻るボタンがタップされました");
     
     // 次画面を指定して遷移
     menuViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
