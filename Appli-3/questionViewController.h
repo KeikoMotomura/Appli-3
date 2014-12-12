@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+static NSString * const TableViewCustomCellIdentifier = @"customcell";
+
 
 @interface questionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
@@ -19,8 +21,9 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *explainLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;//使わない
+
 @property (weak, nonatomic) IBOutlet UILabel *queLabel;
 @property (weak, nonatomic) IBOutlet UITableView *choiseTableView;
 

@@ -26,8 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *note3Label;
 @property (weak, nonatomic) IBOutlet UITextView *wordTextView;
 
-@property (weak, nonatomic) IBOutlet UIButton *nextpageBtn;
-- (IBAction)nextpageBtn:(id)sender;
+//@property (weak, nonatomic) IBOutlet UIButton *nextpageBtn;
+//- (IBAction)nextpageBtn:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
 - (IBAction)topbackBtn:(id)sender;

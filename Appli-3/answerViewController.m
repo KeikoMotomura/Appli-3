@@ -142,7 +142,15 @@
 -(void) _createnextButton{
     
     //  ボタンの位置を決定
-    _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (200, 550, 100, 10)];
+    if ( self.view.bounds.size.height == 568) {
+        NSLog(@"画面の高さ%f",self.view.bounds.size.height);
+        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 525, 270, 10)];
+    }
+    
+    if ( self.view.bounds.size.height == 480) {
+        NSLog(@"画面の高さ%f",self.view.bounds.size.height);
+        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 437, 270, 10)];
+    }
     
     //  ボタンに表示する文字を指定
     [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];

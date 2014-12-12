@@ -24,7 +24,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
-    
+   
     
     
     
@@ -58,6 +58,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _menuArray.count;
+
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
@@ -79,8 +81,12 @@
     return cell;
     
     //    cell.contentView.backgroundColor = [UIColor redColor]; 背景色を変更したかったがうまく行かなかった。
-    
+   
 }
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    cell.backgroundView.backgroundColor = [UIColor redColor];
+//}
 
 
 
@@ -166,13 +172,6 @@ indexPath{
      pushViewController:questionvc animated:YES];
     
     
-    
-    //    もしかして使っていないかもしれないので、他に影響がなさそうだったら後で消す。
-    //    NSDictionary *wordTitle =
-    //    @{@"0":@"Phrasal verb",@"1":@"Synonym",@"2":@"Antonym",@"3":@"Two Meaning"};
-    //
-    //    //    NSLog(@"%@",[wordTitle objectForKey:@"3"]);
-    //
     
     
 }
