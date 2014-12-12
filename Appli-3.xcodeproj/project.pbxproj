@@ -29,7 +29,10 @@
 		72D33B8F1A39E49400654747 /* perfect.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B881A39E49400654747 /* perfect.gif */; };
 		72D33B901A39E49400654747 /* perfectcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B891A39E49400654747 /* perfectcake.gif */; };
 		72D33B911A39E49400654747 /* specialcake.gif in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B8A1A39E49400654747 /* specialcake.gif */; };
-		72D33B931A39E4A700654747 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B921A39E4A700654747 /* Info.plist */; };
+		72D33B951A3A735400654747 /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B941A3A735400654747 /* TableViewCustomCell.xib */; };
+		72D33B991A3A742F00654747 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D33B981A3A742F00654747 /* CustomTableViewCell.m */; };
+		72D33B9B1A3ABE5000654747 /* 1correct.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B9A1A3ABE5000654747 /* 1correct.jpg */; };
+		72D33B9D1A3ABECE00654747 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B9C1A3ABECE00654747 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +80,11 @@
 		72D33B881A39E49400654747 /* perfect.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = perfect.gif; sourceTree = "<group>"; };
 		72D33B891A39E49400654747 /* perfectcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = perfectcake.gif; sourceTree = "<group>"; };
 		72D33B8A1A39E49400654747 /* specialcake.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = specialcake.gif; sourceTree = "<group>"; };
-		72D33B921A39E4A700654747 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../../Desktop/Info.plist; sourceTree = "<group>"; };
+		72D33B941A3A735400654747 /* TableViewCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCustomCell.xib; sourceTree = "<group>"; };
+		72D33B971A3A742F00654747 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		72D33B981A3A742F00654747 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		72D33B9A1A3ABE5000654747 /* 1correct.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1correct.jpg; path = ../../../../Downloads/1correct.jpg; sourceTree = "<group>"; };
+		72D33B9C1A3ABECE00654747 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +158,9 @@
 				72AD41B61A09FD2C00D2DF1D /* ViewController.m */,
 				72AD41D71A0A5E5100D2DF1D /* menuViewController.h */,
 				72AD41D81A0A5E5100D2DF1D /* menuViewController.m */,
+				72D33B941A3A735400654747 /* TableViewCustomCell.xib */,
+				72D33B971A3A742F00654747 /* CustomTableViewCell.h */,
+				72D33B981A3A742F00654747 /* CustomTableViewCell.m */,
 				72ABD1071A271D9000D9953E /* question-answer */,
 				72ABD1081A271DBE00D9953E /* wordNote */,
 				72AD41B81A09FD2C00D2DF1D /* Main.storyboard */,
@@ -164,7 +174,8 @@
 		72AD41AE1A09FD2C00D2DF1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				72D33B921A39E4A700654747 /* Info.plist */,
+				72D33B9C1A3ABECE00654747 /* Info.plist */,
+				72D33B9A1A3ABE5000654747 /* 1correct.jpg */,
 				72D33B831A39E49400654747 /* images */,
 				72D33B811A39E47800654747 /* QuizList.plist */,
 				72AD41B01A09FD2C00D2DF1D /* main.m */,
@@ -292,9 +303,11 @@
 				72D33B901A39E49400654747 /* perfectcake.gif in Resources */,
 				72AD41BA1A09FD2C00D2DF1D /* Main.storyboard in Resources */,
 				72AD41BF1A09FD2C00D2DF1D /* LaunchScreen.xib in Resources */,
-				72D33B931A39E4A700654747 /* Info.plist in Resources */,
+				72D33B9D1A3ABECE00654747 /* Info.plist in Resources */,
 				72AD41BC1A09FD2C00D2DF1D /* Images.xcassets in Resources */,
+				72D33B9B1A3ABE5000654747 /* 1correct.jpg in Resources */,
 				72D33B8D1A39E49400654747 /* maru.png in Resources */,
+				72D33B951A3A735400654747 /* TableViewCustomCell.xib in Resources */,
 				72D33B8F1A39E49400654747 /* perfect.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +331,7 @@
 				72AD41B41A09FD2C00D2DF1D /* AppDelegate.m in Sources */,
 				72AD41B11A09FD2C00D2DF1D /* main.m in Sources */,
 				72AD421D1A0BC1DA00D2DF1D /* answerViewController.m in Sources */,
+				72D33B991A3A742F00654747 /* CustomTableViewCell.m in Sources */,
 				72AD41D91A0A5E5100D2DF1D /* menuViewController.m in Sources */,
 				72AD42141A0B449200D2DF1D /* noteViewController.m in Sources */,
 				7223C78F1A12032500DEF780 /* resultViewController.m in Sources */,

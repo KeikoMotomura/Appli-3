@@ -108,7 +108,7 @@
     [NSString stringWithFormat:@"%@", _question[self.select_questionNo][@"question"]];
     //＊＊＊ここまで＊＊＊
     
-    _choiseArray = @[ _question[self.select_questionNo][@"selection1"],_question[self.select_questionNo][@"selection2"],_question[self.select_questionNo][@"selection3"],_question[self.select_questionNo][@"selection4"]];
+    _choiseArray = @[ _question[self.select_questionNo][@"selection0"],_question[self.select_questionNo][@"selection1"],_question[self.select_questionNo][@"selection2"],_question[self.select_questionNo][@"selection3"]];
     
     
     

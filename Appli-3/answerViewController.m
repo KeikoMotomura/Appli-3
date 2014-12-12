@@ -63,7 +63,7 @@
     
     
     
-    self.answerTextView.text = [NSString stringWithFormat:@"%@\n\n\n\n%@\n\n%@\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description1"],_answerArray[self.select_questionNo][@"description2"],_answerArray[self.select_questionNo][@"description3"]];
+    self.answerTextView.text = [NSString stringWithFormat:@"%@\n\n\n\n%@\n\n%@\n\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description1"],_answerArray[self.select_questionNo][@"description2"],_answerArray[self.select_questionNo][@"description3"]];
     
     
     self.answerTextView.editable = NO;
