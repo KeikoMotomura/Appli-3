@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const TableViewCustomCellIdentifier = @"TableViewCustomCell";
+
 @interface menuViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
 
 {
     

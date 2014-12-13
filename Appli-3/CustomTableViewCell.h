@@ -11,8 +11,8 @@
 
 @interface CustomTableViewCell : UIViewController
 
-//static NSString * const TableViewCustomCellIdentifier = @"TableViewCustomCell";
-
 + (CGFloat)rowHeight;
+
+
 
 @end

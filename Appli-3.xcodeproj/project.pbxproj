@@ -33,6 +33,11 @@
 		72D33B991A3A742F00654747 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D33B981A3A742F00654747 /* CustomTableViewCell.m */; };
 		72D33B9B1A3ABE5000654747 /* 1correct.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B9A1A3ABE5000654747 /* 1correct.jpg */; };
 		72D33B9D1A3ABECE00654747 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B9C1A3ABECE00654747 /* Info.plist */; };
+		72D33B9F1A3C549700654747 /* label0.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33B9E1A3C549700654747 /* label0.png */; };
+		72D33BA51A3C64B500654747 /* Antonym.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BA11A3C64B500654747 /* Antonym.png */; };
+		72D33BA61A3C64B500654747 /* PhrasalVerb.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BA21A3C64B500654747 /* PhrasalVerb.png */; };
+		72D33BA71A3C64B500654747 /* Synonym.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BA31A3C64B500654747 /* Synonym.png */; };
+		72D33BA81A3C64B500654747 /* TwoMeaning.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BA41A3C64B500654747 /* TwoMeaning.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +90,11 @@
 		72D33B981A3A742F00654747 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		72D33B9A1A3ABE5000654747 /* 1correct.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1correct.jpg; path = ../../../../Downloads/1correct.jpg; sourceTree = "<group>"; };
 		72D33B9C1A3ABECE00654747 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72D33B9E1A3C549700654747 /* label0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = label0.png; path = ../../../PhotoShop201410/label0.png; sourceTree = "<group>"; };
+		72D33BA11A3C64B500654747 /* Antonym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Antonym.png; sourceTree = "<group>"; };
+		72D33BA21A3C64B500654747 /* PhrasalVerb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhrasalVerb.png; sourceTree = "<group>"; };
+		72D33BA31A3C64B500654747 /* Synonym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Synonym.png; sourceTree = "<group>"; };
+		72D33BA41A3C64B500654747 /* TwoMeaning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoMeaning.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +184,8 @@
 		72AD41AE1A09FD2C00D2DF1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				72D33BA01A3C64B500654747 /* categoryimage */,
+				72D33B9E1A3C549700654747 /* label0.png */,
 				72D33B9C1A3ABECE00654747 /* Info.plist */,
 				72D33B9A1A3ABE5000654747 /* 1correct.jpg */,
 				72D33B831A39E49400654747 /* images */,
@@ -213,6 +225,17 @@
 			);
 			name = images;
 			path = ../../../../Desktop/images;
+			sourceTree = "<group>";
+		};
+		72D33BA01A3C64B500654747 /* categoryimage */ = {
+			isa = PBXGroup;
+			children = (
+				72D33BA11A3C64B500654747 /* Antonym.png */,
+				72D33BA21A3C64B500654747 /* PhrasalVerb.png */,
+				72D33BA31A3C64B500654747 /* Synonym.png */,
+				72D33BA41A3C64B500654747 /* TwoMeaning.png */,
+			);
+			path = categoryimage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,11 +318,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D33BA61A3C64B500654747 /* PhrasalVerb.png in Resources */,
 				72D33B911A39E49400654747 /* specialcake.gif in Resources */,
 				72D33B821A39E47800654747 /* QuizList.plist in Resources */,
 				72D33B8C1A39E49400654747 /* cupcake.gif in Resources */,
 				72D33B8E1A39E49400654747 /* pancake.gif in Resources */,
+				72D33BA51A3C64B500654747 /* Antonym.png in Resources */,
 				72D33B8B1A39E49400654747 /* batu.png in Resources */,
+				72D33BA71A3C64B500654747 /* Synonym.png in Resources */,
 				72D33B901A39E49400654747 /* perfectcake.gif in Resources */,
 				72AD41BA1A09FD2C00D2DF1D /* Main.storyboard in Resources */,
 				72AD41BF1A09FD2C00D2DF1D /* LaunchScreen.xib in Resources */,
@@ -307,8 +333,10 @@
 				72AD41BC1A09FD2C00D2DF1D /* Images.xcassets in Resources */,
 				72D33B9B1A3ABE5000654747 /* 1correct.jpg in Resources */,
 				72D33B8D1A39E49400654747 /* maru.png in Resources */,
+				72D33B9F1A3C549700654747 /* label0.png in Resources */,
 				72D33B951A3A735400654747 /* TableViewCustomCell.xib in Resources */,
 				72D33B8F1A39E49400654747 /* perfect.gif in Resources */,
+				72D33BA81A3C64B500654747 /* TwoMeaning.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

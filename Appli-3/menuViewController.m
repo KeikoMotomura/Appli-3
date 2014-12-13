@@ -9,6 +9,7 @@
 #import "menuViewController.h"
 #import "questionViewController.h"
 #import "AppDelegate.h"//グローバル変数を使う為に必要
+#import "CustomTableViewCell.h"
 
 @interface menuViewController ()
 
@@ -31,7 +32,8 @@
     self.titleLabel.text = @"種類を選択して下さい";
     
     
-    _menuArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
+    _menuArray = @[@"PhrasalVerb.png",@"Synonym.png",@"Antonym.png",@"TwoMeaning.png"];
+    
     
     self.categoryExplainText.text = @"Phrasal Verb・・フレーズ動詞\nSynonym・・・同意語\nAntonym・・・反意語\nTwo Meaning・・複数の意味を持つ単語";
     
@@ -42,9 +44,29 @@
     _menuTableView.dataSource = self;
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+
+//＊＊＊＊＊＊＊＊カスタムセルで追加   
+    // デリゲートメソッドをこのクラスで実装する
+    self.menuTableView.delegate = self;
+    self.menuTableView.dataSource = self;
+    
+    
+    // カスタマイズしたセルをテーブルビューにセット
+    UINib *nib = [UINib nibWithNibName:TableViewCustomCellIdentifier bundle:nil];
+    [self.menuTableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+    
 }
 
 
+#pragma mark - UITableViewDelegate methods
+    
+    - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+    {
+        return [CustomTableViewCell rowHeight];
+    }
+
+ 
 
 
 //  画面を戻したときに前回選択した行の選択状況を解除する
@@ -77,16 +99,17 @@
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = _menuArray[indexPath.row];
+    
+    //cell.textLabel.text = _menuArray[indexPath.row];
+    
+    cell.imageView.image = [UIImage imageNamed:_menuArray[indexPath.row]];
     return cell;
     
-    //    cell.contentView.backgroundColor = [UIColor redColor]; 背景色を変更したかったがうまく行かなかった。
+//    self.coffeeImage.image = [UIImage imageNamed:_menuArray[indexPath.row];
    
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    cell.backgroundView.backgroundColor = [UIColor redColor];
-//}
+
 
 
 
