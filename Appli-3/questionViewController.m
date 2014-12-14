@@ -10,6 +10,7 @@
 #import "questionViewController.h"
 #import "answerViewController.h"
 #import "AppDelegate.h"//グローバル変数を使う為に必要
+#import "CustomTableViewCell2.h"
 
 @interface questionViewController ()
 
@@ -23,7 +24,7 @@
     
     //    self.title=@"questionViewController";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
        
@@ -81,6 +82,8 @@
     }
 
     
+    self.queImageView.image = [UIImage imageNamed:@"queLabel.png"];
+
     
     //    //＊＊＊＊問題の単語をプロパティリストから表示させる為のコード＊＊＊
     //    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
@@ -106,12 +109,28 @@
     _question = app.shufflequestion10;
     
     
+//＊＊＊＊＊＊＊＊カスタムセルで追加
+    // デリゲートメソッドをこのクラスで実装する
+    self.choiseTableView.delegate = self;
+    self.choiseTableView.dataSource = self;
     
     
-    //    問題の表示
+    // カスタマイズしたセルをテーブルビューにセット
+    UINib *nib2 = [UINib nibWithNibName:TableViewCustomCellIdentifier2 bundle:nil];
+    [self.choiseTableView registerNib:nib2 forCellReuseIdentifier:@"Cell"];
+    
+
+
+//    問題の表示
     self.queLabel.text =
     [NSString stringWithFormat:@"%@", _question[self.select_questionNo][@"question"]];
+    
+    self.queLabel.textAlignment = UITextAlignmentCenter;
+    
+    
     //＊＊＊ここまで＊＊＊
+    
+    
     
     _choiseArray = @[ _question[self.select_questionNo][@"selection0"],_question[self.select_questionNo][@"selection1"],_question[self.select_questionNo][@"selection2"],_question[self.select_questionNo][@"selection3"]];
     
@@ -124,7 +143,21 @@
     
     
     
+
+    
 }
+
+
+#pragma mark - UITableViewDelegate methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [CustomTableViewCell2 rowHeight];
+}
+
+
+
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _choiseArray.count;
@@ -146,6 +179,10 @@
     }
     
     cell.textLabel.text = _choiseArray[indexPath.row];
+    cell.textLabel.textAlignment = UITextAlignmentCenter;
+
+    cell.imageView.image = [UIImage imageNamed:@"quechoise.png"];
+    
     return cell;
     
     

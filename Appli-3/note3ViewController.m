@@ -20,9 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"Detail";
+//    self.title=@"Detail";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     self.kokuban2.image = [UIImage imageNamed:@"kokuban2.JPG"];

@@ -22,7 +22,7 @@
     
 //    self.title=@"問題種類を選択 menuViewController";
     
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
       
     
@@ -66,7 +66,7 @@
         return [CustomTableViewCell rowHeight];
     }
 
- 
+
 
 
 //  画面を戻したときに前回選択した行の選択状況を解除する

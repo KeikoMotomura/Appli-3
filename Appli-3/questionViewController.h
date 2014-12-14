@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const TableViewCustomCellIdentifier2 = @"TableViewCustomCell2";
+
 
 @interface questionViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-
 
 {
     NSArray *_choiseArray;
@@ -20,11 +21,16 @@
     
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *explainLabel;
+
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *explainImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *queLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *queImageView;
+
+
 @property (weak, nonatomic) IBOutlet UITableView *choiseTableView;
 
 

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
+static NSString * const TableViewCustomCellIdentifier3 = @"TableViewCustomCell3";
+
 @interface noteViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 
