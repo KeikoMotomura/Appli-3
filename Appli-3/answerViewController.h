@@ -52,6 +52,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
 @property (weak, nonatomic) IBOutlet UIButton *wordjumpBtn;
 
+@property (weak, nonatomic) IBOutlet UIImageView *kokuban;
 
 - (IBAction)menubackBtn:(id)sender;
 

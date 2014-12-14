@@ -28,6 +28,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
+    self.kokuban.image = [UIImage imageNamed:@"kokuban.JPG"];
     
     
     //    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
@@ -63,7 +64,7 @@
     
     
     
-    self.answerTextView.text = [NSString stringWithFormat:@"%@\n\n\n\n%@\n\n%@\n\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description1"],_answerArray[self.select_questionNo][@"description2"],_answerArray[self.select_questionNo][@"description3"]];
+    self.answerTextView.text = [NSString stringWithFormat:@"%@\n\n%@\n\n%@\n\n%@",_answerArray[self.select_questionNo][@"question"],_answerArray[self.select_questionNo][@"description1"],_answerArray[self.select_questionNo][@"description2"],_answerArray[self.select_questionNo][@"description3"]];
     
     
     self.answerTextView.editable = NO;
@@ -77,11 +78,11 @@
     
     if ( self.select_selectionNo == [_answerArray[self.select_questionNo][@"answer"] intValue])
         
-    {   self.answerImageView.image = [UIImage imageNamed:@"maru.png"];
+    {   self.answerImageView.image = [UIImage imageNamed:@"correct.png"];
         self.select_correctanswerNo +=1; //+=1 で１プラスの意味になる
         
     } else {
-        self.answerImageView.image = [UIImage imageNamed:@"batu.png"];
+        self.answerImageView.image = [UIImage imageNamed:@"incorrect.png"];
         
     }
     

@@ -29,6 +29,9 @@
 //@property (weak, nonatomic) IBOutlet UIButton *nextpageBtn;
 //- (IBAction)nextpageBtn:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *kokuban2;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *topbackBtn;
 - (IBAction)topbackBtn:(id)sender;
 

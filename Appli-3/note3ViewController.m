@@ -25,11 +25,15 @@
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
+    self.kokuban2.image = [UIImage imageNamed:@"kokuban2.JPG"];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     
     self.note3Label.text = [NSString stringWithFormat:@"%@", _note2Array[self.select_wordlist][@"question"]];
+    self.note3Label.textColor = [UIColor whiteColor];
+    
     NSLog(@"選択した単語のNo▶︎%@",_note2Array[self.select_wordlist][@"questionNo"]);
     
     self.select_categoryNo = self.select_wordNo;//前画面からわたって来たwordNoをcategoryNoに代入する
@@ -95,7 +99,7 @@
         //　　currentNoとcheckNoがイコールだったら　＝　前画面からもらったqueNoと_answerArrayのqueNoがイコールだったら
         if (currentNo == checkNo)
         {
-            self.wordTextView.text = [NSString stringWithFormat:@"%@\n\n\n\n%@\n\n%@", tmpQuestion[@"description1"],tmpQuestion[@"description2"],tmpQuestion[@"description3"]];
+            self.wordTextView.text = [NSString stringWithFormat:@"%@\n\n\n%@\n\n%@", tmpQuestion[@"description1"],tmpQuestion[@"description2"],tmpQuestion[@"description3"]];
             break;
         }
     }
