@@ -20,12 +20,13 @@ static NSString * const TableViewCustomCellIdentifier = @"TableViewCustomCell";
 
 
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *titleLabelImageView;
 
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
 
-@property (weak, nonatomic) IBOutlet UITextView *categoryExplainText;
+@property (weak, nonatomic) IBOutlet UIImageView *categorydescImageView;
 
 
 @end

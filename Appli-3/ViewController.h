@@ -10,12 +10,12 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *startBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *wordBtn;
 
+@property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
 
 @property(nonatomic,assign) int select_num;
 

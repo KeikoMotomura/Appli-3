@@ -59,19 +59,23 @@
     
     switch (self.select_categoryNo) {
         case 0:
-            self.explainLabel.text = @"正しい日本語訳はどれでしょう？";
+            self.explainImageView.image = [UIImage imageNamed:@"quediscP.png"];
+
             break;
             
         case 1:
-            self.explainLabel.text = @"同意語はどれでしょう？";
+            self.explainImageView.image = [UIImage imageNamed:@"quediscS.png"];
+
             break;
             
         case 2:
-            self.explainLabel.text = @"反意語はどれでしょう？";
+            self.explainImageView.image = [UIImage imageNamed:@"quediscA.png"];
+
             break;
             
         case 3:
-            self.explainLabel.text = @"正しい訳のペアはどれでしょう？";
+            self.explainImageView.image = [UIImage imageNamed:@"quediscT.png"];
+
             break;
             
     }

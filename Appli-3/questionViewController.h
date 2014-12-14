@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *explainLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *explainImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *queLabel;
 @property (weak, nonatomic) IBOutlet UITableView *choiseTableView;

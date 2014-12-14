@@ -27,16 +27,15 @@
       
     
     
-//    self.titleLabel.text = @"種類を選択して下さい";
-    [self.titleLabel setImage:[UIImage imageNamed:@"categoryLabel.png"]
-                   forState:UIControlStateNormal];
 
+        self.titleLabelImageView.image = [UIImage imageNamed:@"categoryLabel.png"];
     
     
     _menuArray = @[@"PhrasalVerb.png",@"Synonym.png",@"Antonym.png",@"TwoMeaning.png"];
     
     
-    self.categoryExplainText.text = @"Phrasal Verb・・フレーズ動詞\nSynonym・・・同意語\nAntonym・・・反意語\nTwo Meaning・・複数の意味を持つ単語";
+
+    self.categorydescImageView.image = [UIImage imageNamed:@"categorydesc.png"];
     
     
     
