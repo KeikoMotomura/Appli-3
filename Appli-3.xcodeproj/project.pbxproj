@@ -38,6 +38,17 @@
 		72D33BA61A3C64B500654747 /* PhrasalVerb.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BA21A3C64B500654747 /* PhrasalVerb.png */; };
 		72D33BA71A3C64B500654747 /* Synonym.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BA31A3C64B500654747 /* Synonym.png */; };
 		72D33BA81A3C64B500654747 /* TwoMeaning.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BA41A3C64B500654747 /* TwoMeaning.png */; };
+		72D33BAE1A3D992400654747 /* startBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BAD1A3D992400654747 /* startBtn.png */; };
+		72D33BB01A3D999B00654747 /* pinkcupcake.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BAF1A3D999B00654747 /* pinkcupcake.PNG */; };
+		72D33BB21A3D9B4F00654747 /* wordnoteBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BB11A3D9B4F00654747 /* wordnoteBtn.png */; };
+		72D33BBA1A3DA4EA00654747 /* menubackBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BB41A3DA4EA00654747 /* menubackBtn.png */; };
+		72D33BBB1A3DA4EA00654747 /* nextpageBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BB51A3DA4EA00654747 /* nextpageBtn.png */; };
+		72D33BBC1A3DA4EA00654747 /* resultBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BB61A3DA4EA00654747 /* resultBtn.png */; };
+		72D33BBD1A3DA4EA00654747 /* topbacBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BB71A3DA4EA00654747 /* topbacBtn.png */; };
+		72D33BBE1A3DA4EA00654747 /* wordaddBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BB81A3DA4EA00654747 /* wordaddBtn.png */; };
+		72D33BBF1A3DA4EA00654747 /* worderaceBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BB91A3DA4EA00654747 /* worderaceBtn.png */; };
+		72D33BC11A3DB39C00654747 /* background5.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BC01A3DB39C00654747 /* background5.png */; };
+		72D33BC31A3DC83300654747 /* categoryLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = 72D33BC21A3DC83300654747 /* categoryLabel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +106,17 @@
 		72D33BA21A3C64B500654747 /* PhrasalVerb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhrasalVerb.png; sourceTree = "<group>"; };
 		72D33BA31A3C64B500654747 /* Synonym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Synonym.png; sourceTree = "<group>"; };
 		72D33BA41A3C64B500654747 /* TwoMeaning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwoMeaning.png; sourceTree = "<group>"; };
+		72D33BAD1A3D992400654747 /* startBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startBtn.png; sourceTree = "<group>"; };
+		72D33BAF1A3D999B00654747 /* pinkcupcake.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pinkcupcake.PNG; path = ../../../../Desktop/pinkcupcake.PNG; sourceTree = "<group>"; };
+		72D33BB11A3D9B4F00654747 /* wordnoteBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordnoteBtn.png; sourceTree = "<group>"; };
+		72D33BB41A3DA4EA00654747 /* menubackBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubackBtn.png; sourceTree = "<group>"; };
+		72D33BB51A3DA4EA00654747 /* nextpageBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextpageBtn.png; sourceTree = "<group>"; };
+		72D33BB61A3DA4EA00654747 /* resultBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resultBtn.png; sourceTree = "<group>"; };
+		72D33BB71A3DA4EA00654747 /* topbacBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbacBtn.png; sourceTree = "<group>"; };
+		72D33BB81A3DA4EA00654747 /* wordaddBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordaddBtn.png; sourceTree = "<group>"; };
+		72D33BB91A3DA4EA00654747 /* worderaceBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = worderaceBtn.png; sourceTree = "<group>"; };
+		72D33BC01A3DB39C00654747 /* background5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background5.png; path = ../../../../Desktop/background5.png; sourceTree = "<group>"; };
+		72D33BC21A3DC83300654747 /* categoryLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = categoryLabel.png; path = ../../../../Desktop/categoryLabel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +206,12 @@
 		72AD41AE1A09FD2C00D2DF1D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				72D33BC21A3DC83300654747 /* categoryLabel.png */,
+				72D33BC01A3DB39C00654747 /* background5.png */,
+				72D33BB31A3DA4EA00654747 /* BtnParts */,
+				72D33BB11A3D9B4F00654747 /* wordnoteBtn.png */,
+				72D33BAF1A3D999B00654747 /* pinkcupcake.PNG */,
+				72D33BAD1A3D992400654747 /* startBtn.png */,
 				72D33BA01A3C64B500654747 /* categoryimage */,
 				72D33B9E1A3C549700654747 /* label0.png */,
 				72D33B9C1A3ABECE00654747 /* Info.plist */,
@@ -236,6 +264,19 @@
 				72D33BA41A3C64B500654747 /* TwoMeaning.png */,
 			);
 			path = categoryimage;
+			sourceTree = "<group>";
+		};
+		72D33BB31A3DA4EA00654747 /* BtnParts */ = {
+			isa = PBXGroup;
+			children = (
+				72D33BB41A3DA4EA00654747 /* menubackBtn.png */,
+				72D33BB51A3DA4EA00654747 /* nextpageBtn.png */,
+				72D33BB61A3DA4EA00654747 /* resultBtn.png */,
+				72D33BB71A3DA4EA00654747 /* topbacBtn.png */,
+				72D33BB81A3DA4EA00654747 /* wordaddBtn.png */,
+				72D33BB91A3DA4EA00654747 /* worderaceBtn.png */,
+			);
+			path = BtnParts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,24 +359,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D33BB01A3D999B00654747 /* pinkcupcake.PNG in Resources */,
 				72D33BA61A3C64B500654747 /* PhrasalVerb.png in Resources */,
+				72D33BBB1A3DA4EA00654747 /* nextpageBtn.png in Resources */,
 				72D33B911A39E49400654747 /* specialcake.gif in Resources */,
 				72D33B821A39E47800654747 /* QuizList.plist in Resources */,
+				72D33BBA1A3DA4EA00654747 /* menubackBtn.png in Resources */,
 				72D33B8C1A39E49400654747 /* cupcake.gif in Resources */,
 				72D33B8E1A39E49400654747 /* pancake.gif in Resources */,
 				72D33BA51A3C64B500654747 /* Antonym.png in Resources */,
 				72D33B8B1A39E49400654747 /* batu.png in Resources */,
 				72D33BA71A3C64B500654747 /* Synonym.png in Resources */,
+				72D33BBC1A3DA4EA00654747 /* resultBtn.png in Resources */,
 				72D33B901A39E49400654747 /* perfectcake.gif in Resources */,
 				72AD41BA1A09FD2C00D2DF1D /* Main.storyboard in Resources */,
 				72AD41BF1A09FD2C00D2DF1D /* LaunchScreen.xib in Resources */,
+				72D33BBF1A3DA4EA00654747 /* worderaceBtn.png in Resources */,
 				72D33B9D1A3ABECE00654747 /* Info.plist in Resources */,
 				72AD41BC1A09FD2C00D2DF1D /* Images.xcassets in Resources */,
+				72D33BAE1A3D992400654747 /* startBtn.png in Resources */,
 				72D33B9B1A3ABE5000654747 /* 1correct.jpg in Resources */,
 				72D33B8D1A39E49400654747 /* maru.png in Resources */,
+				72D33BBE1A3DA4EA00654747 /* wordaddBtn.png in Resources */,
+				72D33BC11A3DB39C00654747 /* background5.png in Resources */,
 				72D33B9F1A3C549700654747 /* label0.png in Resources */,
+				72D33BBD1A3DA4EA00654747 /* topbacBtn.png in Resources */,
 				72D33B951A3A735400654747 /* TableViewCustomCell.xib in Resources */,
+				72D33BC31A3DC83300654747 /* categoryLabel.png in Resources */,
 				72D33B8F1A39E49400654747 /* perfect.gif in Resources */,
+				72D33BB21A3D9B4F00654747 /* wordnoteBtn.png in Resources */,
 				72D33BA81A3C64B500654747 /* TwoMeaning.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

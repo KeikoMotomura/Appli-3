@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 
 
+
 @interface note2ViewController ()
 
 @end
@@ -21,6 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
+    
     
     
     
@@ -142,9 +148,15 @@
     
     [_note2TableView reloadData];
     
+
+    
+    
+    
     //  画面が戻ったときに前回の選択状況を解除する
     [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
     
+    
+
     
     
     
@@ -165,7 +177,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return _noteArray.count;//note ここだけsortにしても全部きえる
+    return _noteArray.count;
     
 }
 
@@ -182,7 +194,7 @@
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
     }
     
-    cell.textLabel.text = _noteArray[indexPath.row][@"question"];//ここを変えたらダメ
+    cell.textLabel.text = _noteArray[indexPath.row][@"question"];
     return cell;
     
     

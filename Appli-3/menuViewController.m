@@ -24,12 +24,13 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor redColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
-    
-   
-    
+      
     
     
-    self.titleLabel.text = @"種類を選択して下さい";
+//    self.titleLabel.text = @"種類を選択して下さい";
+    [self.titleLabel setImage:[UIImage imageNamed:@"categoryLabel.png"]
+                   forState:UIControlStateNormal];
+
     
     
     _menuArray = @[@"PhrasalVerb.png",@"Synonym.png",@"Antonym.png",@"TwoMeaning.png"];
@@ -101,11 +102,9 @@
     
     
     //cell.textLabel.text = _menuArray[indexPath.row];
-    
     cell.imageView.image = [UIImage imageNamed:_menuArray[indexPath.row]];
     return cell;
     
-//    self.coffeeImage.image = [UIImage imageNamed:_menuArray[indexPath.row];
    
 }
 

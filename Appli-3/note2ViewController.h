@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface note2ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITabBarDelegate,UIActionSheetDelegate>
+static NSString * const TableViewCustomCellIdentifier = @"TableViewCustomCell";
+
+
+@interface note2ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 
 {
@@ -24,7 +27,7 @@
 }
 
 
-@property (weak, nonatomic) IBOutlet UILabel *notetitleLabel;//使わない
+
 @property (weak, nonatomic) IBOutlet UITableView *note2TableView;
 
 

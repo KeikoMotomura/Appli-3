@@ -24,7 +24,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     
-    _noteArray = @[@"Phrasal Verb",@"Synonym",@"Antonym",@"Two Meaning"];
+    _noteArray = @[@"PhrasalVerb.png",@"Synonym.png",@"Antonym.png",@"TwoMeaning.png"];
     
     _noteTableView.delegate = self;
     _noteTableView.dataSource = self;
@@ -58,7 +58,7 @@
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = _noteArray[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:_noteArray[indexPath.row]];
     return cell;
     
 }

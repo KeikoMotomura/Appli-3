@@ -108,7 +108,8 @@
     //    最初はFlagをYESにしておく(ボタンの初期表示を「削除」にするため）
     _wordjumpflag = YES;
     
-    [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+    [self.wordjumpBtn setImage:[UIImage imageNamed:@"worderaceBtn.png"]
+                      forState:UIControlStateNormal];
     
     
     //    単語帳を検索する
@@ -145,7 +146,10 @@
         if ([_answerArray[self.select_questionNo][@"questionNo"] intValue] != [questionNoid intValue]) {
             _wordjumpflag = NO;
             
-            [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+//            [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+            [self.wordjumpBtn setImage:[UIImage imageNamed:@"worderaceBtn.png"]
+                              forState:UIControlStateNormal];
+
             
             break;//単語帳から見つかったら検索を中止するのでここでbreak
             
@@ -230,30 +234,30 @@
 
 
 
-- (IBAction)nextpageBtn:(id)sender {//次のページへは移動する。次の行のデータを持ってくるようにしたい。
-    NSLog(@"次の単語へボタンが押されました");
+//- (IBAction)nextpageBtn:(id)sender {//次のページへは移動する。次の行のデータを持ってくるようにしたい。
+//    NSLog(@"次の単語へボタンが押されました");
+//    
+//    note3ViewController *notevc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
+//    
+//    [[self navigationController] pushViewController:notevc animated:YES];
+//    
+//    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
+//    NSBundle *bundle = [NSBundle mainBundle];
+//    
+//    //  読み込むプロパティリストのファイルパス（場所）の指定
+//    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
+//    
+//    //  プロパティリストの中身のデータを取得
+//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+//    
+//    //    次ページの単語を表示させる為に追加してみた（必要かは不明）
+//    self.select_wordlist = self.select_wordlist+1;
+//    NSLog(@"note3のwoldlistNO▶︎%d", _select_wordlist);
+//    
+
     
-    note3ViewController *notevc = [self.storyboard instantiateViewControllerWithIdentifier:@"note3ViewController"];
     
-    [[self navigationController] pushViewController:notevc animated:YES];
-    
-    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
-    NSBundle *bundle = [NSBundle mainBundle];
-    
-    //  読み込むプロパティリストのファイルパス（場所）の指定
-    NSString *path = [bundle pathForResource:@"QuizList"ofType:@"plist"];
-    
-    //  プロパティリストの中身のデータを取得
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    
-    //    次ページの単語を表示させる為に追加してみた（必要かは不明）
-    self.select_wordlist = self.select_wordlist+1;
-    NSLog(@"note3のwoldlistNO▶︎%d", _select_wordlist);
-    
-    
-    
-    
-}
+//}
 
 
 

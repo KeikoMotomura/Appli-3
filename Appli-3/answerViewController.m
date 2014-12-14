@@ -120,16 +120,17 @@
     
     if(_wordjumpflag){ //==YESの意味になる
         
-        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+        [self.wordjumpBtn setImage:[UIImage imageNamed:@"worderaceBtn.png"]
+                     forState:UIControlStateNormal];
     }else{
-        [self.wordjumpBtn setTitle:@"単語帳に追加する" forState:UIControlStateNormal];
+        [self.wordjumpBtn setImage:[UIImage imageNamed:@"wordaddBtn.png"]
+                     forState:UIControlStateNormal];
         
         
     }
     
     
 }
-
 
 
 
@@ -144,22 +145,26 @@
     //  ボタンの位置を決定
     if ( self.view.bounds.size.height == 568) {
         NSLog(@"画面の高さ%f",self.view.bounds.size.height);
-        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 525, 270, 10)];
+        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (230, 490, 73, 73)];
     }
     
     if ( self.view.bounds.size.height == 480) {
         NSLog(@"画面の高さ%f",self.view.bounds.size.height);
-        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (110, 437, 270, 10)];
+        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (230, 437, 73, 73)];
     }
     
     //  ボタンに表示する文字を指定
-    [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
+//    [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
+    [_nextButton setImage:[UIImage imageNamed:@"nextpageBtn.png"]
+                 forState:UIControlStateNormal];
     
     if (self.select_questionNo == 9) {
         NSLog(@"問題カウント数10になりました");
         
         //  ボタンに表示する文字を指定
-        [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
+//        [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
+        [_nextButton setImage:[UIImage imageNamed:@"resultBtn.png"]
+                          forState:UIControlStateNormal];
         
     }
     
@@ -263,7 +268,8 @@
         
         _wordjumpflag = NO;
         
-        [self.wordjumpBtn setTitle:@"単語帳へ追加する" forState:UIControlStateNormal];
+        [self.wordjumpBtn setImage:[UIImage imageNamed:@"wordaddBtn.png"]
+                          forState:UIControlStateNormal];
         
     }else{
         
@@ -309,7 +315,8 @@
         _wordjumpflag = YES;
         
         
-        [self.wordjumpBtn setTitle:@"単語帳から削除する" forState:UIControlStateNormal];
+        [self.wordjumpBtn setImage:[UIImage imageNamed:@"worderaceBtn.png"]
+                          forState:UIControlStateNormal];
         
         
         
