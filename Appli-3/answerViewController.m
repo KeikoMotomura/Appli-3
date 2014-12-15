@@ -151,7 +151,7 @@
     
     if ( self.view.bounds.size.height == 480) {
         NSLog(@"画面の高さ%f",self.view.bounds.size.height);
-        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (230, 437, 73, 73)];
+        _nextButton = [[UIButton alloc] initWithFrame:CGRectMake (230, 400, 73, 73)];
     }
     
     //  ボタンに表示する文字を指定
