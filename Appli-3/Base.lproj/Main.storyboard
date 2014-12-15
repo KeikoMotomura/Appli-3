@@ -20,7 +20,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8Q0-pg-mhX" kind="push" id="0FS-Dl-Cao"/>
+                                    <segue destination="83S-1N-4iM" kind="push" id="L2M-sP-SwC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="u3E-G8-SzB">
@@ -107,22 +107,34 @@
             <point key="canvasLocation" x="-520" y="424.10666666666668"/>
         </scene>
         <!--Note View Controller-->
-        <scene sceneID="heA-Oj-S8t">
+        <scene sceneID="ONE-zM-otC">
             <objects>
-                <viewController storyboardIdentifier="noteViewController" id="8Q0-pg-mhX" customClass="noteViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="40" id="IPI-p9-apj">
+                <viewController storyboardIdentifier="noteViewController" id="83S-1N-4iM" customClass="noteViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ht4-x5-5Ol">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jbb-6h-n6t">
+                                <rect key="frame" x="22" y="108" width="277" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0TW-9a-LzS">
+                                <rect key="frame" x="23" y="185" width="277" height="329"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="eh6-5J-dEt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="P28-qW-p3p"/>
                     <connections>
-                        <outlet property="noteTableView" destination="IPI-p9-apj" id="JFb-eP-bDM"/>
+                        <outlet property="noteImageView" destination="jbb-6h-n6t" id="qEE-ZJ-xj9"/>
+                        <outlet property="noteTableView" destination="0TW-9a-LzS" id="KTR-gS-eaC"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ga6-GB-Jz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55v-kJ-j0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="737"/>
+            <point key="canvasLocation" x="316" y="739"/>
         </scene>
         <!--Note2 View Controller-->
         <scene sceneID="Kxp-TV-8Gy">
@@ -161,7 +173,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fVQ-ph-6oN">
-                                <rect key="frame" x="0.0" y="265" width="320" height="263"/>
+                                <rect key="frame" x="33" y="265" width="255" height="263"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

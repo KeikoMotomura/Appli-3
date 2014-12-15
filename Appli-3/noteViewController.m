@@ -21,6 +21,9 @@
     
     self.title=@"Category";
     
+    self.noteImageView.image = [UIImage imageNamed:@"categoryLabel.png"];
+
+    
     // 文字色変わらず
 //    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000]};
     
@@ -47,6 +50,7 @@
     // カスタマイズしたセルをテーブルビューにセット
     UINib *nib3 = [UINib nibWithNibName:TableViewCustomCellIdentifier3 bundle:nil];
     [self.noteTableView registerNib:nib3 forCellReuseIdentifier:@"Cell"];
+    
     
 
     
@@ -81,10 +85,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+ 
     
     cell.imageView.image = [UIImage imageNamed:_noteArray[indexPath.row]];
-//      ＊＊＊＊うまくいかない　画像のセンタリング
-//    cell.imageView.image = [UIImage imsgeAlignmentCenter];
     return cell;
     
 }

@@ -22,6 +22,8 @@ static NSString * const TableViewCustomCellIdentifier3 = @"TableViewCustomCell3"
 
 @property (strong, nonatomic) IBOutlet UITableView *noteTableView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *noteImageView;
+
 @property(nonatomic,assign) int select_num;
 @property(nonatomic,assign) int select_wordNo;
 

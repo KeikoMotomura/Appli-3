@@ -179,11 +179,18 @@
     }
     
     cell.textLabel.text = _choiseArray[indexPath.row];
-    cell.textLabel.textAlignment = UITextAlignmentCenter;
+    //cell.textLabel.textAlignment = UITextAlignmentCenter;
 
-    cell.imageView.image = [UIImage imageNamed:@"quechoise.png"];
+
+    // Set backgroundView
+    UIImageView *imageView;
+    UIImage *image;
+    image = [UIImage imageNamed:@"quechoise.png"];
+    imageView = [[UIImageView alloc] initWithImage:image];
     
-    return cell;
+
+    cell.backgroundView = imageView;
+        return cell;
     
     
 }
