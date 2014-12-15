@@ -122,10 +122,10 @@
     if(_wordjumpflag){ //==YESの意味になる
         
         [self.wordjumpBtn setImage:[UIImage imageNamed:@"worderaceBtn.png"]
-                     forState:UIControlStateNormal];
+                          forState:UIControlStateNormal];
     }else{
         [self.wordjumpBtn setImage:[UIImage imageNamed:@"wordaddBtn.png"]
-                     forState:UIControlStateNormal];
+                          forState:UIControlStateNormal];
         
         
     }
@@ -155,7 +155,7 @@
     }
     
     //  ボタンに表示する文字を指定
-//    [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
+    //    [_nextButton setTitle:@"次の問題へ" forState:UIControlStateNormal];
     [_nextButton setImage:[UIImage imageNamed:@"nextpageBtn.png"]
                  forState:UIControlStateNormal];
     
@@ -163,9 +163,9 @@
         NSLog(@"問題カウント数10になりました");
         
         //  ボタンに表示する文字を指定
-//        [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
+        //        [_nextButton setTitle:@"結果を見る" forState:UIControlStateNormal];
         [_nextButton setImage:[UIImage imageNamed:@"resultBtn.png"]
-                          forState:UIControlStateNormal];
+                     forState:UIControlStateNormal];
         
     }
     

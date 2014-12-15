@@ -22,10 +22,10 @@
     self.title=@"Category";
     
     self.noteImageView.image = [UIImage imageNamed:@"categoryLabel.png"];
-
+    
     
     // 文字色変わらず
-//    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000]};
+    //    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000]};
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
@@ -41,7 +41,7 @@
     
     
     
-//＊＊＊＊＊＊＊＊カスタムセルで追加
+    //＊＊＊＊＊＊＊＊カスタムセルで追加
     // デリゲートメソッドをこのクラスで実装する
     self.noteTableView.delegate = self;
     self.noteTableView.dataSource = self;
@@ -52,7 +52,7 @@
     [self.noteTableView registerNib:nib3 forCellReuseIdentifier:@"Cell"];
     
     
-
+    
     
 } //DidRoadの終わり
 
@@ -85,7 +85,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
- 
+    
     
     cell.imageView.image = [UIImage imageNamed:_noteArray[indexPath.row]];
     return cell;

@@ -20,21 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.title=@"問題種類を選択 menuViewController";
+    //    self.title=@"問題種類を選択 menuViewController";
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
-      
     
     
-
-        self.titleLabelImageView.image = [UIImage imageNamed:@"categoryLabel.png"];
+    
+    
+    self.titleLabelImageView.image = [UIImage imageNamed:@"categoryLabel.png"];
     
     
     _menuArray = @[@"PhrasalVerb.png",@"Synonym.png",@"Antonym.png",@"TwoMeaning.png"];
     
     
-
+    
     self.categorydescImageView.image = [UIImage imageNamed:@"categorydesc.png"];
     
     
@@ -44,9 +44,9 @@
     _menuTableView.dataSource = self;
     
     _menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-
-//＊＊＊＊＊＊＊＊カスタムセルで追加   
+    
+    
+    //＊＊＊＊＊＊＊＊カスタムセルで追加
     // デリゲートメソッドをこのクラスで実装する
     self.menuTableView.delegate = self;
     self.menuTableView.dataSource = self;
@@ -60,11 +60,11 @@
 
 
 #pragma mark - UITableViewDelegate methods
-    
-    - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-    {
-        return [CustomTableViewCell rowHeight];
-    }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [CustomTableViewCell rowHeight];
+}
 
 
 
@@ -80,8 +80,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _menuArray.count;
-
-
+    
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView
@@ -104,7 +104,7 @@
     cell.imageView.image = [UIImage imageNamed:_menuArray[indexPath.row]];
     return cell;
     
-   
+    
 }
 
 

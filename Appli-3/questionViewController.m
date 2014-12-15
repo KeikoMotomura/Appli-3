@@ -27,7 +27,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
-       
+    
     
     
     NSDictionary *categoryTitle =
@@ -61,29 +61,29 @@
     switch (self.select_categoryNo) {
         case 0:
             self.explainImageView.image = [UIImage imageNamed:@"quediscP.png"];
-
+            
             break;
             
         case 1:
             self.explainImageView.image = [UIImage imageNamed:@"quediscS.png"];
-
+            
             break;
             
         case 2:
             self.explainImageView.image = [UIImage imageNamed:@"quediscA.png"];
-
+            
             break;
             
         case 3:
             self.explainImageView.image = [UIImage imageNamed:@"quediscT.png"];
-
+            
             break;
             
     }
-
+    
     
     self.queImageView.image = [UIImage imageNamed:@"queLabel.png"];
-
+    
     
     //    //＊＊＊＊問題の単語をプロパティリストから表示させる為のコード＊＊＊
     //    //  bundle=プロジェクト内のファイルにアクセスできるオブジェクトを宣言(NSBundle型のオブジェクト）
@@ -109,7 +109,7 @@
     _question = app.shufflequestion10;
     
     
-//＊＊＊＊＊＊＊＊カスタムセルで追加
+    //＊＊＊＊＊＊＊＊カスタムセルで追加
     // デリゲートメソッドをこのクラスで実装する
     self.choiseTableView.delegate = self;
     self.choiseTableView.dataSource = self;
@@ -119,9 +119,9 @@
     UINib *nib2 = [UINib nibWithNibName:TableViewCustomCellIdentifier2 bundle:nil];
     [self.choiseTableView registerNib:nib2 forCellReuseIdentifier:@"Cell"];
     
-
-
-//    問題の表示
+    
+    
+    //    問題の表示
     self.queLabel.text =
     [NSString stringWithFormat:@"%@", _question[self.select_questionNo][@"question"]];
     
@@ -143,7 +143,7 @@
     
     
     
-
+    
     
 }
 
@@ -180,17 +180,18 @@
     
     cell.textLabel.text = _choiseArray[indexPath.row];
     //cell.textLabel.textAlignment = UITextAlignmentCenter;
-
-
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
+    
     // Set backgroundView
     UIImageView *imageView;
     UIImage *image;
     image = [UIImage imageNamed:@"quechoise.png"];
     imageView = [[UIImageView alloc] initWithImage:image];
     
-
+    
     cell.backgroundView = imageView;
-        return cell;
+    return cell;
     
     
 }

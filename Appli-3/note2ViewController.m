@@ -41,7 +41,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:1.02 green:0.96 blue:0.98 alpha:1.000];
     
     _note2TableView.separatorColor = [UIColor colorWithRed:0.796 green:0.084 blue:0.532 alpha:1.000];
-
+    
     
     
     //単語種類を一番上に表示させる為のコード
@@ -151,7 +151,7 @@
     
     [_note2TableView reloadData];
     
-
+    
     
     
     
@@ -159,7 +159,7 @@
     [_note2TableView deselectRowAtIndexPath:_note2TableView.indexPathForSelectedRow animated:YES];
     
     
-
+    
     
     
     

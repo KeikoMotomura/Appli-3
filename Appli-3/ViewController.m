@@ -25,7 +25,7 @@
     self.titleImageView.image = [UIImage imageNamed:@"englishexercise.png"];
     
     [self.startBtn setImage:[UIImage imageNamed:@"startBtn.png"]
-                 forState:UIControlStateNormal];
+                   forState:UIControlStateNormal];
     
     
 }
