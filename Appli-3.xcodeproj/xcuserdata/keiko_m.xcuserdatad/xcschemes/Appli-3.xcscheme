@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "72AD41AA1A09FD2C00D2DF1D"
-               BuildableName = "Appli-3.app"
+               BuildableName = "chocEnglish.app"
                BlueprintName = "Appli-3"
                ReferencedContainer = "container:Appli-3.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "72AD41AA1A09FD2C00D2DF1D"
-            BuildableName = "Appli-3.app"
+            BuildableName = "chocEnglish.app"
             BlueprintName = "Appli-3"
             ReferencedContainer = "container:Appli-3.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "72AD41AA1A09FD2C00D2DF1D"
-            BuildableName = "Appli-3.app"
+            BuildableName = "chocEnglish.app"
             BlueprintName = "Appli-3"
             ReferencedContainer = "container:Appli-3.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "72AD41AA1A09FD2C00D2DF1D"
-            BuildableName = "Appli-3.app"
+            BuildableName = "chocEnglish.app"
             BlueprintName = "Appli-3"
             ReferencedContainer = "container:Appli-3.xcodeproj">
          </BuildableReference>

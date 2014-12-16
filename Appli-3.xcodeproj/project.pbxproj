@@ -81,7 +81,7 @@
 /* Begin PBXFileReference section */
 		7223C78D1A12032500DEF780 /* resultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultViewController.h; sourceTree = "<group>"; };
 		7223C78E1A12032500DEF780 /* resultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultViewController.m; sourceTree = "<group>"; };
-		72AD41AB1A09FD2C00D2DF1D /* Appli-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Appli-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72AD41AB1A09FD2C00D2DF1D /* chocEnglish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chocEnglish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AD41B01A09FD2C00D2DF1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72AD41B21A09FD2C00D2DF1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72AD41B31A09FD2C00D2DF1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		72AD41AC1A09FD2C00D2DF1D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72AD41AB1A09FD2C00D2DF1D /* Appli-3.app */,
+				72AD41AB1A09FD2C00D2DF1D /* chocEnglish.app */,
 				72AD41C41A09FD2C00D2DF1D /* Appli-3Tests.xctest */,
 			);
 			name = Products;
@@ -368,7 +368,7 @@
 			);
 			name = "Appli-3";
 			productName = "Appli-3";
-			productReference = 72AD41AB1A09FD2C00D2DF1D /* Appli-3.app */;
+			productReference = 72AD41AB1A09FD2C00D2DF1D /* chocEnglish.app */;
 			productType = "com.apple.product-type.application";
 		};
 		72AD41C31A09FD2C00D2DF1D /* Appli-3Tests */ = {
@@ -630,7 +630,7 @@
 				INFOPLIST_FILE = "Appli-3/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = chocEnglish;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -642,7 +642,7 @@
 				INFOPLIST_FILE = "Appli-3/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = chocEnglish;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
