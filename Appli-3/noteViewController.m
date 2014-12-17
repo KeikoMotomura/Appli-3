@@ -21,7 +21,7 @@
     
     self.title=@"Category";
     
-    self.noteImageView.image = [UIImage imageNamed:@"categoryLabel.png"];
+    self.noteImageView.image = [UIImage imageNamed:@"wordnoteImage.png"];
     
     
     // 文字色変わらず
@@ -85,12 +85,33 @@
         cell = [[UITableViewCell alloc] initWithStyle:
                 UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+
+
+//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+        [self updateCell:cell forIndexPath:indexPath];
+        
+        return cell;
+    }
     
     
-    cell.imageView.image = [UIImage imageNamed:_noteArray[indexPath.row]];
-    return cell;
     
-}
+- (void)updateCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
+    {
+        NSString *str = _noteArray[indexPath.row];
+        
+        UIImage *image = [UIImage imageNamed:str];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 230, 48)];
+        imageView.image = image;
+        [cell.contentView addSubview:imageView];
+        
+    }
+
+//    cell.imageView.image = [UIImage imageNamed:_noteArray[indexPath.row]];
+//    return cell;
+//}
+
+
 
 //     何か行が押されたときにnote2ViewControllerに画面推移する
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)
